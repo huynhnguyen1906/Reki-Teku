@@ -1,14 +1,26 @@
 @import url(normalize.css);
 
-@import url("https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap');
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-	font-family: "Kiwi Maru", sans-serif;
-	background-color: #f5f5f5;
+    font-family: 'Kiwi Maru', sans-serif;
+    background-color: #f5f5f5;
+}
+:root {
+    --primary-color: #f5f5f5;
+    --secondary-color: #f5f5f5;
+    --tertiary-color: #f5f5f5;
+    --quaternary-color: #f5f5f5;
+    --quinary-color: #f5f5f5;
+    --senary-color: #f5f5f5;
+    --septenary-color: #f5f5f5;
+    --octonary-color: #f5f5f5;
+    --nonary-color: #f5f5f5;
+    --denary-color: #f5f5f5;
 }
