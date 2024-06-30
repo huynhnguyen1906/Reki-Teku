@@ -1,7 +1,7 @@
 import axios from 'axios';
 import TestApi from '@/components/TestApi';
 import Link from 'next/link';
-export default function AdminPage() {
+export default function TestPage() {
     async () => {
         try {
             const response = await axios.get('/api/test-firebase');
