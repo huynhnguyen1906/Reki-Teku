@@ -1,18 +1,17 @@
-
 .footerWrapper{
-    padding: 20px 70px 40px;
+    // 波線の部分を見るためにmargin開けてる
+    margin-top: 500px;
+    padding: 20px 50px 40px 70px;
     color: #fff;
     background: #4B3333;
-    li{
+    ul{
         list-style: none;
-    }
-    a{
-        color: #fff;
-        text-decoration: none;
-    }
-    p{
-        // margin: 0;
-        // padding: 0;
+        padding: 0;
+        a{
+            font-size: 16px;
+            color: #fff;
+            text-decoration: none;
+        }
     }
 }
 .nav{
@@ -21,41 +20,91 @@
         gap: 3rem;
     }
 }
-.title{
-    margin: 73px 0 28px;
-    font-size: 32px;
-}
 .infoWrap{
     margin-bottom: 45px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    
-}
-.sns{
-    display: flex;
-    gap: 2.2rem;
+    h1{
+        margin: 63px 0 28px;
+        font-size: 32px;    
+    }
+    p{
+        font-size: 16px;
+    }
 }
 .contactWrap{
     display: flex;
     flex-direction: column;
-    gap: 18px;
-}
-.message{
+    gap: 1.8rem;
     p{
-        padding: 15px 25px;
-        width: fit-content;
-        font-size: 20px;
-        border: 1px solid #fff;
-        border-radius: 30px;
+        margin-bottom: 0;
+    }
+}
+.messageWrap{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4.7rem;
+    .sns{
+        display: flex;
+        gap: 2.2rem;
+        p{
+            width: 5rem;
+            height: 5rem;
+            border: 2px solid #fff;
+            border-radius: 100rem;
+            text-align: center;
+            line-height: 4rem;
+            svg{
+                width: 2rem;
+                height: 2rem;
+            }
+        }
+    }
+    .mail{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        p{
+            padding: 15px 25px;
+            border-radius: 30px;
+            font-size: 2rem;
+            border: 1px solid #fff;
+            display: flex;
+            align-items: center;
+            span{
+                padding-left: 16px;
+                svg{
+                    margin: auto 0;
+                    width: 1.5rem;
+                    height: 1.5rem;
+                }
+            }
+        }
     }
 }
 .footerWrap{
-    &before{
+    &::before{
         content: "";
+        display: block;
+        margin-bottom: 36px;
         border-top: 1px solid #fff;
     }
-    font-size: 16px;
-    display: flex;
-    gap: 10px;
+    ul{
+        display: flex;
+        justify-content: space-between;
+        a{
+            padding-right: 10px;
+        }
+    }
+}
+
+.wave_container {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
 }
