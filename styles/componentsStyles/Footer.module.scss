@@ -1,9 +1,17 @@
+.footerBg{
+    width: 100%;
+    height: 100vh;
+    background-image: url('../../public/images/footerBg.svg');
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
 .footerWrapper{
-    // 波線の部分を見るためにmargin開けてる
-    margin-top: 500px;
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
     padding: 20px 50px 40px 70px;
     color: #fff;
-    background: #4B3333;
     ul{
         list-style: none;
         padding: 0;
@@ -98,13 +106,4 @@
             padding-right: 10px;
         }
     }
-}
-
-.wave_container {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -100;
 }
