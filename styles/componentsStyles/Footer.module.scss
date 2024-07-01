@@ -1,0 +1,109 @@
+.footerBg{
+    width: 100%;
+    height: 100vh;
+    background-image: url('../../public/images/footerBg.svg');
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+.footerWrapper{
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+    padding: 20px 50px 40px 70px;
+    color: #fff;
+    ul{
+        list-style: none;
+        padding: 0;
+        a{
+            font-size: 16px;
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+}
+.nav{
+    ul{
+        display: flex;
+        gap: 3rem;
+    }
+}
+.infoWrap{
+    margin-bottom: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    h1{
+        margin: 63px 0 28px;
+        font-size: 32px;    
+    }
+    p{
+        font-size: 16px;
+    }
+}
+.contactWrap{
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+    p{
+        margin-bottom: 0;
+    }
+}
+.messageWrap{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4.7rem;
+    .sns{
+        display: flex;
+        gap: 2.2rem;
+        p{
+            width: 5rem;
+            height: 5rem;
+            border: 2px solid #fff;
+            border-radius: 100rem;
+            text-align: center;
+            line-height: 4rem;
+            svg{
+                width: 2rem;
+                height: 2rem;
+            }
+        }
+    }
+    .mail{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        p{
+            padding: 15px 25px;
+            border-radius: 30px;
+            font-size: 2rem;
+            border: 1px solid #fff;
+            display: flex;
+            align-items: center;
+            span{
+                padding-left: 16px;
+                svg{
+                    margin: auto 0;
+                    width: 1.5rem;
+                    height: 1.5rem;
+                }
+            }
+        }
+    }
+}
+.footerWrap{
+    &::before{
+        content: "";
+        display: block;
+        margin-bottom: 36px;
+        border-top: 1px solid #fff;
+    }
+    ul{
+        display: flex;
+        justify-content: space-between;
+        a{
+            padding-right: 10px;
+        }
+    }
+}
