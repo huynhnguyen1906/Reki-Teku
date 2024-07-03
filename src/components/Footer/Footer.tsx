@@ -3,6 +3,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { FaLine } from "react-icons/fa6";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
+import Link from 'next/link';
 
 export default function Footer() {
     return (
@@ -10,10 +11,10 @@ export default function Footer() {
             <div className={Style.footerWrapper}>
                 <div className={Style.nav}>
                     <ul>
-                        <li><a href="#">トップページ</a></li>
-                        <li><a href="#">歴てくについて</a></li>
-                        <li><a href="#">ツアー紹介</a></li>
-                        <li><a href="#">お知らせ</a></li>
+                        <li><Link href="#">トップページ</Link></li>
+                        <li><Link href="#">歴てくについて</Link></li>
+                        <li><Link href="#">ツアー紹介</Link></li>
+                        <li><Link href="#">お知らせ</Link></li>
                     </ul>
                 </div>
                 <div className={Style.infoWrap}>
@@ -30,25 +31,25 @@ export default function Footer() {
                     </div>
                     <div className={Style.messageWrap}>
                         <div className={Style.sns}>
-                            <p><FaXTwitter /></p>
-                            <p><FaInstagram /></p>
-                            <p><FaLine /></p>
+                            <p><Link href="#"><FaXTwitter /></Link></p>
+                            <p><Link href="#"><FaInstagram /></Link></p>
+                            <p><Link href="#"><FaLine /></Link></p>
                         </div>
                         <div className={Style.mail}>
-                            <p>LINEで予約・お問い合わせ<span><FaArrowUpRightFromSquare /></span></p>
-                            <p>メールで予約・お問い合わせ<span><FaArrowUpRightFromSquare /></span></p>
+                            <p>LINEで予約・お問い合わせ<span><Link href="#"><FaArrowUpRightFromSquare /></Link></span></p>
+                            <p>メールで予約・お問い合わせ<span><Link href="#"><FaArrowUpRightFromSquare /></Link></span></p>
                         </div>
                     </div>
                 </div>
                 <div className={Style.footerWrap}>
                     <ul>
                         <li>
-                            <a href="#">プライバシーポリシー</a>
-                            <a href="#">ご利用にあたって</a>
-                            <a href="#">よくある質問</a>
+                            <Link href="#">プライバシーポリシー</Link>
+                            <Link href="#">ご利用にあたって</Link>
+                            <Link href="#">よくある質問</Link>
                         </li>
-                        <li><a href="#">国内旅行業務取扱管理者番号　1234-56789</a></li>
-                        <li><a href="#">&copy;歴てく2024</a></li>
+                        <li><Link href="#">国内旅行業務取扱管理者番号　1234-56789</Link></li>
+                        <li><Link href="#">&copy;歴てく2024</Link></li>
                     </ul>
                 </div>
             </div>
