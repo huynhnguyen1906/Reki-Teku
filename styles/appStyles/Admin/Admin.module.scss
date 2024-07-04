@@ -4,6 +4,7 @@
     position: relative;
     width: 100%;
     height: auto;
+    font-family: 'Roboto';
 }
 
 .nav {
@@ -16,6 +17,14 @@
     padding: 0 20px 0 20px;
     position: relative;
     z-index: 10;
+    .userIcon {
+        color: #ffffff;
+        font-size: 1.5rem;
+        cursor: pointer;
+        span {
+            padding-left: 5px;
+        }
+    }
 }
 .sideBar {
     background-color: $main-color;
@@ -55,5 +64,9 @@
     background-color: #ffffff;
     margin-left: 20rem;
     padding: 20px;
-    height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
