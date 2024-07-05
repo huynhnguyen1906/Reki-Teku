@@ -64,9 +64,11 @@
     background-color: #ffffff;
     margin-left: 20rem;
     padding: 20px;
+    min-height: calc(100vh - 70px);
     height: auto;
     display: flex;
     flex-direction: column;
+    gap: 20px;
     justify-content: flex-start;
     align-items: center;
 }
