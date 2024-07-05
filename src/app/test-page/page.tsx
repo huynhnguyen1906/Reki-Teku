@@ -1,5 +1,5 @@
 import axios from 'axios';
-import TestApi from '@/components/TestApi';
+import TestApi from '@/components/Test/TestApi';
 import Link from 'next/link';
 export default function TestPage() {
     async () => {
