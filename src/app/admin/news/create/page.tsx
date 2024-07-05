@@ -1,11 +1,16 @@
+'use client';
+
+import dynamic from 'next/dynamic';
+
+const EditorComponent = dynamic(() => import('@/components/Admin/Editor'), { ssr: false });
+
 import AdminLayout from '@/app/admin/AdminLayout';
-import Editor from '@/components/Admin/Editor';
 
 export default function CreateNews() {
     return (
         <AdminLayout>
             <div>News Create</div>
-            <Editor />
+            <EditorComponent />
         </AdminLayout>
     );
 }
