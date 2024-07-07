@@ -15,16 +15,17 @@ class CustomImageTool extends Image {
 
     render() {
         const wrapper = super.render();
-        if (!CustomImageTool.firstImageRendered) {
-            const caption = wrapper.querySelector('.cdx-input');
-            if (caption) {
-                caption.style.display = 'none';
-            }
-            CustomImageTool.firstImageRendered = true;
+        const caption = wrapper.querySelector('.cdx-input');
+        if (caption) {
+            caption.style.display = 'none';
         }
         return wrapper;
     }
 }
+
+export const resetFirstImageRendered = () => {
+    CustomImageTool.firstImageRendered = false;
+};
 
 const editorConfig: EditorConfig = {
     holder: 'editorjs',
@@ -156,6 +157,7 @@ const editorConfig: EditorConfig = {
             blockTunes: {
                 delete: {
                     Delete: '削除',
+                    'Click to delete': 'もう一度クリックして削除',
                 },
                 moveUp: {
                     'Move up': '上へ移動',
@@ -172,12 +174,13 @@ const editorConfig: EditorConfig = {
         blocks: [
             {
                 type: 'image',
-                data: {},
+                data: {
+                    file: {},
+                },
             },
             {
                 type: 'header',
                 data: {
-                    text: '',
                     level: 2,
                 },
             },

@@ -9,7 +9,6 @@ import AdminLayout from '@/app/admin/AdminLayout';
 export default function CreateNews() {
     return (
         <AdminLayout>
-            <div>News Create</div>
             <EditorComponent />
         </AdminLayout>
     );

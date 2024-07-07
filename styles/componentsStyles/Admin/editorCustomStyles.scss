@@ -6,19 +6,35 @@
     width: 100%;
     max-width: 1000px;
 }
+.codex-editor__redactor {
+    padding-bottom: 50px !important;
+}
 .image-tool__image {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .image-tool__image img {
-    width: 100%;
-    width: 100%;
-
+    max-width: 800px;
+    max-height: 610px;
+}
+.mainVisual img {
     max-width: 1000px;
-    max-height: 700px;
+    max-height: 780px;
+}
+.ce-header::before {
+    user-select: none;
+    pointer-events: none;
+}
+.ce-popover-item--confirmation {
+    .ce-popover-item__title {
+        font-size: 10px;
+    }
 }
 
+h1 {
+    font-size: 5.4rem;
+}
 h2 {
     font-size: 4.2rem;
 }
