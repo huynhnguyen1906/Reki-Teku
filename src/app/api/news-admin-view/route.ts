@@ -29,12 +29,14 @@ export async function GET(req: NextRequest) {
 
         const response = NextResponse.json(newsData);
 
-        response.headers.set('Cache-Control', 'public, max-age=3600, stale-while-revalidate=59');
-        response.headers.set('Expires', new Date(Date.now() + 3600 * 1000).toUTCString());
+        response.headers.set('Cache-Control', 'no-cache, no-store, must-revalidate');
+        response.headers.set('Pragma', 'no-cache');
+        response.headers.set('Expires', '0');
 
         return response;
     } catch (e) {
         const errorResponse = NextResponse.json({ error: 'Error fetching documents: ' + e }, { status: 500 });
+
         errorResponse.headers.set('Cache-Control', 'no-store');
 
         return errorResponse;
