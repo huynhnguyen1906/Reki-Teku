@@ -1,0 +1,21 @@
+{
+    "headers": [
+        {
+            "source": "/api/news-admin-view",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "max-age=0, no-store, no-cache, must-revalidate, proxy-revalidate"
+                },
+                {
+                    "key": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "key": "Expires",
+                    "value": "0"
+                }
+            ]
+        }
+    ]
+}
