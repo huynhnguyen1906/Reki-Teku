@@ -44,7 +44,6 @@ export const handleSend = async (
 
         if (response.status === 200) {
             toast.success('記事の送信が完了しました');
-            console.log('Saved news:', response.data);
             mutate('/api/news-admin-view', undefined, true);
             router.push('/admin/news');
         } else {
