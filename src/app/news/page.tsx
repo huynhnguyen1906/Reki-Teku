@@ -1,6 +1,6 @@
 import Style from '@styles/appStyles/News.module.scss';
 import Footer from "@/components/Footer/Footer";
-import Pagination from "@/components/pagination";
+import Pagination from "@/components/Pagination";
 import { IoMdTime } from "react-icons/io";
 
 export default function News() {
@@ -13,7 +13,7 @@ export default function News() {
                     <div className={Style.item}>
                         <div className={Style.time}>
                             <IoMdTime />
-                            <p><time datetime="2024-01-01">2024/01/01</time></p>
+                            <p>2024/01/01</p>
                         </div>
                         <p className={Style.kinds}>ブログ</p>
                     </div>
