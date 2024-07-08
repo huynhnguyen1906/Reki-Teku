@@ -1,5 +1,6 @@
 import Style from '@styles/appStyles/News.module.scss';
 import Footer from "@/components/Footer/Footer";
+import Pagination from "@/components/pagination";
 import { IoMdTime } from "react-icons/io";
 
 export default function News() {
@@ -62,6 +63,7 @@ export default function News() {
                 </div>
 
                 <p className={Style.text}>歴史上の人物の足跡をてくてくと歩く「歴てく」の旅。その旅は、彼らの一生から生きていく知恵、ヒントをもらえる時間でもあります。</p>
+                <Pagination />
             </div>
             <Footer />
         </div>

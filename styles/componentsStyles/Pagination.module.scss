@@ -1,0 +1,24 @@
+.pageNavi{
+    padding: 10rem 0 10rem;
+    ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        li{
+            list-style: none;
+            a{ 
+                padding: 8px 12px;
+                color: #222;
+                font-size: 16px;
+                border-radius: 5px;
+                text-decoration: none;
+                background: #fefefe;
+                &:hover{
+                    color: #fffdf7;
+                    background: #4b3333;
+                }
+            }
+        }
+    }
+}
