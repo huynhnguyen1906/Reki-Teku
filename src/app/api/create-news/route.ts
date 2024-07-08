@@ -10,6 +10,7 @@ export async function POST(req: NextRequest) {
             news_data,
             news_timestamp: serverTimestamp(),
             news_type,
+            deleted: false,
         });
 
         return NextResponse.json({ message: 'Document successfully written!', id: docRef.id });

@@ -43,13 +43,13 @@ function Editor() {
                     className={`${Style.btnSelect} ${activeButton === 'ツアー追加' ? Style.active : ''}`}
                     onClick={() => handleButtonClick('ツアー追加')}
                 >
-                    <button>ツアー追加</button>
+                    <div className={Style.tourAddTag}>ツアー追加</div>
                 </div>
                 <div
                     className={`${Style.btnSelect} ${activeButton === 'ブログ更新' ? Style.active : ''}`}
                     onClick={() => handleButtonClick('ブログ更新')}
                 >
-                    <button>ブログ更新</button>
+                    <div className={Style.blogAddTag}>ブログ更新</div>
                 </div>
             </div>
             <div id="editorjs" className={Style.editorContainer}></div>
