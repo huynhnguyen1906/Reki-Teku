@@ -7,6 +7,7 @@ export const useAdminNews = () => {
         revalidateIfStale: false,
         revalidateOnFocus: false,
         revalidateOnReconnect: false,
+        refreshInterval: 0,
     });
 
     return {
