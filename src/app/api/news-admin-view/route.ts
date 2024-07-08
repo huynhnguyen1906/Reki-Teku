@@ -27,8 +27,6 @@ export async function GET(req: NextRequest) {
             };
         });
 
-        console.log('Fetched news data:', newsData);
-
         const response = NextResponse.json(newsData);
 
         response.headers.set('Cache-Control', 'no-cache, no-store, must-revalidate');

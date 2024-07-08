@@ -10,7 +10,6 @@ export default function News() {
         url: '/admin/news/create',
     };
     const { news, isError } = useAdminNews();
-    console.log(news);
     if (isError) return <div>エラーが発生しました。</div>;
     return (
         <AdminLayout>
