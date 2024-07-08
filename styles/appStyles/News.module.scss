@@ -1,10 +1,22 @@
+.bg{
+    background: url(../../public/images/bg.png);
+    background-size: contain;
+    background-position: top center;
+}
 .blogWrap{
-    margin: 0 14rem;
+    margin: 0 auto;
+    max-width: 1000px;
 }
 .blogHeader{
-    margin-top: 2rem;
+    width: fit-content;
+    h1{
+        img{
+            max-width: 1000px;
+            min-height: 490px;
+        }
+    }
     .item{
-        margin-top: 2rem;
+        margin-top: 20px;
         display: flex;
         gap: 1.8rem;
         .time{
@@ -13,9 +25,9 @@
             gap: 3px;
             color: #9e9e9e;
         }
-        p{
+        .kinds{
             width: 132px;
-            border-radius: 4rem;
+            border-radius: 40px;
             color: #fefefe;
             text-align: center;
             background-color: #ED9292;
@@ -26,19 +38,23 @@
         font-size: 42px;
     }
 }
-.blogContent{
-    margin: 5rem auto;
-    text-align: center;
-    .text{
-        margin-bottom: 50px;
-        font-size: 18px;
+
+.text{
+    margin-top: 60px;
+    font-size: 18px;
+}
+
+.picWrap{
+    .pic{
+        width: fit-content;
+        margin: 50px auto 20px;
+        img{
+            max-width: 800px;
+            min-height: 610px;
+        }
     }
     .sup{
-        padding: 2rem 0 5rem;
+        text-align: center;
         font-size: 16px;
-    }
-    &:last-child{
-        margin-top: 130px;
-        font-weight: bold;
     }
 }
