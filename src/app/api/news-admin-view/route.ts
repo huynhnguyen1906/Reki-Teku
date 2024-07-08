@@ -27,8 +27,16 @@ export async function GET(req: NextRequest) {
             };
         });
 
-        return NextResponse.json(newsData);
+        const response = NextResponse.json(newsData);
+
+        response.headers.set('Cache-Control', 'public, max-age=3600, stale-while-revalidate=59');
+        response.headers.set('Expires', new Date(Date.now() + 3600 * 1000).toUTCString());
+
+        return response;
     } catch (e) {
-        return NextResponse.json({ error: 'Error fetching documents: ' + e }, { status: 500 });
+        const errorResponse = NextResponse.json({ error: 'Error fetching documents: ' + e }, { status: 500 });
+        errorResponse.headers.set('Cache-Control', 'no-store');
+
+        return errorResponse;
     }
 }
