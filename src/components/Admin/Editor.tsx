@@ -10,11 +10,13 @@ import useEditor from '@/hooks/useEditor';
 import Button from 'react-bootstrap/esm/Button';
 import Style from '@styles/componentsStyles/Admin/Editor.module.scss';
 import '@styles/componentsStyles/Admin/editorCustomStyles.scss';
+import { useAdminNews } from '@/hooks/useAdminNews'; // Import useAdminNews
 
 function Editor() {
     const [activeButton, setActiveButton] = useState('ツアー追加');
     const [loading, setLoading] = useState(false);
     const router = useRouter();
+    const { mutate } = useAdminNews();
 
     useEffect(() => {
         resetFirstImageRendered();
@@ -29,7 +31,7 @@ function Editor() {
     const handleSendClick = () => {
         if (editor) {
             const params: HandleSendParams = { editor, activeButton, router };
-            handleSend(params, setLoading);
+            handleSend(params, setLoading, mutate);
         } else {
             console.error('Editor instance is not initialized');
         }
