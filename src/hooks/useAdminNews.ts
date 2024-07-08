@@ -8,7 +8,6 @@ export const useAdminNews = () => {
         revalidateOnFocus: true,
         revalidateOnReconnect: true,
         refreshInterval: 0,
-        dedupingInterval: 0,
     });
 
     return {
