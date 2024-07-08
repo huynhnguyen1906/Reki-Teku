@@ -4,11 +4,10 @@ import { HandleSendParams, OutputData } from '@/types/SaveNews';
 import { getDownloadURL, ref, uploadString } from 'firebase/storage';
 import { storage } from '@/lib/firebase';
 import { convertToWebP } from '@/utils/changeTypeImg';
-
+import { mutate } from 'swr';
 export const handleSend = async (
     { editor, activeButton, router }: HandleSendParams,
     setLoading: (loading: boolean) => void,
-    mutate: () => void,
 ) => {
     if (!editor) {
         console.error('Editor instance is null');
@@ -46,7 +45,7 @@ export const handleSend = async (
         if (response.status === 200) {
             toast.success('記事の送信が完了しました');
             console.log('Saved news:', response.data);
-            mutate();
+            mutate('/api/news-admin-view/', undefined, false);
             router.push('/admin/news');
         } else {
             toast.error('記事の送信に失敗しました');

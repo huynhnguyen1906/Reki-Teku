@@ -14,6 +14,5 @@ export const useAdminNews = () => {
         news: data,
         isLoading: !error && !data,
         isError: error,
-        mutate,
     };
 };
