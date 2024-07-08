@@ -4,10 +4,10 @@ const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export const useAdminNews = () => {
     const { data, error } = useSWR('/api/news-admin-view', fetcher, {
-        revalidateIfStale: true,
+        revalidateIfStale: false,
         revalidateOnFocus: true,
         revalidateOnReconnect: true,
-        refreshInterval: 30000,
+        refreshInterval: 0,
     });
 
     return {
