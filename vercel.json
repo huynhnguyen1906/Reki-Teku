@@ -1,21 +1,12 @@
 {
-    "headers": [
+    "routes": [
         {
-            "source": "/api/(.*)",
-            "headers": [
-                {
-                    "key": "Cache-Control",
-                    "value": "no-cache, no-store, must-revalidate"
-                },
-                {
-                    "key": "Pragma",
-                    "value": "no-cache"
-                },
-                {
-                    "key": "Expires",
-                    "value": "0"
-                }
-            ]
+            "src": "/api/news-admin-view",
+            "headers": {
+                "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate",
+                "Pragma": "no-cache",
+                "Expires": "0"
+            }
         }
     ]
 }

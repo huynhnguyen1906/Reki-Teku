@@ -29,7 +29,8 @@ export async function GET(req: NextRequest) {
 
         const response = NextResponse.json(newsData);
 
-        response.headers.set('Cache-Control', 'no-store');
+        // Set cache control headers
+        response.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
         response.headers.set('Pragma', 'no-cache');
         response.headers.set('Expires', '0');
 
