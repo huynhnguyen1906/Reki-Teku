@@ -9,24 +9,28 @@
     .btnSelect {
         border-radius: 4rem;
         padding: 3px;
-        button {
+        div {
             width: 13.2rem;
             height: 2.6rem;
             border-radius: 4rem;
+            font-size: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #f1f1f1;
+            user-select: none;
         }
-        &:nth-child(2) {
-            margin-right: 1rem;
-            button {
-                background: #91d1df;
-            }
+        .tourAddTag {
+            background: #91d1df;
         }
-        &:nth-child(3) {
-            button {
-                background: #ed9292;
-            }
+        .blogAddTag {
+            background: #ed9292;
         }
         &.active {
             border: 2px solid #45df69;
+        }
+        &:nth-child(3) {
+            margin-left: 16px;
         }
     }
 }
