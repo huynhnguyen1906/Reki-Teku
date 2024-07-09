@@ -17,7 +17,13 @@ export default function News() {
         } else {
             fetch('/api/news-admin-view')
                 .then((response) => {
-                    console.log(response.headers);
+                    console.log('Cache-Control:', response.headers.get('Cache-Control'));
+                    console.log('Pragma:', response.headers.get('Pragma'));
+                    console.log('Expires:', response.headers.get('Expires'));
+                    console.log('Age:', response.headers.get('Age'));
+                    console.log('Vary:', response.headers.get('Vary'));
+                    console.log('Server:', response.headers.get('Server'));
+
                     return response.json();
                 })
                 .then((data) => console.log(data))
