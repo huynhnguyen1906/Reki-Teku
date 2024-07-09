@@ -3,14 +3,7 @@ import useSWR, { mutate } from 'swr';
 const fetcher = (url: string) => {
     const timestamp = Date.now();
     const urlWithTimestamp = `${url}?t=${timestamp}`;
-    return fetch(urlWithTimestamp, {
-        cache: 'no-store',
-        headers: {
-            'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
-            Pragma: 'no-cache',
-            Expires: '0',
-        },
-    }).then((res) => res.json());
+    return fetch(urlWithTimestamp).then((res) => res.json());
 };
 
 export const useAdminNews = () => {
