@@ -1,0 +1,21 @@
+{
+    "headers": [
+        {
+            "source": "/api/news-admin-view",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, s-maxage=10, stale-while-revalidate"
+                },
+                {
+                    "key": "CDN-Cache-Control",
+                    "value": "public, s-maxage=10"
+                },
+                {
+                    "key": "Vercel-CDN-Cache-Control",
+                    "value": "public, s-maxage=10"
+                }
+            ]
+        }
+    ]
+}
