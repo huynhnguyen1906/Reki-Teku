@@ -38,4 +38,4 @@ export async function GET(req: NextRequest) {
     }
 }
 
-export const revalidate = 0;
+export const revalidate = 10;
