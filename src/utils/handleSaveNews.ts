@@ -5,7 +5,6 @@ import { getDownloadURL, ref, uploadString } from 'firebase/storage';
 import { storage } from '@/lib/firebase';
 import { convertToWebP } from '@/utils/changeTypeImg';
 import { mutate } from 'swr';
-
 export const handleSend = async (
     { editor, activeButton, router }: HandleSendParams,
     setLoading: (loading: boolean) => void,
@@ -45,16 +44,7 @@ export const handleSend = async (
 
         if (response.status === 200) {
             toast.success('記事の送信が完了しました');
-
-            mutate(
-                '/api/news-admin-view',
-                async () => {
-                    const updatedNewsResponse = await axios.get('/api/news-admin-view');
-                    return updatedNewsResponse.data;
-                },
-                false,
-            );
-
+            mutate('/api/news-admin-view', undefined, true);
             router.push('/admin/news');
         } else {
             toast.error('記事の送信に失敗しました');
