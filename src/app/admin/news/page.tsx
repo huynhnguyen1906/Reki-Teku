@@ -15,7 +15,7 @@ export default function News() {
         <AdminLayout>
             <AdminBtnBox createUrl={createUrl} />
             <div className={styles.NewsItemBox}>
-                {news && news.map((newsItem: any) => <NewsItem key={newsItem.id} newsItem={newsItem} />)}
+                {news && (news as any[]).map((newsItem: any) => <NewsItem key={newsItem.id} newsItem={newsItem} />)}
             </div>
         </AdminLayout>
     );
