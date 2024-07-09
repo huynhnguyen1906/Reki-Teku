@@ -3,8 +3,10 @@ import useSWR, { mutate } from 'swr';
 const fetcher = (url: string) =>
     fetch(url, {
         cache: 'no-store',
-        next: {
-            revalidate: 10,
+        headers: {
+            'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+            Pragma: 'no-cache',
+            Expires: '0',
         },
     }).then((res) => res.json());
 
