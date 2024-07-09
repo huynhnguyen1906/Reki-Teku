@@ -4,33 +4,13 @@ import AdminLayout from '../AdminLayout';
 import AdminBtnBox from '@/components/Admin/AdminBtnBox';
 import NewsItem from '@/components/Admin/News/NewsItem';
 import { useAdminNews } from '@/hooks/useAdminNews';
-import { useEffect } from 'react';
 export default function News() {
     const createUrl = {
         name: '記事追加',
         url: '/admin/news/create',
     };
     const { news, isError } = useAdminNews();
-    useEffect(() => {
-        if (isError) {
-            console.log('エラーが発生しました。');
-        } else {
-            fetch('/api/news-admin-view')
-                .then((response) => {
-                    console.log('Cache-Control:', response.headers.get('Cache-Control'));
-                    console.log('Pragma:', response.headers.get('Pragma'));
-                    console.log('Expires:', response.headers.get('Expires'));
-                    console.log('Age:', response.headers.get('Age'));
-                    console.log('Vary:', response.headers.get('Vary'));
-                    console.log('Server:', response.headers.get('Server'));
-
-                    return response.json();
-                })
-                .then((data) => console.log(data))
-                .catch((error) => console.error('Error:', error));
-        }
-    }, [isError]);
-
+    if (isError) return <div>エラーが発生しました。</div>;
     return (
         <AdminLayout>
             <AdminBtnBox createUrl={createUrl} />
