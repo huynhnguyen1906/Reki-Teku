@@ -5,7 +5,7 @@
             "headers": [
                 {
                     "key": "Cache-Control",
-                    "value": "max-age=0, no-store, no-cache, must-revalidate, proxy-revalidate"
+                    "value": "no-store, no-cache, must-revalidate, proxy-revalidate"
                 },
                 {
                     "key": "Pragma",
