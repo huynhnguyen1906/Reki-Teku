@@ -7,6 +7,7 @@ const fetcher = (url: string) =>
             Pragma: 'no-cache',
             Expires: '0',
         },
+        cache: 'no-store',
     }).then((res) => res.json());
 
 export const useAdminNews = () => {
