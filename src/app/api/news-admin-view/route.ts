@@ -27,12 +27,15 @@ export async function GET(req: NextRequest) {
             };
         });
 
-        const response = NextResponse.json(newsData);
-
-        return response;
+        return NextResponse.json(newsData);
     } catch (e) {
-        const errorResponse = NextResponse.json({ error: 'Error fetching documents: ' + e }, { status: 500 });
-
-        return errorResponse;
+        return NextResponse.json(
+            { error: 'Error fetching documents: ' + e },
+            {
+                status: 500,
+            },
+        );
     }
 }
+
+export const revalidate = 0;
