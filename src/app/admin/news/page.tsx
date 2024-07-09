@@ -10,7 +10,7 @@ export default function News() {
         name: '記事追加',
         url: '/admin/news/create',
     };
-    const { news, isError, refetch } = useAdminNews();
+    const { news, isError } = useAdminNews();
 
     if (isError) return <div>エラーが発生しました。</div>;
 
@@ -20,7 +20,6 @@ export default function News() {
             <div className={styles.NewsItemBox}>
                 {news && news.map((newsItem: any) => <NewsItem key={newsItem.id} newsItem={newsItem} />)}
             </div>
-            <button onClick={refetch}>Refetch News</button>
         </AdminLayout>
     );
 }
