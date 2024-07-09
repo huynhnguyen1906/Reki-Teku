@@ -5,15 +5,15 @@
             "headers": [
                 {
                     "key": "Cache-Control",
-                    "value": "public, s-maxage=10, stale-while-revalidate=59"
+                    "value": "s-maxage=10, stale-while-revalidate=59"
                 },
                 {
                     "key": "CDN-Cache-Control",
-                    "value": "public, s-maxage=10"
+                    "value": "s-maxage=10"
                 },
                 {
                     "key": "Vercel-CDN-Cache-Control",
-                    "value": "public, s-maxage=10"
+                    "value": "s-maxage=10"
                 }
             ]
         }
