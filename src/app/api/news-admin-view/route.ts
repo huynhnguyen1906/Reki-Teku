@@ -27,25 +27,12 @@ export async function GET(req: NextRequest) {
             };
         });
 
-        return NextResponse.json(newsData, {
-            status: 200,
-            headers: {
-                'Cache-Control': 'public, s-maxage=10, stale-while-revalidate',
-                'CDN-Cache-Control': 'public, s-maxage=10',
-                'Vercel-CDN-Cache-Control': 'public, s-maxage=10',
-            },
-        });
+        const response = NextResponse.json(newsData);
+
+        return response;
     } catch (e) {
-        return NextResponse.json(
-            { error: 'Error fetching documents: ' + e },
-            {
-                status: 500,
-                headers: {
-                    'Cache-Control': 'public, s-maxage=10, stale-while-revalidate',
-                    'CDN-Cache-Control': 'public, s-maxage=10',
-                    'Vercel-CDN-Cache-Control': 'public, s-maxage=10',
-                },
-            },
-        );
+        const errorResponse = NextResponse.json({ error: 'Error fetching documents: ' + e }, { status: 500 });
+
+        return errorResponse;
     }
 }
