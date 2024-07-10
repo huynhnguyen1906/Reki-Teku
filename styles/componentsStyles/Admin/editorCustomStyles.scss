@@ -1,0 +1,55 @@
+.ce-toolbar__content {
+    width: calc(100% - 70px);
+    max-width: 1000px;
+}
+.ce-block__content {
+    width: calc(100% - 70px);
+    max-width: 1000px;
+}
+.codex-editor__redactor {
+    padding-bottom: 50px !important;
+}
+.image-tool__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image-tool__image img {
+    max-width: 800px;
+    max-height: 610px;
+}
+.mainVisual img {
+    max-width: 1000px;
+    max-height: 780px;
+}
+.ce-header::before {
+    user-select: none;
+    pointer-events: none;
+}
+.ce-popover-item--confirmation {
+    .ce-popover-item__title {
+        font-size: 10px;
+    }
+}
+
+h1 {
+    font-size: 5.4rem;
+}
+h2 {
+    font-size: 4.2rem;
+}
+h3 {
+    font-size: 3.6rem;
+}
+h4 {
+    font-size: 3rem;
+}
+h5 {
+    font-size: 2.4rem;
+}
+h6 {
+    font-size: 1.8rem;
+}
+p {
+    font-size: 1.6rem;
+}
