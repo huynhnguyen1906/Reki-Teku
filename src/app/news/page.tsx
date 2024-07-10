@@ -1,8 +1,10 @@
 import Style from '@styles/appStyles/News.module.scss';
-import Image from 'next/image';
-import Footer from "@/components/Footer/Footer";
 import Pagination from "@/components/Pagination";
+import Footer from "@/components/Footer/Footer";
+import Image from 'next/image';
+import Link from 'next/link';
 import { IoMdTime } from "react-icons/io";
+import NewsCard from '@/components/NewsCard';
 
 export default function News() {
     return(
@@ -21,7 +23,7 @@ export default function News() {
                     <h2 className={Style.ttl}>大阪冬の陣</h2>
                 </div>
                 
-                <p className={Style.text}>JR玉造駅を降りて西へぶらぶら歩くこと１０分ほど。、「真田山」という場所に行き着いた。
+                <p className={Style.text}>JR玉造駅を降りて西へぶらぶら歩くこと１０分ほど。「真田山」という場所に行き着いた。
                     道路脇の看板には、かわいい真田信繁（幸村）公のイラストが。ゆかり深い地域で、やはり愛されていることを知り、うれしくなった。
                 </p>
                 <div className={Style.picWrap}>
@@ -64,8 +66,11 @@ export default function News() {
                 </div>
 
                 <p className={Style.text}>歴史上の人物の足跡をてくてくと歩く「歴てく」の旅。その旅は、彼らの一生から生きていく知恵、ヒントをもらえる時間でもあります。</p>
-                <Pagination />
+            
+
             </div>
+            <NewsCard />
+            <Pagination />
             <Footer />
         </div>
     );
