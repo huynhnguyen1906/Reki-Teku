@@ -12,12 +12,14 @@ export default function CreateTourForm() {
     const [tourInfo, setTourInfo] = useState({
         location: '',
         name: '',
-        priceAndDays: '',
+        price: '',
+        days: '',
         description: '',
         meetingPoint: '',
+        applyPoint: '',
     });
 
-    const handleTourInfoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleTourInfoChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setTourInfo({
             ...tourInfo,
@@ -45,28 +47,77 @@ export default function CreateTourForm() {
 
     return (
         <div className={Style.CreateTourForm}>
-            <h2>ツアーの基本情報</h2>
-            <div>
-                <label>ツアーの場所：</label>
-                <input type="text" name="location" value={tourInfo.location} onChange={handleTourInfoChange} />
+            <div className={Style.TourInfoForm}>
+                <h2>ツアーの基本情報</h2>
+                <div className={Style.inputItem}>
+                    <label>ツアーの場所：</label>
+                    <input
+                        type="text"
+                        name="location"
+                        placeholder="ツアーの場所を入力。。。"
+                        value={tourInfo.location}
+                        onChange={handleTourInfoChange}
+                    />
+                </div>
+                <div className={Style.inputItem}>
+                    <label>ツアーの名前：</label>
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="ツアーの名前を入力。。。"
+                        value={tourInfo.name}
+                        onChange={handleTourInfoChange}
+                    />
+                </div>
+                <div className={Style.inputItem}>
+                    <label>ツアーの値段</label>
+                    <input
+                        type="text"
+                        name="price"
+                        placeholder="ツアーの値段を入力。。。"
+                        value={tourInfo.price}
+                        onChange={handleTourInfoChange}
+                    />
+                </div>
+                <div className={Style.inputItem}>
+                    <label>ツアーの日数：</label>
+                    <input
+                        type="text"
+                        name="days"
+                        placeholder="ツアーの日数を入力。。。"
+                        value={tourInfo.days}
+                        onChange={handleTourInfoChange}
+                    />
+                </div>
+                <div className={Style.inputItem}>
+                    <label>ツアーの説明：</label>
+                    <textarea
+                        name="description"
+                        placeholder="ツアーの説明を入力。。。"
+                        value={tourInfo.description}
+                        onChange={handleTourInfoChange}
+                    />
+                </div>
+                <div className={Style.inputItem}>
+                    <label>ツアーの集合場所：</label>
+                    <input
+                        type="text"
+                        name="meetingPoint"
+                        placeholder="ツアーの集合場所を入力。。。"
+                        value={tourInfo.meetingPoint}
+                        onChange={handleTourInfoChange}
+                    />
+                </div>
+                <div className={Style.inputItem}>
+                    <label>ツアーのおすすめポイント：</label>
+                    <textarea
+                        name="applyPoint"
+                        placeholder="ツアーのおすすめポイントを入力。。。"
+                        value={tourInfo.applyPoint}
+                        onChange={handleTourInfoChange}
+                    />
+                </div>
             </div>
-            <div>
-                <label>ツアーの名前：</label>
-                <input type="text" name="name" value={tourInfo.name} onChange={handleTourInfoChange} />
-            </div>
-            <div>
-                <label>ツアーの値段と日数：</label>
-                <input type="text" name="priceAndDays" value={tourInfo.priceAndDays} onChange={handleTourInfoChange} />
-            </div>
-            <div>
-                <label>ツアーの説明：</label>
-                <input type="text" name="description" value={tourInfo.description} onChange={handleTourInfoChange} />
-            </div>
-            <div>
-                <label>ツアーの集合場所：</label>
-                <input type="text" name="meetingPoint" value={tourInfo.meetingPoint} onChange={handleTourInfoChange} />
-            </div>
-
             <h2>スケジュール作成</h2>
             {schedule.map((day, dayIndex) => (
                 <CreateToursDesForm
