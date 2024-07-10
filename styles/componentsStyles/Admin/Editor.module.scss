@@ -1,5 +1,7 @@
 .tagSelectBox {
-    width: 1000px;
+    width: 100%;
+    min-width: 710px;
+    max-width: 1000px;
     display: flex;
     justify-content: flex-start;
     align-items: center;

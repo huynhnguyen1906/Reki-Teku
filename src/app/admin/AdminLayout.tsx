@@ -40,7 +40,7 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
                     ツアー管理
                 </Link>
                 <Link href="/admin/text-content" className={isActive('/admin/text-content') ? Style.active : ''}>
-                    文書内容管理
+                    文章内容管理
                 </Link>
             </div>
             <div className={Style.mainContent}>{children}</div>

@@ -1,9 +1,9 @@
 .ce-toolbar__content {
-    width: 100%;
+    width: calc(100% - 70px);
     max-width: 1000px;
 }
 .ce-block__content {
-    width: 100%;
+    width: calc(100% - 70px);
     max-width: 1000px;
 }
 .codex-editor__redactor {
