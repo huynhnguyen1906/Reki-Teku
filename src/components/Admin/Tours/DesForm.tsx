@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import ImageUploader from './ImageUploader';
 import { Destination, DestinationFormProps } from '@/types/AdminCreateTour';
 import Image from 'next/image';
+
 export default function CreateToursDesForm({
     day,
     destinations: initialDestinations,
