@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { FaExternalLinkAlt } from "react-icons/fa";
 
 import { IoMdPin } from "react-icons/io";
-import Slider from '@/components/Slider'
+// import Slider from '@/components/Slider'
 import Link from 'next/link';
 
 export default function Tours() {
