@@ -1,8 +1,9 @@
 import Style from '@styles/appStyles/News.module.scss';
-import Footer from '@/components/Footer/Footer';
 import Pagination from '@/components/Pagination';
-import { IoMdTime } from 'react-icons/io';
+import Footer from '@/components/Footer/Footer';
 import Image from 'next/image';
+import { IoMdTime } from 'react-icons/io';
+import NewsCard from '@/components/NewsCard';
 
 export default function News() {
     return (
@@ -10,7 +11,13 @@ export default function News() {
             <div className={Style.blogWrap}>
                 <div className={Style.blogHeader}>
                     <div>
-                        <Image src="/images/blog_osaka/picture_01.webp" alt="" width={800} height={400} />
+                        <Image
+                            src="/images/blog_osaka/picture_01.webp"
+                            alt=""
+                            width={1000}
+                            height={490}
+                            layout="responsive"
+                        />
                     </div>
                     <div className={Style.item}>
                         <div className={Style.time}>
@@ -23,12 +30,18 @@ export default function News() {
                 </div>
 
                 <p className={Style.text}>
-                    JR玉造駅を降りて西へぶらぶら歩くこと１０分ほど。、「真田山」という場所に行き着いた。
+                    JR玉造駅を降りて西へぶらぶら歩くこと１０分ほど。「真田山」という場所に行き着いた。
                     道路脇の看板には、かわいい真田信繁（幸村）公のイラストが。ゆかり深い地域で、やはり愛されていることを知り、うれしくなった。
                 </p>
                 <div className={Style.picWrap}>
                     <p className={Style.pic}>
-                        <Image src="/images/blog_osaka/picture_02.webp" alt="" width={800} height={400} />
+                        <Image
+                            src="/images/blog_osaka/picture_02.webp"
+                            alt=""
+                            width={800}
+                            height={610}
+                            layout="responsive"
+                        />
                     </p>
                     <p className={Style.sup}>信繁公とこんな所でばったり</p>
                 </div>
@@ -41,7 +54,13 @@ export default function News() {
                 </p>
                 <div className={Style.picWrap}>
                     <p className={Style.pic}>
-                        <Image src="/images/blog_osaka/picture_03.webp" alt="" width={800} height={400} />
+                        <Image
+                            src="/images/blog_osaka/picture_03.webp"
+                            alt=""
+                            width={800}
+                            height={610}
+                            layout="responsive"
+                        />
                     </p>
                     <p className={Style.sup}>案内版の正面に多数の墓碑が並んでた</p>
                 </div>
@@ -53,14 +72,26 @@ export default function News() {
                 </p>
                 <div className={Style.picWrap}>
                     <p className={Style.pic}>
-                        <Image src="/images/blog_osaka/picture_04.webp" alt="" width={800} height={400} />
+                        <Image
+                            src="/images/blog_osaka/picture_04.webp"
+                            alt=""
+                            width={800}
+                            height={610}
+                            layout="responsive"
+                        />
                     </p>
                     <p className={Style.sup}>心眼寺の門脇にあった案内板。真田丸の別名は「偃月城」</p>
                 </div>
 
                 <div className={Style.picWrap}>
                     <p className={Style.pic}>
-                        <Image src="/images/blog_osaka/picture_05.webp" alt="" width={800} height={400} />
+                        <Image
+                            src="/images/blog_osaka/picture_05.webp"
+                            alt=""
+                            width={800}
+                            height={610}
+                            layout="responsive"
+                        />
                     </p>
                     <p className={Style.sup}>案内板には「豊臣信繁之墓」とある</p>
                 </div>
@@ -74,7 +105,13 @@ export default function News() {
                 </p>
                 <div className={Style.picWrap}>
                     <p className={Style.pic}>
-                        <Image src="/images/blog_osaka/picture_06.webp" alt="" width={800} height={400} />
+                        <Image
+                            src="/images/blog_osaka/picture_06.webp"
+                            alt=""
+                            width={800}
+                            height={610}
+                            layout="responsive"
+                        />
                     </p>
                     <p className={Style.sup}>
                         「大坂冬の陣」最大の激戦地、真田丸の顕彰碑すぐ後ろでは部活動生の声が響いていた
@@ -84,8 +121,9 @@ export default function News() {
                 <p className={Style.text}>
                     歴史上の人物の足跡をてくてくと歩く「歴てく」の旅。その旅は、彼らの一生から生きていく知恵、ヒントをもらえる時間でもあります。
                 </p>
-                <Pagination />
             </div>
+            <NewsCard />
+            <Pagination />
             <Footer />
         </div>
     );

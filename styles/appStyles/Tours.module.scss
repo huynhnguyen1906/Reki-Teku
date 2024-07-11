@@ -1,0 +1,214 @@
+$bgW: #FFFDF7;
+
+.bg{
+    background: url(../../public/images/bg.png);
+    background-size: contain;
+    background-position: top center;
+}
+.toursWrap{
+    margin-left: 50px;
+    padding-top: 50px;
+    display: flex;
+    gap: 4rem;
+    img{
+        max-width: 700px;
+        max-height: 400px;
+    }
+}
+.toursContent{
+    .pref{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    h1{
+        margin: 10px 0 5px;
+        font-size: 40px;
+    }
+    .text{
+        margin-top: 60px;
+        font-size: 16px;
+    }
+    .attn{
+        margin: 25px 0 75px;
+        font-size: 14px;
+        color: #d04848;
+    }
+    .appt{
+        p{
+            font-size: 22px;
+            &:first-child{
+                margin-bottom: 10px;
+                font-size: 18px;
+            }
+        }
+    }
+}
+.ttl{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 50px 0 0 50px;
+    h2{
+        font-size: 30px;
+    }
+}
+.pointFlex{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .text{
+        width: 660px;
+    }
+}
+.sinWrap{
+    background-color: $bgW;
+    box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding: 3rem;
+    font-size: 20px;
+    .border{
+        padding: 3px 7px;
+        border: 1px solid #000;
+        border-radius: 20px;
+        div{
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+        }
+    }
+    .line{
+        border: #000 1px solid;
+        margin:  1rem 0;
+        // &::after{
+            // content: "";
+            // display: block;
+            // width: 30rem;
+            // height: 1px;
+            // color: #333;
+        // }
+    }
+    .detail{
+        padding: 5px 0;
+        display: flex;
+        justify-content: space-between;
+
+    }
+    .total{
+        padding: 10px 0 55px;
+        display: flex;
+        justify-content: space-between;
+
+        // &::before{
+        //     content: "";
+        //     width: 30rem;
+        //     height: 1px;
+        //     border-top: 1px solid #000;
+        // }
+    }
+    .lineBtn{
+        a{
+            text-decoration: none;        
+            color: $bgW;
+        }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        padding: 1rem 6rem;
+        color: $bgW;
+        border-radius: 10px;
+        background: url(../../public/images/lineBg.svg) no-repeat;
+        background-position: center center;
+    }
+}
+
+
+.item{
+    margin: 180px auto 135px;
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    width: fit-content;
+    background: #FFFDF7;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 999px;
+    p{
+        padding: 22px 90px;
+        &:hover{
+            color: #FFFDF7;
+            background: #222;
+            border-radius: 999px;
+        }
+    }
+}
+
+.schedWrap{
+    position: relative;
+    .borderline{
+        position: absolute;
+        left: 120px;
+        height: 97%;
+        border-left: 2px solid #000;
+        margin: 5rem 0;
+        &::after{
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #000;
+        }
+    }
+}
+.schedContent{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4rem;
+    margin: 0 0 135px 90px; 
+    .pic{
+        img{
+            width: 100%;
+            border-radius: 25px;
+            max-width: 650px;
+            max-height: 366px;
+        }
+        p{
+            padding: 10px 0 0 50px;
+            font-size: 20px;
+            span{
+                padding-left: 10px;
+                font-size: 30px;
+                font-weight: bold;
+            }
+        }
+    }
+    .text{
+        font-size: 16px;
+        line-height: 40px;
+    }
+    
+}
+.tourList{
+    a{
+        text-decoration: none;
+    }
+    .tours{
+        margin: 30px 50px 0 50px;
+        padding: 6px;
+        width: 377px;
+        height: 395px;
+        border-radius: 10px;
+        background: #FEFEFE;
+        box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+        h3{
+            color: #000;
+            font-size: 20px;
+            margin: 15px 0 25px;
+        }
+        p{
+            color: #9E9E9E;
+            font-size: 16px;
+        }
+    }
+}   

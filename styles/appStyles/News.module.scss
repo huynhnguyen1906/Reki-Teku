@@ -1,3 +1,5 @@
+@import '/styles/variables';
+
 .bg {
     background: url(../../public/images/bg.png);
     background-size: contain;
@@ -23,14 +25,14 @@
             display: flex;
             align-items: center;
             gap: 3px;
-            color: #9e9e9e;
+            color: $text-color-gray;
         }
         .kinds {
             padding: 2px 40px;
             border-radius: 40px;
-            color: #fefefe;
+            color: $accent-color-white;
             text-align: center;
-            background-color: #ed9292;
+            background-color: $add-tour-tag-bg;
         }
     }
     .ttl {
