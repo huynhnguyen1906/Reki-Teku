@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 @import '/styles/variables';
 
+=======
+>>>>>>> main
 .bg {
     background: url(../../public/images/bg.png);
     background-size: contain;
@@ -12,6 +15,7 @@
 .blogHeader {
     img {
         border-radius: 20px;
+        height: 100%;
         width: 100%;
         max-width: 1000px;
         max-height: 490px;
@@ -31,7 +35,11 @@
             border-radius: 40px;
             color: $accent-color-white;
             text-align: center;
+<<<<<<< HEAD
             background-color: $add-tour-tag-bg;
+=======
+            background-color: #ed9292;
+>>>>>>> main
         }
     }
     .ttl {
@@ -51,6 +59,7 @@
         margin: 50px auto 20px;
         img {
             width: 100%;
+            height: 100%;
             max-width: 800px;
             max-height: 610px;
             border-radius: 10px;
