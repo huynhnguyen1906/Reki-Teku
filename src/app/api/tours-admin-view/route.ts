@@ -4,7 +4,7 @@ import { collection, query, orderBy, getDocs } from 'firebase/firestore';
 
 export async function GET(req: NextRequest) {
     try {
-        const toursQuery = query(collection(db, 'Tours'), orderBy('created_at'));
+        const toursQuery = query(collection(db, 'Tours'), orderBy('created_at', 'desc'));
         const querySnapshot = await getDocs(toursQuery);
 
         const toursData = querySnapshot.docs.map((doc) => {
