@@ -1,96 +1,98 @@
 @import '/styles/variables';
 
-.bg{
+.bg {
     background: url(../../public/images/bg.png);
     background-size: contain;
     background-position: top center;
 }
-.blogWrap{
+.blogWrap {
     margin: 0 auto;
     max-width: 1000px;
 }
-.blogHeader{
-    img{
+.blogHeader {
+    img {
         border-radius: 20px;
         width: 100%;
         max-width: 1000px;
         max-height: 490px;
     }
-    .item{
+    .item {
         margin-top: 20px;
         display: flex;
         gap: 1.8rem;
-        .time{
+        .time {
             display: flex;
             align-items: center;
             gap: 3px;
             color: $text-color-gray;
         }
-        .kinds{
+        .kinds {
             padding: 2px 40px;
             border-radius: 40px;
             color: $accent-color-white;
             text-align: center;
-            background-color: $tourTag-bg;
+            background-color: $add-tour-tag-bg;
         }
     }
-    .ttl{
+    .ttl {
         margin-top: 10px;
         font-size: 42px;
     }
 }
 
-.text{
+.text {
     margin-top: 60px;
     font-size: 18px;
 }
 
-.picWrap{
-    .pic{
+.picWrap {
+    .pic {
         width: fit-content;
         margin: 50px auto 20px;
-        img{
+        img {
             width: 100%;
             max-width: 800px;
             max-height: 610px;
             border-radius: 10px;
         }
     }
-    .sup{
+    .sup {
         text-align: center;
         font-size: 16px;
     }
 }
 
 @media screen and (max-width: 1000px) {
-    .item,.ttl,.picWrap,.text{
+    .item,
+    .ttl,
+    .picWrap,
+    .text {
         padding: 0 14px;
     }
-    .blogHeader{
-        img{
+    .blogHeader {
+        img {
             border-radius: 0;
         }
-        .item{
+        .item {
             font-size: 14px;
-            .kinds{
+            .kinds {
                 padding: 2px 30px;
             }
         }
-        .ttl{
+        .ttl {
             font-size: 28px;
         }
     }
-    .text{
+    .text {
         margin-top: 40px;
         font-size: 16px;
     }
-    .picWrap{
-        .pic{
+    .picWrap {
+        .pic {
             margin: 20px auto 10px;
         }
-        .sup{
+        .sup {
             font-size: 14px;
         }
     }
 }
-
