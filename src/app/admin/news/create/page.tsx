@@ -2,7 +2,7 @@
 
 import dynamic from 'next/dynamic';
 
-const EditorComponent = dynamic(() => import('@/components/Admin/Editor'), { ssr: false });
+const EditorComponent = dynamic(() => import('@/components/Admin/News/Editor'), { ssr: false });
 
 import AdminLayout from '@/app/admin/AdminLayout';
 

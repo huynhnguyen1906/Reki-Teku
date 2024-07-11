@@ -16,9 +16,12 @@ class CustomImageTool extends Image {
     render() {
         const wrapper = super.render();
         const caption = wrapper.querySelector('.cdx-input');
-        if (caption) {
+
+        if (caption && !CustomImageTool.firstImageRendered) {
             caption.style.display = 'none';
+            CustomImageTool.firstImageRendered = true;
         }
+
         return wrapper;
     }
 }
@@ -183,6 +186,10 @@ const editorConfig: EditorConfig = {
                 data: {
                     level: 2,
                 },
+            },
+            {
+                type: 'paragraph',
+                data: {},
             },
         ],
     },
