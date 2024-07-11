@@ -3,7 +3,7 @@ import Pagination from '@/components/Pagination';
 import Footer from '@/components/Footer/Footer';
 import Image from 'next/image';
 import { IoMdTime } from 'react-icons/io';
-import NewsCard from '@/components/NewsCard';
+import NewsCard from '@/components/News/NewsCard';
 
 export default function News() {
     return (
