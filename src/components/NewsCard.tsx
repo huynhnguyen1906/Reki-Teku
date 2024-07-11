@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import { IoMdTime } from "react-icons/io";
 
-export default function NewsCad(){
+export default function NewsCard(){
     return(
         <div className={Style.newsWrap}>
             <Link href="#">

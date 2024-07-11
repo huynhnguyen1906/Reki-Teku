@@ -1,4 +1,4 @@
-$bgW: #FFFDF7;
+@import '/styles/variables';
 
 .bg{
     background: url(../../public/images/bg.png);
@@ -32,7 +32,7 @@ $bgW: #FFFDF7;
     .attn{
         margin: 25px 0 75px;
         font-size: 14px;
-        color: #d04848;
+        color: $accent-color-crimson;
     }
     .appt{
         p{
@@ -62,7 +62,7 @@ $bgW: #FFFDF7;
     }
 }
 .sinWrap{
-    background-color: $bgW;
+    background-color: $accent-color-white;
     box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     padding: 3rem;
@@ -73,20 +73,24 @@ $bgW: #FFFDF7;
         border-radius: 20px;
         div{
             display: flex;
-            justify-content: space-between;
+            gap: 1rem;
             padding: 10px 0;
+        }
+        input{
+            width: 200px;
+            background: none;
+        }
+        select{
+            @extend input;
+            margin-left: 20px;
+            border: none;
         }
     }
     .line{
+        position: relative;
         border: #000 1px solid;
         margin:  1rem 0;
-        // &::after{
-            // content: "";
-            // display: block;
-            // width: 30rem;
-            // height: 1px;
-            // color: #333;
-        // }
+        display: block;
     }
     .detail{
         padding: 5px 0;
@@ -98,25 +102,18 @@ $bgW: #FFFDF7;
         padding: 10px 0 55px;
         display: flex;
         justify-content: space-between;
-
-        // &::before{
-        //     content: "";
-        //     width: 30rem;
-        //     height: 1px;
-        //     border-top: 1px solid #000;
-        // }
     }
     .lineBtn{
         a{
             text-decoration: none;        
-            color: $bgW;
+            color: $accent-color-white;
         }
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 2rem;
         padding: 1rem 6rem;
-        color: $bgW;
+        color: $accent-color-white;
         border-radius: 10px;
         background: url(../../public/images/lineBg.svg) no-repeat;
         background-position: center center;
@@ -130,13 +127,13 @@ $bgW: #FFFDF7;
     justify-content: center;
     font-size: 24px;
     width: fit-content;
-    background: #FFFDF7;
+    background: $accent-color-white;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
     border-radius: 999px;
     p{
         padding: 22px 90px;
         &:hover{
-            color: #FFFDF7;
+            color: $accent-color-white;
             background: #222;
             border-radius: 999px;
         }
@@ -150,13 +147,19 @@ $bgW: #FFFDF7;
         left: 120px;
         height: 97%;
         border-left: 2px solid #000;
-        margin: 5rem 0;
+        padding: 2rem 0;
         &::after{
+            display: inline-block;
             content: "";
-            width: 10px;
-            height: 10px;
+            width: 30px;
+            height: 30px;
+            background-color: #000;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 10%;
+            left: 0;
             border-radius: 50%;
-            background: #000;
         }
     }
 }
@@ -189,26 +192,3 @@ $bgW: #FFFDF7;
     }
     
 }
-.tourList{
-    a{
-        text-decoration: none;
-    }
-    .tours{
-        margin: 30px 50px 0 50px;
-        padding: 6px;
-        width: 377px;
-        height: 395px;
-        border-radius: 10px;
-        background: #FEFEFE;
-        box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
-        h3{
-            color: #000;
-            font-size: 20px;
-            margin: 15px 0 25px;
-        }
-        p{
-            color: #9E9E9E;
-            font-size: 16px;
-        }
-    }
-}   
