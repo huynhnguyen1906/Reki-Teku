@@ -2,12 +2,12 @@
 import { useState } from 'react';
 import CreateToursDesForm from './DesForm';
 import { Destination } from '@/types/AdminCreateTour';
+import Button from 'react-bootstrap/esm/Button';
+import { FaRegPlusSquare, FaTrashAlt } from 'react-icons/fa';
 import Style from '@styles/componentsStyles/Admin/CreateTourForm.module.scss';
 
 export default function CreateTourForm() {
-    const [schedule, setSchedule] = useState<{ day: number; destinations: Destination[] }[]>([
-        { day: 1, destinations: [{ destination: '', description: '', image: '' }] },
-    ]);
+    const [schedule, setSchedule] = useState<{ day: number; destinations: Destination[] }[]>([]);
 
     const [tourInfo, setTourInfo] = useState({
         location: '',
@@ -40,7 +40,27 @@ export default function CreateTourForm() {
         setSchedule(newSchedule);
     };
 
+    const handleDeleteDay = (dayIndex: number) => {
+        const newSchedule = schedule.filter((_, index) => index !== dayIndex);
+        setSchedule(newSchedule);
+    };
+
     const handleSubmit = () => {
+        const isTourInfoValid = Object.values(tourInfo).every((value) => value.trim() !== '');
+        if (!isTourInfoValid) {
+            alert('ツアーの情報を入力してください。');
+            return;
+        }
+
+        const isScheduleValid = schedule.every((day) =>
+            day.destinations.every((destination) => Object.values(destination).every((value) => value.trim() !== '')),
+        );
+
+        if (!isScheduleValid) {
+            alert('スケジュールの情報を入力してください。');
+            return;
+        }
+
         console.log('Tour Info:', tourInfo);
         console.log('Schedule:', schedule);
     };
@@ -118,17 +138,30 @@ export default function CreateTourForm() {
                     />
                 </div>
             </div>
-            <h2>スケジュール作成</h2>
-            {schedule.map((day, dayIndex) => (
-                <CreateToursDesForm
-                    key={dayIndex}
-                    day={day.day}
-                    destinations={day.destinations}
-                    onDestinationsChange={(newDestinations) => handleDestinationsChange(dayIndex, newDestinations)}
-                />
-            ))}
-            <button onClick={addDay}>日数追加</button>
-            <button onClick={handleSubmit}>送信</button>
+            <div className={Style.TourInfoForm}>
+                <h2>スケジュール作成</h2>
+                {schedule.map((day, dayIndex) => (
+                    <div key={dayIndex} className={Style.dayContainer}>
+                        <CreateToursDesForm
+                            day={day.day}
+                            destinations={day.destinations}
+                            onDestinationsChange={(newDestinations) =>
+                                handleDestinationsChange(dayIndex, newDestinations)
+                            }
+                        />
+                        <Button variant="danger" onClick={() => handleDeleteDay(dayIndex)}>
+                            <FaTrashAlt /> この日を削除
+                        </Button>
+                    </div>
+                ))}
+                <Button variant="info" onClick={addDay} className={Style.addDayBtn}>
+                    <FaRegPlusSquare />
+                    日数追加
+                </Button>
+            </div>
+            <Button variant="success" onClick={handleSubmit} className={Style.submitBtn}>
+                送信
+            </Button>
         </div>
     );
 }

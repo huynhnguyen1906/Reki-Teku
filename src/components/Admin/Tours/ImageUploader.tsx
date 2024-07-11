@@ -1,5 +1,7 @@
 'use client';
 import { useRef } from 'react';
+import Button from 'react-bootstrap/esm/Button';
+import Style from '@styles/componentsStyles/Admin/CreateTourForm.module.scss';
 
 interface ImageUploaderProps {
     setImage: (image: string) => void;
@@ -22,7 +24,9 @@ export default function ImageUploader({ setImage }: ImageUploaderProps) {
 
     return (
         <div className="image-uploader">
-            <button onClick={handleButtonClick}>アップロード</button>
+            <Button onClick={handleButtonClick} variant="secondary" className={Style.AddImgBtn}>
+                写真追加
+            </Button>
             <input
                 type="file"
                 ref={fileInputRef}
