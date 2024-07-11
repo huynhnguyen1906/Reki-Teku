@@ -1,13 +1,19 @@
 'use client';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import CreateToursDesForm from './DesForm';
 import { Destination } from '@/types/AdminCreateTour';
+import { handleSaveTour } from '@/utils/handleSaveTour';
 import Button from 'react-bootstrap/esm/Button';
+import Spinner from 'react-bootstrap/Spinner';
 import { FaRegPlusSquare, FaTrashAlt } from 'react-icons/fa';
 import Style from '@styles/componentsStyles/Admin/CreateTourForm.module.scss';
+import SpinnerStyle from '@styles/componentsStyles/Admin/Editor.module.scss';
 
 export default function CreateTourForm() {
     const [schedule, setSchedule] = useState<{ day: number; destinations: Destination[] }[]>([]);
+    const [loading, setLoading] = useState(false);
+    const router = useRouter();
 
     const [tourInfo, setTourInfo] = useState({
         location: '',
@@ -46,23 +52,7 @@ export default function CreateTourForm() {
     };
 
     const handleSubmit = () => {
-        const isTourInfoValid = Object.values(tourInfo).every((value) => value.trim() !== '');
-        if (!isTourInfoValid) {
-            alert('ツアーの情報を入力してください。');
-            return;
-        }
-
-        const isScheduleValid = schedule.every((day) =>
-            day.destinations.every((destination) => Object.values(destination).every((value) => value.trim() !== '')),
-        );
-
-        if (!isScheduleValid) {
-            alert('スケジュールの情報を入力してください。');
-            return;
-        }
-
-        console.log('Tour Info:', tourInfo);
-        console.log('Schedule:', schedule);
+        handleSaveTour(tourInfo, schedule, setLoading, router);
     };
 
     return (
@@ -162,6 +152,12 @@ export default function CreateTourForm() {
             <Button variant="success" onClick={handleSubmit} className={Style.submitBtn}>
                 送信
             </Button>
+            11
+            {loading && (
+                <div className={SpinnerStyle.spinnerContainer}>
+                    <Spinner animation="border" variant="light" className={SpinnerStyle.spinner} />
+                </div>
+            )}
         </div>
     );
 }

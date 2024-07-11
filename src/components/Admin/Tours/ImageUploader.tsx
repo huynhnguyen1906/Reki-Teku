@@ -1,3 +1,4 @@
+// ImageUploader.tsx
 'use client';
 import { useRef } from 'react';
 import Button from 'react-bootstrap/esm/Button';
@@ -17,8 +18,11 @@ export default function ImageUploader({ setImage }: ImageUploaderProps) {
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
         if (file) {
-            const imageUrl = URL.createObjectURL(file);
-            setImage(imageUrl);
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setImage(reader.result as string);
+            };
+            reader.readAsDataURL(file);
         }
     };
 

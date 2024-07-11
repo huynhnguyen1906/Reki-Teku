@@ -9,3 +9,18 @@ export interface DestinationFormProps {
     destinations: Destination[];
     onDestinationsChange: (destinations: Destination[]) => void;
 }
+
+export interface TourInfo {
+    location: string;
+    name: string;
+    price: string;
+    days: string;
+    description: string;
+    meetingPoint: string;
+    applyPoint: string;
+}
+
+export interface Schedule {
+    day: number;
+    destinations: Destination[];
+}
