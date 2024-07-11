@@ -1,0 +1,43 @@
+.TourItem {
+    width: 100%;
+    height: 4rem;
+    padding: 8px 16px;
+    background: #f2f2f2;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .tourName {
+        width: 23rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        p {
+            font-size: 16px;
+        }
+    }
+    .TourDes {
+        width: 24rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        p {
+            font-size: 12px;
+        }
+    }
+
+    .TourApplyPoint {
+        width: 25rem;
+        p {
+            font-size: 16px;
+            text-align: left;
+        }
+    }
+    .btnBox {
+        width: 8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+    }
+}

@@ -26,19 +26,20 @@
     user-select: none;
     pointer-events: none;
 }
+
 .cdx-paragraph {
     position: relative;
 }
 
-.codex-editor__redactor [contenteditable]:empty::before {
+.ce-paragraph:empty::before {
     content: attr(data-placeholder-active);
-    pointer-events: none;
     position: absolute;
-    color: #ccc;
+    color: #707684;
 }
 .cdx-paragraph:not([data-placeholder-active])::before {
     display: none;
 }
+
 .ce-popover-item--confirmation {
     .ce-popover-item__title {
         font-size: 10px;
