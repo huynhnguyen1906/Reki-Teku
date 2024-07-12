@@ -1,0 +1,49 @@
+@media (min-width: 710px) {
+    header {
+        padding: 0 35px;
+    }
+    .navbar-expand-lg .navbar-toggler {
+        display: none;
+    }
+    .navbar-expand-lg .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+        justify-content: flex-end;
+    }
+    .navbar-expand-lg .navbar-nav {
+        flex-direction: row;
+        gap: 60px;
+    }
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: var(--bs-navbar-nav-link-padding-x);
+        position: relative;
+        padding-left: var(--bs-navbar-nav-link-padding-x);
+    }
+}
+@media (max-width: 710px) {
+    .navbar-nav {
+        display: none !important;
+    }
+    header {
+        padding: 0 16px;
+    }
+}
+.navbar-toggler {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: #f1f1f1 1px solid;
+    padding: 0;
+    span {
+        width: 25px;
+        height: 25px;
+        background-image: url('../../public/images/burgerBtnIcon.svg');
+    }
+}
+.navbar-toggler:focus {
+    text-decoration: none;
+    outline: 0;
+    box-shadow: none;
+}

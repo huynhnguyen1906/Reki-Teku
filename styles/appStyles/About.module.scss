@@ -70,12 +70,13 @@
 }
 
 .aboutWrap {
+    padding: 0 80px;
     h2 {
         margin: 100px 0 80px;
         text-align: center;
     }
     .about {
-        font-size: 24px;
+        font-size: 16px;
         text-align: left;
         margin: 20px 0;
         dt {
@@ -83,7 +84,7 @@
             float: left;
         }
         dd {
-            margin-left: 250px;
+            margin-left: 200px;
         }
         &::after {
             content: '';

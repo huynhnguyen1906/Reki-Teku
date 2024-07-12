@@ -1,10 +1,10 @@
 import React from 'react';
-import NavBar from './NavBar/NavBar';
+import Header from './Header/Header';
 import Footer from './Footer/Footer';
 export default function MainLayout({ children }: { children: React.ReactNode }) {
     return (
         <>
-            <NavBar />
+            <Header />
             <main>{children}</main>
             <Footer />
         </>
