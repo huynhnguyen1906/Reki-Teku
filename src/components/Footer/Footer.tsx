@@ -43,13 +43,13 @@ export default function Footer() {
                         <div className={Style.messageWrap}>
                             <div className={Style.sns}>
                                 <Link href="#">
-                                    <FaXTwitter />
+                                    <FaXTwitter color="#fff" />
                                 </Link>
                                 <Link href="#">
-                                    <FaInstagram />
+                                    <FaInstagram color="#fff" />
                                 </Link>
                                 <Link href="#">
-                                    <FaLine />
+                                    <FaLine color="#fff" />
                                 </Link>
                             </div>
                             <div className={Style.mail}>
