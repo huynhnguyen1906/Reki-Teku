@@ -152,7 +152,6 @@ export default function CreateTourForm() {
             <Button variant="success" onClick={handleSubmit} className={Style.submitBtn}>
                 送信
             </Button>
-            11
             {loading && (
                 <div className={SpinnerStyle.spinnerContainer}>
                     <Spinner animation="border" variant="light" className={SpinnerStyle.spinner} />
