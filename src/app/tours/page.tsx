@@ -60,11 +60,9 @@ export default function Tours() {
                             <p className={Style.line}></p>
                             <div className={Style.num}>
                                 <p>人数</p>
-                                <select id="num">
+                                <select id="num" defaultValue="2">
                                     <option value="1">1名様</option>
-                                    <option value="2" selected>
-                                        2名様
-                                    </option>
+                                    <option value="2">2名様</option>
                                     <option value="3">3名様</option>
                                     <option value="4">4名様</option>
                                 </select>
@@ -86,7 +84,7 @@ export default function Tours() {
                         </div>
                         <div className={Style.lineBtn}>
                             <Link href="#">LINEで確認する</Link>
-                            <FaExternalLinkAlt color='#fffdf7'/>
+                            <FaExternalLinkAlt color="#fffdf7" />
                         </div>
                     </div>
                 </div>
