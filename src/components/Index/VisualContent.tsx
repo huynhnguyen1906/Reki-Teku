@@ -9,7 +9,7 @@ export default function VisualContent() {
             if (imgDiv) {
                 const width = window.innerWidth;
                 const height = window.innerHeight;
-                const path = `M1 2.5V${height - 50}C${width * 0.026} ${height - 36.333} ${width * 0.087} ${height} ${
+                const path = `M0 2.5V${height - 50}C${width * 0.026} ${height - 36.333} ${width * 0.087} ${height} ${
                     width * 0.125
                 } ${height}C${width * 0.163} ${height} ${width * 0.271} ${height - 10} ${width * 0.297} ${
                     height - 20
