@@ -64,7 +64,7 @@ export default function CreateTourForm() {
                     <input
                         type="text"
                         name="location"
-                        placeholder="ツアーの場所を入力。。。"
+                        placeholder="ツアーの場所を入力..."
                         value={tourInfo.location}
                         onChange={handleTourInfoChange}
                     />
@@ -74,7 +74,7 @@ export default function CreateTourForm() {
                     <input
                         type="text"
                         name="name"
-                        placeholder="ツアーの名前を入力。。。"
+                        placeholder="ツアーの名前を入力..."
                         value={tourInfo.name}
                         onChange={handleTourInfoChange}
                     />
@@ -84,7 +84,7 @@ export default function CreateTourForm() {
                     <input
                         type="text"
                         name="price"
-                        placeholder="ツアーの値段を入力。。。"
+                        placeholder="ツアーの値段を入力..."
                         value={tourInfo.price}
                         onChange={handleTourInfoChange}
                     />
@@ -94,7 +94,7 @@ export default function CreateTourForm() {
                     <input
                         type="text"
                         name="days"
-                        placeholder="ツアーの日数を入力。。。"
+                        placeholder="ツアーの日数を入力..."
                         value={tourInfo.days}
                         onChange={handleTourInfoChange}
                     />
@@ -103,7 +103,7 @@ export default function CreateTourForm() {
                     <label>ツアーの説明：</label>
                     <textarea
                         name="description"
-                        placeholder="ツアーの説明を入力。。。"
+                        placeholder="ツアーの説明を入力..."
                         value={tourInfo.description}
                         onChange={handleTourInfoChange}
                     />
@@ -113,7 +113,7 @@ export default function CreateTourForm() {
                     <input
                         type="text"
                         name="meetingPoint"
-                        placeholder="ツアーの集合場所を入力。。。"
+                        placeholder="ツアーの集合場所を入力..."
                         value={tourInfo.meetingPoint}
                         onChange={handleTourInfoChange}
                     />
@@ -122,7 +122,7 @@ export default function CreateTourForm() {
                     <label>ツアーのおすすめポイント：</label>
                     <textarea
                         name="applyPoint"
-                        placeholder="ツアーのおすすめポイントを入力。。。"
+                        placeholder="ツアーのおすすめポイントを入力..."
                         value={tourInfo.applyPoint}
                         onChange={handleTourInfoChange}
                     />
