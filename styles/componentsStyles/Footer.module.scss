@@ -138,7 +138,8 @@
 
 @media screen and (max-width: 1000px) {
     .footerBg {
-        height: 80vh;
+        background-image: url(../../public/images/footerS.png);
+        height: 700px;
         background-size: cover;
     }
     .footerWrapper {
