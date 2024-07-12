@@ -1,3 +1,5 @@
+@import '/styles/variables';
+
 .pageNavi{
     padding: 10rem 0 10rem;
     ul{
@@ -13,9 +15,9 @@
                 font-size: 16px;
                 border-radius: 5px;
                 text-decoration: none;
-                background: #fefefe;
+                background: $accent-color-white;
                 &:hover{
-                    color: #fffdf7;
+                    color: $accent-color-white;
                     background: #4b3333;
                 }
             }

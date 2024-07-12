@@ -1,12 +1,12 @@
 import React from 'react';
 import Style from '@styles/appStyles/Tours.module.scss';
 import Footer from '@/components/Footer/Footer';
+import ToursCard from '@/components/Tours/ToursCard';
 import Image from 'next/image';
 
 import { FaExternalLinkAlt } from 'react-icons/fa';
 
 import { IoMdPin } from 'react-icons/io';
-// import Slider from '@/components/Slider'
 import Link from 'next/link';
 
 export default function Tours() {
@@ -50,20 +50,19 @@ export default function Tours() {
                         <br />
                         時代を超えた旅を通じて、福岡の歴史の奥深さを体験してみませんか？
                     </p>
+
                     <div className={Style.sinWrap}>
                         <div className={Style.border}>
                             <div className={Style.date}>
                                 <p>開始日</p>
-                                <input type="date" name="" id="" />
+                                <input type="date" name="date" id="date" />
                             </div>
                             <p className={Style.line}></p>
                             <div className={Style.num}>
                                 <p>人数</p>
-                                <select id="num">
+                                <select id="num" defaultValue="2">
                                     <option value="1">1名様</option>
-                                    <option value="2" selected>
-                                        2名様
-                                    </option>
+                                    <option value="2">2名様</option>
                                     <option value="3">3名様</option>
                                     <option value="4">4名様</option>
                                 </select>
@@ -75,7 +74,7 @@ export default function Tours() {
                             <p>¥21980</p>
                         </div>
                         <div className={Style.detail}>
-                            <p>大人</p>
+                            <p>子供</p>
                             <p>¥21980</p>
                         </div>
                         <p className={Style.line}></p>
@@ -85,7 +84,7 @@ export default function Tours() {
                         </div>
                         <div className={Style.lineBtn}>
                             <Link href="#">LINEで確認する</Link>
-                            <FaExternalLinkAlt />
+                            <FaExternalLinkAlt color="#fffdf7" />
                         </div>
                     </div>
                 </div>
@@ -205,16 +204,7 @@ export default function Tours() {
                     <Image src="images/logo-black.svg" alt="" width={40} height={40} />
                     <h2>他のツアー</h2>
                 </div>
-                <Link href="#">
-                    <div className={Style.tours}>
-                        <Image src="/images/tours/day2_1.png" alt="今津元寇防塁" width={367} height={244} />
-                        <h3>室町〜江戸　博多の歴史</h3>
-                        <p>
-                            ホームに降り立つと、真っ赤な生地に黒い「六文銭」があしらわれた幕が頭上を覆っていた。昨年11月半ばの南海高野線九度山駅
-                            （和歌山県九.....
-                        </p>
-                    </div>
-                </Link>
+                <ToursCard />
             </div>
             <Footer />
         </div>
