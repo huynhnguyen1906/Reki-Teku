@@ -1,10 +1,18 @@
+'use client';
+import { useEffect } from 'react';
 import React from 'react';
 import Style from '@styles/appStyles/About.module.scss';
-import '@styles/appStyles/AboutCustomBg.scss';
 import Image from 'next/image';
 import MainLayout from '@/components/MainLayout';
 
 export default function About() {
+    useEffect(() => {
+        document.body.style.backgroundImage = 'url(/images/bg-cloud.svg)';
+        document.body.style.backgroundSize = 'cover';
+        return () => {
+            document.body.style.backgroundImage = 'url(/images/bg.svg)';
+        };
+    }, []);
     return (
         <MainLayout>
             <div className={Style.companyWrap}>

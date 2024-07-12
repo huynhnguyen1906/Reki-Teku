@@ -42,6 +42,8 @@
 }
 .ttl {
     font-size: 40px;
+    color: $accent-color-brown;
+
     &::before {
         content: '';
         display: inline-block;
@@ -145,6 +147,7 @@
         }
     }
     .aboutWrap {
+        padding: 0;
         h2 {
             margin: 50px 0 40px;
         }

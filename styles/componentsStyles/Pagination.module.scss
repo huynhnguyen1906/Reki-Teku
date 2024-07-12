@@ -1,24 +1,24 @@
 @import '/styles/variables';
 
-.pageNavi{
+.pageNavi {
     padding: 10rem 0 10rem;
-    ul{
+    ul {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 1rem;
-        li{
+        li {
             list-style: none;
-            a{ 
+            a {
                 padding: 8px 12px;
-                color: #222;
+                color: $text-color;
                 font-size: 16px;
                 border-radius: 5px;
                 text-decoration: none;
                 background: $accent-color-white;
-                &:hover{
+                &:hover {
                     color: $accent-color-white;
-                    background: #4b3333;
+                    background: $accent-color-brown;
                 }
             }
         }

@@ -10,13 +10,7 @@ export default function NewsCad() {
             <Link href="#">
                 <div className={Style.newsContent}>
                     <p className={Style.thumb}>
-                        <Image
-                            src="/images/tours/day2_1.png"
-                            alt="今津元寇防塁"
-                            width={367}
-                            height={204}
-                            layout="responsive"
-                        />
+                        <Image src="/images/tours/day2_1.png" alt="今津元寇防塁" width={367} height={204} />
                     </p>
                     <div className={Style.item}>
                         <div className={Style.data}>
