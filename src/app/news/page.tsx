@@ -1,13 +1,13 @@
 import Style from '@styles/appStyles/News.module.scss';
 import Pagination from '@/components/Pagination';
-import Footer from '@/components/Footer/Footer';
 import Image from 'next/image';
 import { IoMdTime } from 'react-icons/io';
 import NewsCard from '@/components/News/NewsCard';
+import MainLayout from '@/components/MainLayout';
 
 export default function News() {
     return (
-        <div className={Style.bg}>
+        <MainLayout>
             <div className={Style.blogWrap}>
                 <div className={Style.blogHeader}>
                     <div>
@@ -88,7 +88,6 @@ export default function News() {
             </div>
             <NewsCard />
             <Pagination />
-            <Footer />
-        </div>
+        </MainLayout>
     );
 }

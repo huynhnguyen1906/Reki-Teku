@@ -1,11 +1,10 @@
-import Footer from "@/components/Footer/Footer";
-
+import MainLayout from '@/components/MainLayout';
 export default function Home() {
-	return (
-		<>
-			<h1>hello</h1>
-			<Footer />
-		</>
-	)
-		
+    return (
+        <>
+            <MainLayout>
+                <h1>hello</h1>
+            </MainLayout>
+        </>
+    );
 }

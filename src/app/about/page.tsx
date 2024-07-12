@@ -1,11 +1,12 @@
 import React from 'react';
 import Style from '@styles/appStyles/About.module.scss';
-import Footer from '@/components/Footer/Footer';
+import '@styles/appStyles/AboutCustomBg.scss';
 import Image from 'next/image';
+import MainLayout from '@/components/MainLayout';
 
 export default function About() {
     return (
-        <div className={Style.bg}>
+        <MainLayout>
             <div className={Style.companyWrap}>
                 <div className={Style.content}>
                     <h2 className={Style.ttl}>「歴てく」について</h2>
@@ -109,7 +110,6 @@ export default function About() {
                     </dl>
                 </div>
             </div>
-            <Footer />
-        </div>
+        </MainLayout>
     );
 }

@@ -1,17 +1,15 @@
 import React from 'react';
 import Style from '@styles/appStyles/Tours.module.scss';
-import Footer from '@/components/Footer/Footer';
 import ToursCard from '@/components/Tours/ToursCard';
 import Image from 'next/image';
-
 import { FaExternalLinkAlt } from 'react-icons/fa';
-
 import { IoMdPin } from 'react-icons/io';
 import Link from 'next/link';
+import MainLayout from '@/components/MainLayout';
 
 export default function Tours() {
     return (
-        <div className={Style.bg}>
+        <MainLayout>
             <div className={Style.toursWrap}>
                 <div className={Style.toursContent}>
                     <div className={Style.pref}>
@@ -206,7 +204,6 @@ export default function Tours() {
                 </div>
                 <ToursCard />
             </div>
-            <Footer />
-        </div>
+        </MainLayout>
     );
 }

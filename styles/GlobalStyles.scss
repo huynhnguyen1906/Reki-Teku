@@ -54,9 +54,12 @@ h6 {
 }
 body {
     font-family: 'Kiwi Maru', sans-serif;
-    background-color: #f5f5f5;
     font-size: 16px;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    background-color: $main-color;
+    background-image: url('../public/images/bg.svg');
+    background-size: contain;
+    background-position: top center;
 }

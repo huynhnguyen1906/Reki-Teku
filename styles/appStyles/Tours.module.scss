@@ -1,111 +1,105 @@
 @import '/styles/variables';
 
-.bg{
-    background: url(../../public/images/bg.png);
-    background-size: contain;
-    background-position: top center;
-}
-.toursWrap{
+.toursWrap {
     margin-left: 50px;
     padding-top: 50px;
     display: flex;
     gap: 4rem;
-    img{
+    img {
         max-width: 700px;
         max-height: 400px;
     }
 }
-.toursContent{
-    .pref{
+.toursContent {
+    .pref {
         display: flex;
         align-items: center;
         gap: 1rem;
     }
-    h1{
+    h1 {
         margin: 10px 0 5px;
         font-size: 40px;
     }
-    .text{
+    .text {
         margin-top: 60px;
         font-size: 16px;
     }
-    .attn{
+    .attn {
         margin: 25px 0 75px;
         font-size: 14px;
         color: $accent-color-crimson;
     }
-    .appt{
-        p{
+    .appt {
+        p {
             font-size: 22px;
-            &:first-child{
+            &:first-child {
                 margin-bottom: 10px;
                 font-size: 18px;
             }
         }
     }
 }
-.ttl{
+.ttl {
     display: flex;
     align-items: center;
     gap: 1rem;
     margin: 50px 0 0 50px;
-    h2{
+    h2 {
         font-size: 30px;
     }
 }
-.pointFlex{
+.pointFlex {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    .text{
+    .text {
         width: 660px;
     }
 }
-.sinWrap{
+.sinWrap {
     background-color: $accent-color-white;
     box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     padding: 3rem;
     font-size: 20px;
-    .border{
+    .border {
         padding: 3px 7px;
         border: 1px solid #000;
         border-radius: 20px;
-        div{
+        div {
             display: flex;
             gap: 1rem;
             padding: 10px 0;
         }
-        input{
+        input {
             width: 200px;
             background: none;
         }
-        select{
+        select {
             @extend input;
             margin-left: 20px;
             border: none;
         }
     }
-    .line{
+    .line {
         position: relative;
         border: #000 1px solid;
-        margin:  1rem 0;
+        margin: 1rem 0;
         display: block;
     }
-    .detail{
+    .detail {
         padding: 5px 0;
         display: flex;
         justify-content: space-between;
-
     }
-    .total{
+    .total {
         padding: 10px 0 55px;
         display: flex;
         justify-content: space-between;
     }
-    .lineBtn{
-        a{
-            text-decoration: none;        
+    .lineBtn {
+        a {
+            text-decoration: none;
             color: $accent-color-white;
         }
         display: flex;
@@ -120,8 +114,7 @@
     }
 }
 
-
-.item{
+.item {
     margin: 180px auto 135px;
     display: flex;
     justify-content: center;
@@ -130,9 +123,9 @@
     background: $accent-color-white;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
     border-radius: 999px;
-    p{
+    p {
         padding: 22px 90px;
-        &:hover{
+        &:hover {
             color: $accent-color-white;
             background: #222;
             border-radius: 999px;
@@ -140,17 +133,17 @@
     }
 }
 
-.schedWrap{
+.schedWrap {
     position: relative;
-    .borderline{
+    .borderline {
         position: absolute;
         left: 120px;
         height: 97%;
         border-left: 2px solid #000;
         padding: 2rem 0;
-        &::after{
+        &::after {
             display: inline-block;
-            content: "";
+            content: '';
             width: 30px;
             height: 30px;
             background-color: #000;
@@ -163,32 +156,31 @@
         }
     }
 }
-.schedContent{
+.schedContent {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 4rem;
-    margin: 0 0 135px 90px; 
-    .pic{
-        img{
+    margin: 0 0 135px 90px;
+    .pic {
+        img {
             width: 100%;
             border-radius: 25px;
             max-width: 650px;
             max-height: 366px;
         }
-        p{
+        p {
             padding: 10px 0 0 50px;
             font-size: 20px;
-            span{
+            span {
                 padding-left: 10px;
                 font-size: 30px;
                 font-weight: bold;
             }
         }
     }
-    .text{
+    .text {
         font-size: 16px;
         line-height: 40px;
     }
-    
 }
