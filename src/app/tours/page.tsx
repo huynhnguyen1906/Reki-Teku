@@ -1,17 +1,12 @@
 import React from 'react';
 import Style from '@styles/appStyles/Tours.module.scss';
 import Footer from '@/components/Footer/Footer';
-import ToursCard from '@/components/ToursCard';
+import ToursCard from '@/components/Tours/ToursCard';
 import Image from 'next/image';
 
 import { FaExternalLinkAlt } from 'react-icons/fa';
 
-<<<<<<< HEAD
-import { IoMdPin } from "react-icons/io";
-=======
 import { IoMdPin } from 'react-icons/io';
-// import Slider from '@/components/Slider'
->>>>>>> 7bc86f0909b96981c7f7dd181a1e203563c07175
 import Link from 'next/link';
 
 export default function Tours() {
@@ -211,20 +206,7 @@ export default function Tours() {
                     <Image src="images/logo-black.svg" alt="" width={40} height={40} />
                     <h2>他のツアー</h2>
                 </div>
-<<<<<<< HEAD
                 <ToursCard />
-=======
-                <Link href="#">
-                    <div className={Style.tours}>
-                        <Image src="/images/tours/day2_1.png" alt="今津元寇防塁" width={367} height={244} />
-                        <h3>室町〜江戸　博多の歴史</h3>
-                        <p>
-                            ホームに降り立つと、真っ赤な生地に黒い「六文銭」があしらわれた幕が頭上を覆っていた。昨年11月半ばの南海高野線九度山駅
-                            （和歌山県九.....
-                        </p>
-                    </div>
-                </Link>
->>>>>>> 7bc86f0909b96981c7f7dd181a1e203563c07175
             </div>
             <Footer />
         </div>

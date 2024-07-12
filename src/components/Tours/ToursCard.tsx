@@ -1,4 +1,4 @@
-import Style from '@styles/componentsStyles/ToursCard.module.scss'
+import Style from '@styles/componentsStyles/Tours/ToursCard.module.scss'
 import Link from 'next/link';
 import Image from 'next/image';
 
