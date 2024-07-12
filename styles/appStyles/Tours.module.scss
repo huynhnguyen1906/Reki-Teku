@@ -64,7 +64,7 @@
     font-size: 20px;
     .border {
         padding: 3px 7px;
-        border: 1px solid #000;
+        border: 1px solid $text-color;
         border-radius: 20px;
         div {
             display: flex;
@@ -127,7 +127,7 @@
         padding: 22px 90px;
         &:hover {
             color: $accent-color-white;
-            background: #222;
+            background: $accent-color-brown;
             border-radius: 999px;
         }
     }
@@ -139,14 +139,14 @@
         position: absolute;
         left: 120px;
         height: 97%;
-        border-left: 2px solid #000;
+        border-left: 2px solid $text-color;
         padding: 2rem 0;
         &::after {
             display: inline-block;
             content: '';
             width: 30px;
             height: 30px;
-            background-color: #000;
+            background-color: $text-color;
             position: absolute;
             top: 0;
             bottom: 0;

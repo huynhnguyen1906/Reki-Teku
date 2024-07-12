@@ -1,8 +1,11 @@
+@import '/styles/variables';
+
 .footerBg {
     background-image: url('../../public/images/footer.png');
     width: 100%;
     height: 55rem;
-    background-position: center center;
+    background-size: cover;
+    background-position: center bottom;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     bottom: 0;
@@ -31,9 +34,6 @@
             color: #fff;
             text-decoration: none;
         }
-    }
-    svg {
-        color: #fff;
     }
 }
 .nav {
@@ -75,7 +75,7 @@
         a {
             width: 4.5rem;
             height: 4.5rem;
-            border: 1.6px solid #fff;
+            border: 2px solid #fff;
             border-radius: 100rem;
             text-align: center;
             line-height: 3.8rem;
@@ -97,7 +97,7 @@
             border: 1px solid #fff;
             display: flex;
             align-items: center;
-            color: #f1f1f1;
+            color: #fff;
             text-decoration: none;
             span {
                 line-height: 15px;
@@ -113,13 +113,12 @@
 .footerWrap {
     display: flex;
     align-items: center;
-    // flex-direction: column;
     height: 7.5rem;
     width: 100%;
     position: relative;
     &::before {
-        position: absolute;
         content: '';
+        position: absolute;
         width: 100%;
         height: 1px;
         display: block;
@@ -133,6 +132,90 @@
         margin: 0;
         a {
             padding-right: 10px;
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .footerBg {
+        height: 80vh;
+        background-size: cover;
+    }
+    .footerWrapper {
+        height: fit-content;
+        padding: 0 15px;
+        display: inline;
+    }
+    .nav {
+        ul {
+            justify-content: center;
+            li {
+                &:first-child {
+                    display: none;
+                }
+            }
+        }
+    }
+    .infoWrap {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        font-size: 14px;
+        .contactWrap {
+            gap: 0;
+            h1 {
+                margin: 30px 0;
+                font-size: 20px;
+            }
+            p {
+                font-size: 14px;
+            }
+            .defaultInfoWrap {
+                p {
+                    padding: 5px 0;
+                }
+            }
+        }
+        .messageWrap {
+            gap: 0;
+            align-items: center;
+            justify-content: center;
+            .sns {
+                margin: 30px 0;
+                gap: 5rem;
+                a {
+                    width: 35px;
+                    height: 35px;
+                    line-height: 24px;
+                    text-align: center;
+                }
+            }
+            .mail {
+                flex-direction: row;
+                gap: 2rem;
+                a {
+                    font-size: 10px;
+                    padding: 7px 12px;
+                }
+            }
+        }
+    }
+    .footerWrap {
+        display: inline;
+        &::before {
+            position: relative;
+            margin: 20px 0;
+        }
+        ul {
+            margin-bottom: 20px;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            gap: 2rem;
+            a {
+                font-size: 12px;
+                padding: 0;
+            }
         }
     }
 }
