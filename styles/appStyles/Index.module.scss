@@ -1,21 +1,15 @@
 .MainVisual {
     position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 100vh;
 }
 
 .imgDiv {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background: url('../../public/images/blog_osaka/picture_03.webp') no-repeat center center / cover;
-    mask-image: url(#wave-mask); /* Sử dụng SVG mask để tạo hiệu ứng cắt */
-    -webkit-mask-image: url(#wave-mask);
-    mask-size: 100% 100%; /* Kéo dãn mask để khớp với kích thước của phần tử chứa */
+    mask-image: url('../../public/images/FirstviewMask.png');
+    -webkit-mask-image: url('../../public/images/FirstviewMask.png');
+    mask-size: 100% 100%;
     -webkit-mask-size: 100% 100%;
-    mask-repeat: no-repeat; /* Đảm bảo mask không bị lặp lại */
+    mask-repeat: no-repeat;
     -webkit-mask-repeat: no-repeat;
 }
