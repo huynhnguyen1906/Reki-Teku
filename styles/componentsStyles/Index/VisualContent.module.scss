@@ -74,8 +74,8 @@
         .HeroTextRight {
             position: relative;
             top: -25px;
-            right: unset;
-            transform: unset;
+            right: 0;
+            transform: none;
             div {
                 color: #fff;
                 line-height: 50px;
