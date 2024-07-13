@@ -62,9 +62,14 @@
 }
 @media screen and (max-width: 820px) {
     .VisualContent {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         .HeroTextRight {
-            right: 50%;
-            transform: translate(50%, -50%);
+            position: relative;
+            top: -25px;
+            right: unset;
+            transform: unset;
             div {
                 color: #fff;
                 line-height: 50px;
