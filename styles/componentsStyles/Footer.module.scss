@@ -77,9 +77,10 @@
             height: 4.5rem;
             border: 2px solid #fff;
             border-radius: 100rem;
-            text-align: center;
-            line-height: 3.8rem;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             svg {
                 width: 2rem;
                 height: 2rem;
@@ -187,8 +188,9 @@
                 a {
                     width: 35px;
                     height: 35px;
-                    line-height: 24px;
-                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                 }
             }
             .mail {
