@@ -57,7 +57,7 @@ export default function CreateToursDesForm({
                             <input
                                 type="text"
                                 name="destination"
-                                placeholder="目的地を入力。。。"
+                                placeholder="目的地を入力..."
                                 value={dest.destination}
                                 onChange={(e) => handleDestinationChange(e, destIndex)}
                             />
@@ -66,7 +66,7 @@ export default function CreateToursDesForm({
                             <label>紹介文書：</label>
                             <textarea
                                 name="description"
-                                placeholder="紹介文書を入力。。。"
+                                placeholder="紹介文書を入力..."
                                 value={dest.description}
                                 onChange={(e) => handleDestinationChange(e, destIndex)}
                             />
