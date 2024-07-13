@@ -1,14 +1,13 @@
 @import '/styles/variables';
 
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
 .toursWrap {
-    margin-left: 50px;
-    padding-top: 50px;
+    margin: 50px 0 0 50px;
     display: flex;
     gap: 4rem;
-    img {
-        max-width: 700px;
-        max-height: 400px;
-    }
 }
 .toursContent {
     .pref {
@@ -16,7 +15,7 @@
         align-items: center;
         gap: 1rem;
     }
-    h1 {
+    .tourssTtl {
         margin: 10px 0 5px;
         font-size: 40px;
     }
@@ -39,21 +38,21 @@
         }
     }
 }
-.ttl {
+.contentTtl {
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin: 50px 0 0 50px;
+    margin: 100px 0 0 50px;
     h2 {
         font-size: 30px;
     }
 }
-.pointFlex {
+.pointContent {
     display: flex;
     justify-content: space-around;
     align-items: center;
     .text {
-        width: 660px;
+        max-width: 660px;
     }
 }
 .sinWrap {
@@ -63,13 +62,12 @@
     padding: 3rem;
     font-size: 20px;
     .border {
-        padding: 3px 7px;
         border: 1px solid $text-color;
         border-radius: 20px;
         div {
             display: flex;
             gap: 1rem;
-            padding: 10px 0;
+            padding: 10px 7px;
         }
         input {
             width: 200px;
@@ -82,78 +80,89 @@
         }
     }
     .line {
-        position: relative;
-        border: #000 1px solid;
-        margin: 1rem 0;
-        display: block;
+        border: 0.5px $text-color solid;
     }
-    .detail {
-        padding: 5px 0;
-        display: flex;
-        justify-content: space-between;
-    }
-    .total {
-        padding: 10px 0 55px;
-        display: flex;
-        justify-content: space-between;
-    }
-    .lineBtn {
-        a {
-            text-decoration: none;
-            color: $accent-color-white;
-        }
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-        padding: 1rem 6rem;
+}
+.detail {
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.total {
+    padding: 10px 0 55px;
+    display: flex;
+    justify-content: space-between;
+}
+.lineBtn {
+    a {
+        text-decoration: none;
         color: $accent-color-white;
-        border-radius: 10px;
-        background: url(../../public/images/lineBg.svg) no-repeat;
-        background-position: center center;
     }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 6rem;
+    color: $accent-color-white;
+    border-radius: 10px;
+    background: url(../../public/images/lineBg.svg) no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
 
 .item {
     margin: 180px auto 135px;
     display: flex;
-    justify-content: center;
+    align-items: center;
     font-size: 24px;
     width: fit-content;
     background: $accent-color-white;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
     border-radius: 999px;
     p {
-        padding: 22px 90px;
+        margin: 10px;
+        padding: 12px 84px;
+        border-radius: 999px;
+        transition: 0.3s ease-in-out background;
         &:hover {
             color: $accent-color-white;
             background: $accent-color-brown;
-            border-radius: 999px;
         }
     }
 }
 
-.schedWrap {
+.circle {
     position: relative;
-    .borderline {
+    &::after,
+    &::before {
+        content: '';
         position: absolute;
+        width: 12px;
+        height: 12px;
+        border: solid 2px $text-color;
+        background-color: $text-color;
+        border-radius: 50%;
+        left: 116px;
+        z-index: 1000;
+    }
+    &::after {
+        top: 50px;
+    }
+    &::before {
+        bottom: 100px;
+    }
+}
+.borderline {
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 2px;
+        height: 415rem;
+        border: solid 2px $text-color;
+        top: 52px;
         left: 120px;
-        height: 97%;
-        border-left: 2px solid $text-color;
-        padding: 2rem 0;
-        &::after {
-            display: inline-block;
-            content: '';
-            width: 30px;
-            height: 30px;
-            background-color: $text-color;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            right: 10%;
-            left: 0;
-            border-radius: 50%;
-        }
+        z-index: 20;
     }
 }
 .schedContent {
@@ -182,5 +191,99 @@
     .text {
         font-size: 16px;
         line-height: 40px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .container {
+        margin: 0;
+        padding: 0 20px;
+    }
+    .circle {
+        &::after,
+        &::before {
+            width: 10px;
+            height: 10px;
+            left: 6px;
+        }
+        &::before {
+            bottom: 146px;
+            border: 1px;
+        }
+    }
+    .borderline {
+        &::before {
+            left: 10px;
+            height: 412rem;
+            border: 1px solid $text-color;
+        }
+    }
+    .toursWrap {
+        margin: 0;
+        gap: 0;
+        flex-direction: column;
+        .toursContent {
+            .toursTtl {
+                font-size: 20px;
+            }
+            .text {
+                margin-top: 30px;
+            }
+            p {
+                font-size: 14px;
+            }
+            .attn {
+                margin: 15px 0 20px;
+                font-size: 12px;
+            }
+        }
+    }
+    .contentTtl {
+        margin: 100px 0 0 0;
+        h2 {
+            font-size: 18px;
+        }
+    }
+    .lineBtn {
+        font-size: 16px;
+        padding: 10px 30px;
+        gap: 1.5rem;
+    }
+    .pointContent {
+        flex-direction: column;
+        align-items: center;
+        .text {
+            width: fit-content;
+            margin: 30px 0 100px;
+        }
+    }
+    .item {
+        margin: 100px auto 20px;
+        p {
+            font-size: 12px;
+            padding: 5px 35px;
+            margin: 4px;
+        }
+    }
+    .schedWrap {
+        .schedContent {
+            margin: 0 0 50px 0;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
+            .pic {
+                p {
+                    padding-left: 25px;
+                    span {
+                        font-size: 16px;
+                    }
+                }
+            }
+            .text {
+                padding-left: 35px;
+                font-size: 16px;
+                line-height: 30px;
+            }
+        }
     }
 }
