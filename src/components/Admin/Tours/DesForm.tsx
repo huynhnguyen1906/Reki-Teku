@@ -63,10 +63,10 @@ export default function CreateToursDesForm({
                             />
                         </div>
                         <div className={Style.inputItem}>
-                            <label>紹介文書：</label>
+                            <label>紹介文章：</label>
                             <textarea
                                 name="description"
-                                placeholder="紹介文書を入力..."
+                                placeholder="紹介文章を入力..."
                                 value={dest.description}
                                 onChange={(e) => handleDestinationChange(e, destIndex)}
                             />
