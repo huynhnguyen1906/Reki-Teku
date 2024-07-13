@@ -8,7 +8,7 @@ export default function VisualContent() {
             const imgDiv = document.getElementById('imgDiv');
             if (imgDiv) {
                 const width = window.innerWidth;
-                const height = window.innerHeight - 60;
+                const height = imgDiv.getBoundingClientRect().height - 60;
 
                 let path;
                 if (width < 912) {
