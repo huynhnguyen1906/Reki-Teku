@@ -12,11 +12,9 @@ export default function VisualContent() {
 
                 let path;
                 if (width < 912) {
-                    path = `M0 ${height - 75.5}V0H${width}V${height - 100}C${width * 0.85} ${height} ${width * 0.65} ${
-                        height - 50
-                    } ${width * 0.5} ${height - 75.5}C${width * 0.35} ${height - 100} ${width * 0.15} ${height} 0.5 ${
-                        height - 75.5
-                    }Z`;
+                    path = `M0 ${height - 75.5}V0H${width}V${height - 100}C${width * 0.35} ${height - 100} ${
+                        width * 0.15
+                    } ${height} 0.5 ${height - 75.5}Z`;
                 } else {
                     path = `M0 2.5V${height - 50}C${width * 0.026} ${height - 36.333} ${width * 0.2} ${height} ${
                         width * 0.195
