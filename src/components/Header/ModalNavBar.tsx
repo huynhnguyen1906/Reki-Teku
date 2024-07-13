@@ -18,7 +18,7 @@ export default function ModalNavBar({ handleClose: handleClose }: ModalNavBarPro
                 }
             }}
         >
-            <div className={Style.NavBar}>
+            <nav className={Style.NavBar}>
                 <IoCloseOutline color="#4B3333" className={Style.CloseIcon} size={40} onClick={handleClose} />
                 <ul className={Style.NavItemBox}>
                     <li className={Style.NavItem}>
@@ -61,7 +61,7 @@ export default function ModalNavBar({ handleClose: handleClose }: ModalNavBarPro
                         </Link>
                     </li>
                 </ul>
-            </div>
+            </nav>
         </div>
     );
 }

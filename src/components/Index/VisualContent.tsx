@@ -5,10 +5,10 @@ import Style from '@styles/componentsStyles/Index/VisualContent.module.scss';
 export default function VisualContent() {
     useLayoutEffect(() => {
         const updateClipPath = () => {
-            const imgDiv = document.getElementById('imgDiv');
-            if (imgDiv) {
+            const VisualContent = document.getElementById('VisualContent');
+            if (VisualContent) {
                 const width = window.innerWidth;
-                const height = imgDiv.getBoundingClientRect().height - 60;
+                const height = VisualContent.getBoundingClientRect().height;
 
                 let path;
                 if (width < 912) {
@@ -29,7 +29,7 @@ export default function VisualContent() {
                     }V0H0`;
                 }
 
-                imgDiv.style.clipPath = `path('${path}')`;
+                VisualContent.style.clipPath = `path('${path}')`;
             }
         };
 
@@ -39,5 +39,27 @@ export default function VisualContent() {
         return () => window.removeEventListener('resize', updateClipPath);
     }, []);
 
-    return <div id="imgDiv" className={Style.imgDiv}></div>;
+    return (
+        <div id="VisualContent" className={Style.VisualContent}>
+            <div className={Style.HeroTextLeft}>
+                <div>
+                    <span>川が大きな流れから</span>
+                    <span>小さく枝分かれしていくように、</span>
+                    <span>歴史も枝分かれしていきます。</span>
+                    <span>「歴てく」は、枝分かれした</span>
+                    <span>歴史のサイドストーリーを知る旅を</span>
+                    <span>あなたにご提供します。</span>
+                </div>
+            </div>
+            <div className={Style.HeroTextRight}>
+                <p>
+                    <span>自分の目と足で歴史の</span>
+                    <br />
+                    <span>『サイドストーリー』</span>
+                    <br />
+                    <span>を探求し人生を深める</span>
+                </p>
+            </div>
+        </div>
+    );
 }

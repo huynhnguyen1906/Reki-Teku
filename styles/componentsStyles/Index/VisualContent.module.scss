@@ -1,5 +1,73 @@
-.imgDiv {
+@import '/styles/variables.scss';
+
+.VisualContent {
     width: 100%;
     height: 100%;
-    background: url('../../../public/images/blog_osaka/picture_03.webp') no-repeat center center / cover;
+    background: url('../../../public/images/03_bg_overlay.png'),
+        linear-gradient(270deg, rgba(17, 17, 17, 0.3) 0%, rgba(17, 17, 17, 0) 44.5%),
+        url('../../../public/images/tours/day2_1.png');
+    background-repeat: repeat, repeat, no-repeat;
+    background-position: left top, left top, center bottom;
+    background-size: 4px 4px, 100% 100%, cover;
+    position: relative;
+    .HeroTextRight {
+        position: absolute;
+        top: calc(50% - 50px);
+        right: 50px;
+        transform: translateY(-50%);
+        padding: 10px;
+        p {
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            color: #fff;
+            line-height: 80px;
+            font-size: 36px;
+            span {
+                text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
+                letter-spacing: 15px;
+                &:nth-child(3) {
+                    font-size: 42px;
+                    padding-top: 60px;
+                }
+                &:nth-child(5) {
+                    padding-top: 170px;
+                }
+            }
+        }
+    }
+    .HeroTextLeft {
+        position: absolute;
+        top: calc(50%);
+        left: 50px;
+        transform: translateY(-50%);
+        padding: 10px;
+        div {
+            display: flex;
+            flex-direction: column;
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            font-size: 22px;
+            line-height: 22px;
+            gap: 15px;
+            span {
+                letter-spacing: 10px;
+                color: $text-color;
+                padding: 3px 2px 5px;
+                display: inline-block;
+                align-self: flex-start;
+                background-color: #f1f1f1;
+            }
+        }
+    }
+}
+@media screen and (max-width: 820px) {
+    .VisualContent {
+        .HeroTextRight {
+            right: 50%;
+            transform: translate(50%, -50%);
+        }
+        .HeroTextLeft {
+            display: none;
+        }
+    }
 }
