@@ -52,13 +52,13 @@ export default function VisualContent() {
                 </div>
             </div>
             <div className={Style.HeroTextRight}>
-                <p>
+                <div>
                     <span>自分の目と足で歴史の</span>
                     <br />
                     <span>『サイドストーリー』</span>
                     <br />
                     <span>を探求し人生を深める</span>
-                </p>
+                </div>
             </div>
         </div>
     );
