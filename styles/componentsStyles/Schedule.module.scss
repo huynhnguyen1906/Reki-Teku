@@ -1,0 +1,49 @@
+.schedContent {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4rem;
+    margin: 0 0 135px 90px;
+    .pic {
+        img {
+            width: 100%;
+            border-radius: 25px;
+            max-width: 650px;
+            max-height: 366px;
+        }
+        .place {
+            padding: 10px 0 0 50px;
+            font-size: 20px;
+            span {
+                padding-left: 10px;
+                font-size: 30px;
+                font-weight: bold;
+            }
+        }
+    }
+    .text {
+        font-size: 16px;
+        line-height: 40px;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .schedContent {
+        margin: 0 0 50px 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        .pic {
+            .place {
+                padding-left: 25px;
+                span {
+                    font-size: 16px;
+                }
+            }
+        }
+        .text {
+            padding-left: 35px;
+            font-size: 16px;
+            line-height: 30px;
+        }
+    }
+}

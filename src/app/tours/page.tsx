@@ -1,11 +1,13 @@
 import React from 'react';
 import Style from '@styles/appStyles/Tours.module.scss';
+
 import ToursCard from '@/components/Tours/ToursCard';
 import Image from 'next/image';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 import { IoMdPin } from 'react-icons/io';
 import Link from 'next/link';
 import MainLayout from '@/components/MainLayout';
+import Schedule from '@/components/Schedule/Schedule';
 
 export default function Tours() {
     return (
@@ -94,7 +96,11 @@ export default function Tours() {
                     </div>
                     <div className={Style.borderline}>
                         <div className={Style.circle}>
+                            <div className={Style.borderBox}>
+                                <div></div>
+                            </div>
                             <div className={Style.schedWrap}>
+                                <Schedule />
                                 <div className={Style.schedContent}>
                                     <div className={Style.pic}>
                                         <Image
@@ -103,7 +109,7 @@ export default function Tours() {
                                             width={650}
                                             height={366}
                                         />
-                                        <p>
+                                        <p className={Style.place}>
                                             DAY1_①<span>板付遺跡(博多区)</span>
                                         </p>
                                     </div>
@@ -119,7 +125,7 @@ export default function Tours() {
                                 <div className={Style.schedContent}>
                                     <div className={Style.pic}>
                                         <Image src="/images/tours/day1_2.png" alt="水城" width={650} height={366} />
-                                        <p>
+                                        <p className={Style.place}>
                                             DAY1_②<span>水城(太宰府市)</span>
                                         </p>
                                     </div>
@@ -136,7 +142,7 @@ export default function Tours() {
                                             width={650}
                                             height={366}
                                         />
-                                        <p>
+                                        <p className={Style.place}>
                                             DAY1_③<span>太宰府天満宮(太宰府市)</span>
                                         </p>
                                     </div>
@@ -148,7 +154,7 @@ export default function Tours() {
                                 <div className={Style.schedContent}>
                                     <div className={Style.pic}>
                                         <Image src="/images/tours/day1_4.png" alt="鴻臚館" width={650} height={366} />
-                                        <p>
+                                        <p className={Style.place}>
                                             DAY1_④<span>鴻臚館(福岡市)</span>
                                         </p>
                                     </div>
@@ -165,7 +171,7 @@ export default function Tours() {
                                             width={650}
                                             height={366}
                                         />
-                                        <p>
+                                        <p className={Style.place}>
                                             DAY2_①<span>今津元寇防塁(福岡市)</span>
                                         </p>
                                     </div>
@@ -182,7 +188,7 @@ export default function Tours() {
                                             width={650}
                                             height={366}
                                         />
-                                        <p>
+                                        <p className={Style.place}>
                                             DAY2_②<span>志賀島・蒙古塚(福岡市)</span>
                                         </p>
                                     </div>
@@ -199,7 +205,7 @@ export default function Tours() {
                                             width={650}
                                             height={366}
                                         />
-                                        <p>
+                                        <p className={Style.place}>
                                             DAY2_③<span>多々良浜の戦い古戦場跡(福岡市)</span>
                                         </p>
                                     </div>
@@ -216,7 +222,7 @@ export default function Tours() {
                                             width={650}
                                             height={366}
                                         />
-                                        <p>
+                                        <p className={Style.place}>
                                             DAY_④<span>箱崎八幡宮(福岡市)</span>
                                         </p>
                                     </div>
