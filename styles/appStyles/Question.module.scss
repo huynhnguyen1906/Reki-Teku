@@ -1,0 +1,100 @@
+@import '/styles/variables';
+
+.container {
+    margin: 50px auto 0;
+    max-width: 1000px;
+    .contentTtl {
+        margin-bottom: 50px;
+        text-align: center;
+        font-size: 40px;
+    }
+}
+.body {
+    max-width: 850px;
+    margin: 0 auto 38px;
+    font-size: 24px;
+    border-radius: 24px;
+    button {
+        padding: 23px 30px;
+        font-size: 24px;
+    }
+    button:not(.collapsed) {
+        box-shadow: 0px 0px 0px 0px #d8d8d8;
+        background: $accent-color-white;
+        color: $text-color;
+        border-bottom: 1px solid #d8d8d8;
+    }
+    .text {
+        padding: 30px 60px;
+        border-radius: 0 0 24px 24px;
+        background-color: $accent-color-white;
+    }
+    .accordion-body {
+        background-color: $accent-color-white;
+    }
+}
+.accordion-button:not(.collapsed) {
+    background: $accent-color-brown;
+    color: $accent-color-white;
+}
+
+.inquiry {
+    max-width: 850px;
+    margin: 90px auto 0;
+    padding: 50px 105px;
+    font-size: 24px;
+    text-align: center;
+    border-radius: 24px;
+    background: $accent-color-white;
+    .lineBtn {
+        a {
+            text-decoration: none;
+            color: $accent-color-white;
+        }
+        display: flex;
+        width: fit-content;
+        align-items: center;
+        gap: 2rem;
+        margin: 50px auto 0;
+        padding: 1rem 9rem;
+        color: $accent-color-white;
+        border-radius: 10px;
+        background: url(../../public/images/lineBg.svg) no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .container {
+        padding: 0 20px;
+        .contentTtl {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+    }
+    .body {
+        margin-bottom: 15px;
+        button {
+            padding: 12px 20px;
+            font-size: 12px;
+        }
+        .text {
+            padding: 14px;
+            font-size: 12px;
+        }
+    }
+    .inquiry {
+        margin-top: 40px;
+        padding: 16px 24px;
+        font-size: 16px;
+        text-align: left;
+        border-radius: 8px;
+        .lineBtn {
+            margin-top: 16px;
+            padding: 8px 54px;
+            font-size: 14px;
+            gap: 1rem;
+        }
+    }
+}
