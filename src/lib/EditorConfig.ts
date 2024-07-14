@@ -37,7 +37,7 @@ const editorConfig: EditorConfig = {
             class: Header,
             inlineToolbar: true,
             config: {
-                placeholder: '見出しを入力...',
+                placeholder: 'タイトルを入力...',
                 defaultLevel: 2,
             },
         },
