@@ -152,18 +152,20 @@
         bottom: 100px;
     }
 }
+.borderBox {
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    left: 120px;
+    padding: 50px 0 100px 0;
+    div {
+        height: 100%;
+        width: 100%;
+        border: solid 2px $text-color;
+    }
+}
 .borderline {
     position: relative;
-    &::before {
-        content: '';
-        position: absolute;
-        width: 2px;
-        height: 415rem;
-        border: solid 2px $text-color;
-        top: 52px;
-        left: 120px;
-        z-index: 20;
-    }
 }
 .schedContent {
     display: flex;
@@ -178,7 +180,7 @@
             max-width: 650px;
             max-height: 366px;
         }
-        p {
+        .place {
             padding: 10px 0 0 50px;
             font-size: 20px;
             span {
@@ -204,19 +206,16 @@
         &::before {
             width: 10px;
             height: 10px;
-            left: 6px;
+            left: 7px;
         }
         &::before {
             bottom: 146px;
             border: 1px;
         }
     }
-    .borderline {
-        &::before {
-            left: 10px;
-            height: 412rem;
-            border: 1px solid $text-color;
-        }
+    .borderBox {
+        padding-bottom: 150px;
+        left: 10px;
     }
     .toursWrap {
         margin: 0;
@@ -265,25 +264,23 @@
             margin: 4px;
         }
     }
-    .schedWrap {
-        .schedContent {
-            margin: 0 0 50px 0;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 15px;
-            .pic {
-                p {
-                    padding-left: 25px;
-                    span {
-                        font-size: 16px;
-                    }
+    .schedContent {
+        margin: 0 0 50px 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        .pic {
+            .place {
+                padding-left: 25px;
+                span {
+                    font-size: 16px;
                 }
             }
-            .text {
-                padding-left: 35px;
-                font-size: 16px;
-                line-height: 30px;
-            }
+        }
+        .text {
+            padding-left: 35px;
+            font-size: 16px;
+            line-height: 30px;
         }
     }
 }
