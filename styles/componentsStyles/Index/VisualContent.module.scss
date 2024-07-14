@@ -12,7 +12,7 @@
     position: relative;
     .HeroTextRight {
         position: absolute;
-        top: calc(50% - 50px);
+        top: calc(50% - 20px);
         right: 50px;
         transform: translateY(-50%);
         padding: 10px;
@@ -74,7 +74,7 @@
         align-items: center;
         .HeroTextRight {
             position: relative;
-            top: -50px;
+            top: -70px;
             right: 0;
             transform: none;
             div {
