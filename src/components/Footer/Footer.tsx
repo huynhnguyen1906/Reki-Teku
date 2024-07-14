@@ -12,16 +12,16 @@ export default function Footer() {
                     <div className={Style.nav}>
                         <ul>
                             <li>
-                                <Link href="#">トップページ</Link>
+                                <Link href="/">トップページ</Link>
                             </li>
                             <li>
-                                <Link href="#">歴てくについて</Link>
+                                <Link href="/about">歴てくについて</Link>
                             </li>
                             <li>
-                                <Link href="#">ツアー紹介</Link>
+                                <Link href="/tours">ツアー紹介</Link>
                             </li>
                             <li>
-                                <Link href="#">お知らせ</Link>
+                                <Link href="/news">お知らせ</Link>
                             </li>
                         </ul>
                     </div>
@@ -85,7 +85,7 @@ export default function Footer() {
                             <li>
                                 <Link href="#">プライバシーポリシー</Link>
                                 <Link href="#">ご利用にあたって</Link>
-                                <Link href="#">よくある質問</Link>
+                                <Link href="/question">よくある質問</Link>
                             </li>
                             <li>
                                 <Link href="#">国内旅行業務取扱管理者番号　1234-56789</Link>
