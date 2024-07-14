@@ -8,12 +8,19 @@ import Link from 'next/link';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 
 export default function Question() {
+    useEffect(() => {
+        document.body.style.backgroundImage = 'url(/images/bg-cloud.svg)';
+        document.body.style.backgroundSize = 'cover';
+        return () => {
+            document.body.style.backgroundImage = 'url(/images/bg.svg)';
+        };
+    }, []);
     return (
         <MainLayout>
             <div className={Style.container}>
                 <h2 className={Style.contentTtl}>よくある質問</h2>
 
-                <Accordion defaultActiveKey="0">
+                <Accordion defaultActiveKey={null}>
                     <div className={Style.body}>
                         <Accordion.Item eventKey="0">
                             <Accordion.Header>Q サービスの予約方法を教えてください</Accordion.Header>

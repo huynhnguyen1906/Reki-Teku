@@ -22,7 +22,7 @@ export default function ModalNavBar({ handleClose: handleClose }: ModalNavBarPro
                 <IoCloseOutline color="#4B3333" className={Style.CloseIcon} size={40} onClick={handleClose} />
                 <ul className={Style.NavItemBox}>
                     <li className={Style.NavItem}>
-                        <Link href={'/'}>歴てくについて</Link>
+                        <Link href={'/about'}>歴てくについて</Link>
                     </li>
                     <li className={Style.NavItem}>
                         <Link href={'/tours'}>ツアー紹介</Link>
@@ -31,7 +31,7 @@ export default function ModalNavBar({ handleClose: handleClose }: ModalNavBarPro
                         <Link href={'/news'}>お知らせ</Link>
                     </li>
                     <li className={Style.NavItem}>
-                        <Link href={'#'}>よくある質問</Link>
+                        <Link href={'/question'}>よくある質問</Link>
                     </li>
                     <li className={Style.NavItem}>
                         <Link href={'#'}>お問い合わせ</Link>

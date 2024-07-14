@@ -7,9 +7,22 @@ import MainLayout from '@/components/MainLayout';
 
 export default function About() {
     useEffect(() => {
-        document.body.style.backgroundImage = 'url(/images/bg-cloud.svg)';
-        document.body.style.backgroundSize = 'cover';
+        const updateBackground = () => {
+            if (window.matchMedia('(max-width: 600px)').matches) {
+                document.body.style.backgroundImage = 'url(/images/bg-cloud.svg)';
+                document.body.style.backgroundSize = 'auto 50%';
+            } else {
+                document.body.style.backgroundImage = 'url(/images/bg-cloud.svg)';
+                document.body.style.backgroundSize = 'cover';
+            }
+        };
+
+        updateBackground();
+
+        window.addEventListener('resize', updateBackground);
+
         return () => {
+            window.removeEventListener('resize', updateBackground);
             document.body.style.backgroundImage = 'url(/images/bg.svg)';
         };
     }, []);
