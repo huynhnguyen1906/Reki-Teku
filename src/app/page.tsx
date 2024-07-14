@@ -5,7 +5,7 @@ import VisualContent from '@/components/Index/VisualContent';
 import { MdArrowRightAlt } from 'react-icons/md';
 import Link from 'next/link';
 import ToursSlider from '@/components/Index/ToursSlider';
-
+import NewsContainer from '@/components/News/NewsContainer';
 export default function Home() {
     return (
         <MainLayout>
@@ -42,6 +42,10 @@ export default function Home() {
                     <div className={Style.ToursSliderContainer}>
                         <ToursSlider />
                     </div>
+                </div>
+                <div className={Style.News}>
+                    <h2 className={TitleStyle.ttl}>お知らせ</h2>
+                    <NewsContainer />
                 </div>
             </div>
         </MainLayout>

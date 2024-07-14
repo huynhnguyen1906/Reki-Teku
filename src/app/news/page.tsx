@@ -1,9 +1,8 @@
 import Style from '@styles/appStyles/News.module.scss';
-import Pagination from '@/components/Pagination';
 import Image from 'next/image';
 import { IoMdTime } from 'react-icons/io';
-import NewsCard from '@/components/News/NewsCard';
 import MainLayout from '@/components/MainLayout';
+import NewsContainer from '@/components/News/NewsContainer';
 
 export default function News() {
     return (
@@ -86,8 +85,7 @@ export default function News() {
                     歴史上の人物の足跡をてくてくと歩く「歴てく」の旅。その旅は、彼らの一生から生きていく知恵、ヒントをもらえる時間でもあります。
                 </p>
             </div>
-            <NewsCard />
-            <Pagination />
+            <NewsContainer />
         </MainLayout>
     );
 }
