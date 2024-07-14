@@ -118,6 +118,7 @@
             }
         }
         .tourInfo {
+            align-items: center;
             .toursText {
                 font-size: 16px;
                 padding: 0;
@@ -127,5 +128,11 @@
     .swiper-button-prev,
     .swiper-button-next {
         top: 25%;
+    }
+    .swiper-button-prev {
+        left: 0;
+    }
+    .swiper-button-next {
+        right: 0;
     }
 }
