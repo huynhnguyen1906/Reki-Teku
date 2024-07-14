@@ -118,12 +118,12 @@
             }
         }
         .tourInfo {
-            align-items: center;
             .toursText {
                 font-size: 16px;
                 padding: 0;
             }
             .tourButton {
+                align-self: center;
                 position: relative;
                 width: 17rem;
                 height: 3.6rem;
