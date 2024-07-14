@@ -20,7 +20,7 @@ export default function Tours() {
                             <p className={Style.place}>福岡県</p>
                         </div>
                         <h1 className={Style.toursTtl}>古代~室町 博多の歴史</h1>
-                        <p>¥~1,5000 1泊2日</p>
+                        <p className={Style.toursPrice}>¥~1,5000 1泊2日</p>
                         <p className={Style.text}>
                             福岡は、古来より海外との接点を持ち続けてきた日本で唯一の地です。このツアーでは、福岡に点在する各時代を代表する史跡を巡りながら、
                             その歴史的背景と意義を探ります。時系列に沿って訪れることで、福岡の歴史の流れをより深く理解していただけます。
@@ -101,136 +101,13 @@ export default function Tours() {
                             </div>
                             <div className={Style.schedWrap}>
                                 <Schedule />
-                                <div className={Style.schedContent}>
-                                    <div className={Style.pic}>
-                                        <Image
-                                            src="/images/tours/day2_1.png"
-                                            alt="今津元寇防塁"
-                                            width={650}
-                                            height={366}
-                                        />
-                                        <p className={Style.place}>
-                                            DAY1_①<span>板付遺跡(博多区)</span>
-                                        </p>
-                                    </div>
-                                    <div className={Style.text}>
-                                        <p>~日本最古の稲作跡~</p>
-                                        <p>
-                                            古代の福岡にタイムスリップ！？
-                                            <br />
-                                            弥生時代の集落跡を見学!!
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className={Style.schedContent}>
-                                    <div className={Style.pic}>
-                                        <Image src="/images/tours/day1_2.png" alt="水城" width={650} height={366} />
-                                        <p className={Style.place}>
-                                            DAY1_②<span>水城(太宰府市)</span>
-                                        </p>
-                                    </div>
-                                    <div className={Style.text}>
-                                        <p>~古代の防御施設を探索~</p>
-                                        <p>古代の防御拠点、水城を探訪!!</p>
-                                    </div>
-                                </div>
-                                <div className={Style.schedContent}>
-                                    <div className={Style.pic}>
-                                        <Image
-                                            src="/images/tours/day1_3.png"
-                                            alt="太宰府天満宮"
-                                            width={650}
-                                            height={366}
-                                        />
-                                        <p className={Style.place}>
-                                            DAY1_③<span>太宰府天満宮(太宰府市)</span>
-                                        </p>
-                                    </div>
-                                    <div className={Style.text}>
-                                        <p>~菅原道真公に~祈りを捧げる</p>
-                                        <p>学問の神様、菅原道真を祀る神社へ!!</p>
-                                    </div>
-                                </div>
-                                <div className={Style.schedContent}>
-                                    <div className={Style.pic}>
-                                        <Image src="/images/tours/day1_4.png" alt="鴻臚館" width={650} height={366} />
-                                        <p className={Style.place}>
-                                            DAY1_④<span>鴻臚館(福岡市)</span>
-                                        </p>
-                                    </div>
-                                    <div className={Style.text}>
-                                        <p>~古代の外交拠点を訪問~</p>
-                                        <p>古代の迎賓館であり、海外交流の歴史を学べる!!</p>
-                                    </div>
-                                </div>
-                                <div className={Style.schedContent}>
-                                    <div className={Style.pic}>
-                                        <Image
-                                            src="/images/tours/day2_1.png"
-                                            alt="今津元寇防塁"
-                                            width={650}
-                                            height={366}
-                                        />
-                                        <p className={Style.place}>
-                                            DAY2_①<span>今津元寇防塁(福岡市)</span>
-                                        </p>
-                                    </div>
-                                    <div className={Style.text}>
-                                        <p>~元寇の歴史を体感~</p>
-                                        <p>元寇の防衛線を訪れ、その背景を肌で感じる!!</p>
-                                    </div>
-                                </div>
-                                <div className={Style.schedContent}>
-                                    <div className={Style.pic}>
-                                        <Image
-                                            src="/images/tours/day2_2.png"
-                                            alt="志賀島・蒙古塚"
-                                            width={650}
-                                            height={366}
-                                        />
-                                        <p className={Style.place}>
-                                            DAY2_②<span>志賀島・蒙古塚(福岡市)</span>
-                                        </p>
-                                    </div>
-                                    <div className={Style.text}>
-                                        <p>~勇敢な防衛の痕跡を探る~</p>
-                                        <p>元寇の戦死者を祀る蒙古塚!</p>
-                                    </div>
-                                </div>
-                                <div className={Style.schedContent}>
-                                    <div className={Style.pic}>
-                                        <Image
-                                            src="/images/tours/day2_1.png"
-                                            alt="今津元寇防塁"
-                                            width={650}
-                                            height={366}
-                                        />
-                                        <p className={Style.place}>
-                                            DAY2_③<span>多々良浜の戦い古戦場跡(福岡市)</span>
-                                        </p>
-                                    </div>
-                                    <div className={Style.text}>
-                                        <p>~中世の戦いの跡地を巡る~</p>
-                                        <p>鎌倉時代の跡地に足を踏み入れる⁉️</p>
-                                    </div>
-                                </div>
-                                <div className={Style.schedContent}>
-                                    <div className={Style.pic}>
-                                        <Image
-                                            src="/images/tours/day2_1.png"
-                                            alt="今津元寇防塁"
-                                            width={650}
-                                            height={366}
-                                        />
-                                        <p className={Style.place}>
-                                            DAY_④<span>箱崎八幡宮(福岡市)</span>
-                                        </p>
-                                    </div>
-                                    <div className={Style.text}>
-                                        <p>~戦勝祈願の神社を参拝~</p>
-                                        <p>武運長久を祈る神社!</p>
-                                    </div>
-                                </div>
+                                <Schedule />
+                                <Schedule />
+                                <Schedule />
+                                <Schedule />
+                                <Schedule />
+                                <Schedule />
+                                <Schedule />
                             </div>
                         </div>
                     </div>

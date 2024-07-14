@@ -1,6 +1,192 @@
+@import '/styles/variables.scss';
+
 .MainVisual {
     position: relative;
     width: 100vw;
     height: calc(100vh - 6rem);
     min-height: 768px;
+}
+.MainContent {
+    position: relative;
+    width: 100vw;
+    height: auto;
+    min-height: 768px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 10rem;
+    .About {
+        width: 100%;
+        min-height: 720px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        .TextContainer {
+            display: flex;
+            flex-direction: row-reverse;
+            gap: 5rem;
+            position: relative;
+            h2 {
+                writing-mode: vertical-rl;
+                text-orientation: upright;
+                font-size: 4rem;
+                font-weight: 500;
+                letter-spacing: 2rem;
+            }
+            p {
+                font-size: 2.6rem;
+                writing-mode: vertical-rl;
+                text-orientation: upright;
+                line-height: 4rem;
+                padding-top: 50px;
+                letter-spacing: 1rem;
+                span {
+                    line-height: 5rem;
+                }
+            }
+            .Button {
+                position: absolute;
+                width: 25.5rem;
+                height: 6rem;
+                border-radius: 5rem;
+                background: #fefefe;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+                bottom: 75px;
+                left: 115%;
+                a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    height: 100%;
+                    font-size: 2rem;
+                    font-weight: 500;
+                    gap: 1rem;
+                    color: #000;
+                    text-decoration: none;
+                }
+            }
+            .CloudLeft {
+                position: absolute;
+                width: 400px;
+                height: 150px;
+                top: 80%;
+                left: -120%;
+                z-index: -1;
+                background: url('../../public/images/cloudLeft.svg') no-repeat center center / contain;
+            }
+            .CloudRight {
+                position: absolute;
+                width: 350px;
+                height: 150px;
+                top: 10%;
+                right: -120%;
+                z-index: -1;
+                background: url('../../public/images/cloudRight.svg') no-repeat center center / contain;
+            }
+        }
+    }
+    .Tours {
+        width: 100%;
+        height: auto;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 8.5rem;
+        overflow: hidden;
+        .ToursSliderContainer {
+            width: 100%;
+            height: 550px;
+            padding: 0 30px;
+        }
+    }
+}
+@media screen and (max-width: 820px) {
+    .MainContent {
+        gap: 10rem;
+        .About {
+            min-height: 600px;
+            .TextContainer {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 3rem;
+                position: relative;
+                h2 {
+                    writing-mode: horizontal-tb;
+                    text-orientation: mixed;
+                    text-align: center;
+                    font-size: 2.4rem;
+                    font-weight: 500;
+                    letter-spacing: 1rem;
+                }
+                p {
+                    font-size: 1.6rem;
+                    writing-mode: horizontal-tb;
+                    text-orientation: mixed;
+                    text-align: center;
+                    line-height: 3rem;
+                    padding-top: 0px;
+                    letter-spacing: 0.5rem;
+                    span {
+                        line-height: 4rem;
+                    }
+                }
+                .Button {
+                    position: relative;
+                    width: 17rem;
+                    height: 3.6rem;
+                    border-radius: 5rem;
+                    background: #fefefe;
+                    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+                    bottom: 0;
+                    left: 0;
+                    a {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                        height: 100%;
+                        font-size: 1.4rem;
+                        font-weight: 500;
+                        gap: 1rem;
+                        color: #000;
+                        text-decoration: none;
+                    }
+                }
+                .CloudLeft {
+                    position: absolute;
+                    width: 200px;
+                    height: 80px;
+                    top: 80%;
+                    left: -30%;
+                    z-index: -1;
+                    background: url('../../public/images/cloudLeft.svg') no-repeat center center / contain;
+                }
+                .CloudRight {
+                    position: absolute;
+                    width: 150px;
+                    height: 50px;
+                    top: 10%;
+                    right: -20%;
+                    z-index: -1;
+                    background: url('../../public/images/cloudRight.svg') no-repeat center center / contain;
+                }
+            }
+        }
+        .Tours {
+            gap: 4rem;
+            overflow: hidden;
+            .ToursSliderContainer {
+                width: 100%;
+                height: auto;
+                padding: 0 20px;
+            }
+        }
+    }
 }

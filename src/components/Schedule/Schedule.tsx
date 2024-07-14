@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import Style from '@styles/componentsStyles/Schedule.module.scss';
+import Style from '@styles/componentsStyles/Tours/Schedule.module.scss';
 
 export default function Schedule() {
     return (
