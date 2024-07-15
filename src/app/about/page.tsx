@@ -65,7 +65,7 @@ export default function About() {
                                 社会に道徳を取り戻す一助としたい。
                             </p>
                         </div>
-                        <div>
+                        <div className={Style.profile}>
                             <Image src="/images/profile.png" alt="" width={250} height={330} />
                             <p>代表取締役 吉丸宣孝</p>
                         </div>
