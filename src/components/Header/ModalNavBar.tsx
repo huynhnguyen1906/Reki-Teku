@@ -34,13 +34,16 @@ export default function ModalNavBar({ handleClose: handleClose }: ModalNavBarPro
                         <Link href={'/question'}>よくある質問</Link>
                     </li>
                     <li className={Style.NavItem}>
-                        <Link href={'#'}>お問い合わせ</Link>
+                        <Link href={'https://lin.ee/6Ak2Mo3'}>お問い合わせ</Link>
                     </li>
                     <li className={Style.NavItem}>
-                        <Link href="#">
+                        <Link href="https://x.com/rekiteku">
                             <FaXTwitter color="#4B3333" />
                         </Link>
-                        <Link href="#">
+                        <Link
+                            href="https://instagram.com/rekiteku 
+"
+                        >
                             <FaInstagram color="#4B3333" />
                         </Link>
                         <Link href="#">

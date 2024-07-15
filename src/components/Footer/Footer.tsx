@@ -41,13 +41,16 @@ export default function Footer() {
                         </div>
                         <div className={Style.messageWrap}>
                             <div className={Style.sns}>
-                                <Link href="#">
+                                <Link href="https://x.com/rekiteku">
                                     <FaXTwitter color="#fff" />
                                 </Link>
-                                <Link href="#">
+                                <Link
+                                    href="https://instagram.com/rekiteku 
+"
+                                >
                                     <FaInstagram color="#fff" />
                                 </Link>
-                                <Link href="#">
+                                <Link href="https://lin.ee/6Ak2Mo3">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="16"
@@ -65,13 +68,13 @@ export default function Footer() {
                                 </Link>
                             </div>
                             <div className={Style.mail}>
-                                <Link href="#">
+                                <Link href="https://lin.ee/6Ak2Mo3">
                                     LINEで予約・お問い合わせ
                                     <span>
                                         <FaArrowUpRightFromSquare />
                                     </span>
                                 </Link>
-                                <Link href="#">
+                                <Link href="mailto:rekitekuinside@gmail.com?subject=Subject&body=Body%20Text">
                                     メールで予約・お問い合わせ
                                     <span>
                                         <FaArrowUpRightFromSquare />
