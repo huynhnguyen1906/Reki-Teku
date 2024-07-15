@@ -6,7 +6,6 @@ import { MdArrowRightAlt } from 'react-icons/md';
 import Link from 'next/link';
 import ToursSlider from '@/components/Index/ToursSlider';
 import NewsContainer from '@/components/News/NewsContainer';
-import ContactBox from '@/components/Index/ContactBox';
 
 export default function Home() {
     return (
@@ -15,7 +14,6 @@ export default function Home() {
                 <VisualContent />
             </div>
             <div className={Style.MainContent}>
-                <ContactBox />
                 <div className={Style.About}>
                     <div className={Style.TextContainer}>
                         <div className={Style.CloudLeft}></div>
