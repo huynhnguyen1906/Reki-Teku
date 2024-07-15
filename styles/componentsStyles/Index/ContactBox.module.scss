@@ -65,6 +65,9 @@
             height: 100px;
             background: url('../../../public/images/lineQr.svg') no-repeat center center / cover;
         }
+        .LineIcon {
+            display: none;
+        }
     }
     &:hover {
         left: calc(100% - 325px);
@@ -76,9 +79,15 @@
         left: unset;
         width: auto;
         height: auto;
-        bottom: 50px;
+        bottom: 35px;
         right: 10px;
         border-radius: unset;
+        .ContactTitle {
+            display: none;
+        }
+        .ContactContent {
+            display: none;
+        }
         .LineIcon {
             width: 70px;
             height: 70px;
