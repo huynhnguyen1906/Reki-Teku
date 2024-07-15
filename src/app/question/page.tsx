@@ -9,9 +9,22 @@ import { FaExternalLinkAlt } from 'react-icons/fa';
 
 export default function Question() {
     useEffect(() => {
-        document.body.style.backgroundImage = 'url(/images/bg-cloud.svg)';
-        document.body.style.backgroundSize = 'cover';
+        const updateBackground = () => {
+            if (window.matchMedia('(max-width: 600px)').matches) {
+                document.body.style.backgroundImage = 'url(/images/bg-cloud.svg)';
+                document.body.style.backgroundSize = 'contain';
+            } else {
+                document.body.style.backgroundImage = 'url(/images/bg-cloud.svg)';
+                document.body.style.backgroundSize = 'cover';
+            }
+        };
+
+        updateBackground();
+
+        window.addEventListener('resize', updateBackground);
+
         return () => {
+            window.removeEventListener('resize', updateBackground);
             document.body.style.backgroundImage = 'url(/images/bg.svg)';
         };
     }, []);
