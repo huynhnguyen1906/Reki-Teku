@@ -57,7 +57,7 @@
                 border-radius: 30px;
             }
         }
-        .LineQR {
+        .LineQr {
             position: absolute;
             top: 15px;
             right: 15px;
@@ -65,12 +65,12 @@
             height: 100px;
             background: url('../../../public/images/lineQr.svg') no-repeat center center / cover;
         }
-        .LineIcon {
-            display: none;
-        }
     }
     &:hover {
         left: calc(100% - 325px);
+    }
+    .LineIcon {
+        display: none;
     }
 }
 
@@ -89,6 +89,7 @@
             display: none;
         }
         .LineIcon {
+            display: block;
             width: 70px;
             height: 70px;
             background: url('../../../public/images/lineContactIcon.svg') no-repeat center center / cover;

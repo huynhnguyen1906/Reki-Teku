@@ -16,7 +16,7 @@ export default function ContactBox() {
                     <p className={Style.Title}>メールアドレス</p>
                     <p>rekitekuinside@gmail.com</p>
                 </div>
-                <div className={Style.LineIcon}></div>
+                <div className={Style.LineQr}></div>
             </div>
             <Link href={'https://lin.ee/6Ak2Mo3'} className={Style.LineIcon}></Link>
         </div>
