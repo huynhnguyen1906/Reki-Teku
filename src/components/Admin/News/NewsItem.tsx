@@ -1,18 +1,23 @@
+'use client';
+
 import Style from '@styles/componentsStyles/Admin/NewsItem.module.scss';
 import { FaTrash } from 'react-icons/fa6';
 import { FaEdit } from 'react-icons/fa';
 import { AdminNewsView } from '@/types/AdminNewsView';
 import { formatDate } from '@/utils/formatDate';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
 interface NewsItemProps {
     newsItem: AdminNewsView;
+    onDelete: (id: string) => void;
 }
 
 const truncateString = (str: string, num: number) => {
     return str.length > num ? str.slice(0, num) + '...' : str;
 };
 
-export default function NewsItem({ newsItem }: NewsItemProps) {
+export default function NewsItem({ newsItem, onDelete }: NewsItemProps) {
     const formattedHeader = newsItem.header && newsItem.header.text ? truncateString(newsItem.header.text, 13) : '';
     const formattedText = newsItem.text && newsItem.text.text ? truncateString(newsItem.text.text, 20) : '';
     const formattedTimestamp = newsItem.news_timestamp ? formatDate(newsItem.news_timestamp) : '';
@@ -21,6 +26,21 @@ export default function NewsItem({ newsItem }: NewsItemProps) {
         if (newsType === 'ツアー追加') return Style.tourAddTag;
         if (newsType === 'ブログ更新') return Style.blogAddTag;
         return '';
+    };
+
+    const handleDelete = async () => {
+        try {
+            const response = await axios.post('/api/delete-item', { id: newsItem.id, type: 'news' });
+            if (response.status === 200) {
+                toast.success('記事が削除されました');
+                onDelete(newsItem.id);
+            } else {
+                toast.error('記事の削除に失敗しました');
+            }
+        } catch (error) {
+            console.error('Error deleting news item:', error);
+            toast.error('記事の削除に失敗しました');
+        }
     };
 
     return (
@@ -39,7 +59,7 @@ export default function NewsItem({ newsItem }: NewsItemProps) {
             </div>
             <div className={Style.btnBox}>
                 <FaEdit />
-                <FaTrash />
+                <FaTrash onClick={handleDelete} />
             </div>
         </div>
     );

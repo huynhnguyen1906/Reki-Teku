@@ -5,15 +5,29 @@ import AdminBtnBox from '@/components/Admin/AdminBtnBox';
 import NewsItem from '@/components/Admin/News/NewsItem';
 import { useAdminNews } from '@/hooks/useAdminNews';
 import Spinner from 'react-bootstrap/esm/Spinner';
+import { useState, useEffect } from 'react';
+import { AdminNewsView } from '@/types/AdminNewsView';
 
 export default function News() {
     const createUrl = {
         name: '記事追加',
         url: '/admin/news/create',
     };
+
     const { news, isError, isLoading } = useAdminNews();
+    const [newsList, setNewsList] = useState<AdminNewsView[]>([]);
+
+    useEffect(() => {
+        if (news) {
+            setNewsList(news);
+        }
+    }, [news]);
 
     if (isError) return <div>エラーが発生しました。</div>;
+
+    const handleDelete = (id: string) => {
+        setNewsList(newsList.filter((item) => item.id !== id));
+    };
 
     return (
         <AdminLayout>
@@ -22,7 +36,9 @@ export default function News() {
                 {isLoading ? (
                     <Spinner animation="border" role="status"></Spinner>
                 ) : (
-                    news && news.map((newsItem: any) => <NewsItem key={newsItem.id} newsItem={newsItem} />)
+                    newsList.map((newsItem) => (
+                        <NewsItem key={newsItem.id} newsItem={newsItem} onDelete={handleDelete} />
+                    ))
                 )}
             </div>
         </AdminLayout>
