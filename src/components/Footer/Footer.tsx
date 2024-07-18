@@ -86,7 +86,7 @@ export default function Footer() {
                     <div className={Style.footerWrap}>
                         <ul>
                             <li>
-                                <Link href="#">プライバシーポリシー</Link>・<Link href="#">ご利用にあたって</Link>・
+                                <Link href="#">プライバシーポリシー</Link>　<Link href="#">ご利用にあたって</Link>　
                                 <Link href="/question">よくある質問</Link>
                             </li>
                             <li>
