@@ -25,7 +25,7 @@ export default function TourItem({ TourItem, onDelete }: TourItemProps) {
         try {
             const response = await axios.post('/api/delete-item', { id: TourItem.id, type: 'tours' });
             if (response.status === 200) {
-                toast.success('ツアーが削除されました');
+                toast.success('ツアーはごみ箱に移動されました');
                 onDelete(TourItem.id);
             } else {
                 toast.error('ツアーの削除に失敗しました');

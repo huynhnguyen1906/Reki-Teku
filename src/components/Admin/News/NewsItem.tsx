@@ -32,7 +32,7 @@ export default function NewsItem({ newsItem, onDelete }: NewsItemProps) {
         try {
             const response = await axios.post('/api/delete-item', { id: newsItem.id, type: 'news' });
             if (response.status === 200) {
-                toast.success('記事が削除されました');
+                toast.success('記事はごみ箱に移動されました');
                 onDelete(newsItem.id);
             } else {
                 toast.error('記事の削除に失敗しました');
