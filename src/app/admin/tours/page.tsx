@@ -13,6 +13,10 @@ export default function Tours() {
         name: 'ツアー追加',
         url: '/admin/tours/create',
     };
+    const deleteUrl = {
+        name: 'ごみ箱',
+        url: '/admin/tours/deleted',
+    };
 
     const { tour, isError, isLoading } = useAdminTour();
     const [tourList, setTourList] = useState<AdminTourView[]>([]);
@@ -31,7 +35,7 @@ export default function Tours() {
 
     return (
         <AdminLayout>
-            <AdminBtnBox createUrl={createUrl} />
+            <AdminBtnBox createUrl={createUrl} deleteUrl={deleteUrl} />
             <div className={styles.TourItemBox}>
                 {isLoading ? (
                     <Spinner animation="border" role="status"></Spinner>

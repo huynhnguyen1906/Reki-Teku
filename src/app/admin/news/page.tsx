@@ -13,6 +13,10 @@ export default function News() {
         name: '記事追加',
         url: '/admin/news/create',
     };
+    const deleteUrl = {
+        name: 'ごみ箱',
+        url: '/admin/news/deleted',
+    };
 
     const { news, isError, isLoading } = useAdminNews();
     const [newsList, setNewsList] = useState<AdminNewsView[]>([]);
@@ -31,7 +35,7 @@ export default function News() {
 
     return (
         <AdminLayout>
-            <AdminBtnBox createUrl={createUrl} />
+            <AdminBtnBox createUrl={createUrl} deleteUrl={deleteUrl} />
             <div className={styles.NewsItemBox}>
                 {isLoading ? (
                     <Spinner animation="border" role="status"></Spinner>
