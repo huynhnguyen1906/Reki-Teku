@@ -2,18 +2,25 @@
 import { ReactNode } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
+import { destroyCookie } from 'nookies';
 import Logo from '../../../public/images/logo-white.svg';
 import Style from '@styles/appStyles/Admin/Admin.module.scss';
-
+import Button from 'react-bootstrap/Button';
 interface AdminLayoutProps {
     children: ReactNode;
 }
 
 const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
+    const router = useRouter();
     const pathname = usePathname();
 
     const isActive = (path: string) => pathname === path;
+
+    const handleLogout = () => {
+        destroyCookie(null, 'auth_token', { path: '/' });
+        router.push('/admin');
+    };
 
     return (
         <div className={Style.container}>
@@ -21,10 +28,9 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
                 <Link href="/admin/news">
                     <Image src={Logo} alt="logo" width={45} height={45} />
                 </Link>
-                <div className={Style.userIcon}>
-                    <Image src={Logo} alt="logo" width={45} height={45} />
-                    <span>Admin</span>
-                </div>
+                <Button variant="secondary" onClick={handleLogout}>
+                    ログアウト
+                </Button>
             </nav>
             <div className={Style.sideBar}>
                 <Link

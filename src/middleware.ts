@@ -5,7 +5,7 @@ import { parse } from 'cookie';
 export function middleware(request: NextRequest) {
     const cookie = request.headers.get('cookie');
     const cookies = parse(cookie || '');
-    const token = cookies.token;
+    const token = cookies.auth_token;
 
     if (request.nextUrl.pathname === '/admin' && token) {
         return NextResponse.redirect(new URL('/admin/news', request.url));

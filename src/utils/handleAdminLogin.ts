@@ -17,16 +17,15 @@ export const handleAdminLogin = async () => {
 
         const token = await user.getIdToken();
 
-        setCookie(null, 'token', token, {
+        setCookie(null, 'auth_token', token, {
             maxAge: 30 * 24 * 60 * 60,
             path: '/',
         });
 
-        console.log('Token set in cookies');
         return true;
     } catch (error) {
         console.error('Error during login:', error);
-        destroyCookie(null, 'token');
+        destroyCookie(null, 'auth_token');
         return false;
     }
 };
