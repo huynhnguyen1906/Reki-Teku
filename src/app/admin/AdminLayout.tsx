@@ -7,11 +7,14 @@ import { destroyCookie } from 'nookies';
 import Logo from '../../../public/images/logo-white.svg';
 import Style from '@styles/appStyles/Admin/Admin.module.scss';
 import Button from 'react-bootstrap/Button';
+import useAuthRefresh from '@/hooks/useAuthRefresh';
 interface AdminLayoutProps {
     children: ReactNode;
 }
 
 const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
+    useAuthRefresh();
+
     const router = useRouter();
     const pathname = usePathname();
 
@@ -35,13 +38,27 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
             <div className={Style.sideBar}>
                 <Link
                     href="/admin/news"
-                    className={isActive('/admin/news') || isActive('/admin/news/create') ? Style.active : ''}
+                    className={
+                        isActive('/admin/news') ||
+                        isActive('/admin/news/create') ||
+                        isActive('/admin/news/deleted') ||
+                        isActive('/admin/news/edit/[id]')
+                            ? Style.active
+                            : ''
+                    }
                 >
                     記事・ブログ管理
                 </Link>
                 <Link
                     href="/admin/tours"
-                    className={isActive('/admin/tours') || isActive('/admin/tours/create') ? Style.active : ''}
+                    className={
+                        isActive('/admin/tours') ||
+                        isActive('/admin/tours/create') ||
+                        isActive('/admin/tours/deleted') ||
+                        isActive('/admin/tours/edit/[id]')
+                            ? Style.active
+                            : ''
+                    }
                 >
                     ツアー管理
                 </Link>

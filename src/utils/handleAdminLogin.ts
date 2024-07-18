@@ -18,7 +18,7 @@ export const handleAdminLogin = async () => {
         const token = await user.getIdToken();
 
         setCookie(null, 'auth_token', token, {
-            maxAge: 30 * 24 * 60 * 60,
+            maxAge: 7 * 24 * 60 * 60,
             path: '/',
         });
 
