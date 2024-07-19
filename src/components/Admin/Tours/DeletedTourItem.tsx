@@ -31,8 +31,26 @@ export default function DeletedTourItem({ TourItem, onDelete }: TourItemProps) {
                 toast.error('ツアーの復元に失敗しました');
             }
         } catch (error) {
-            console.error('Error deleting tour item:', error);
-            toast.error('ツアーが復元されました');
+            console.error('Error recovering tour item:', error);
+            toast.error('ツアーの復元に失敗しました');
+        }
+    };
+
+    const handleDeletePermanently = async () => {
+        const confirmDelete = window.confirm('本当にこのツアーを完全に削除しますか？');
+        if (!confirmDelete) return;
+
+        try {
+            const response = await axios.post('/api/delete-item-permanently', { id: TourItem.id, type: 'tours' });
+            if (response.status === 200) {
+                toast.success('ツアーが完全に削除されました');
+                onDelete(TourItem.id);
+            } else {
+                toast.error('ツアーの削除に失敗しました');
+            }
+        } catch (error) {
+            console.error('Error deleting tour item permanently:', error);
+            toast.error('ツアーの削除に失敗しました');
         }
     };
 
@@ -49,7 +67,7 @@ export default function DeletedTourItem({ TourItem, onDelete }: TourItemProps) {
             </div>
             <div className={Style.btnBox}>
                 <RiDeviceRecoverLine onClick={handleRecover} />
-                <FaTrash />
+                <FaTrash onClick={handleDeletePermanently} />
             </div>
         </div>
     );

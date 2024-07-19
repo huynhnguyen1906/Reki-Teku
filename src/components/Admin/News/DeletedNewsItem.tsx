@@ -38,8 +38,26 @@ export default function DeletedNewsItem({ newsItem, onDelete }: NewsItemProps) {
                 toast.error('記事の復元に失敗しました');
             }
         } catch (error) {
-            console.error('Error deleting news item:', error);
+            console.error('Error recovering news item:', error);
             toast.error('記事の復元に失敗しました');
+        }
+    };
+
+    const handleDeletePermanently = async () => {
+        const confirmDelete = window.confirm('本当にこの記事を完全に削除しますか？');
+        if (!confirmDelete) return;
+
+        try {
+            const response = await axios.post('/api/delete-item-permanently', { id: newsItem.id, type: 'news' });
+            if (response.status === 200) {
+                toast.success('記事が完全に削除されました');
+                onDelete(newsItem.id);
+            } else {
+                toast.error('記事の削除に失敗しました');
+            }
+        } catch (error) {
+            console.error('Error deleting news item permanently:', error);
+            toast.error('記事の削除に失敗しました');
         }
     };
 
@@ -59,7 +77,7 @@ export default function DeletedNewsItem({ newsItem, onDelete }: NewsItemProps) {
             </div>
             <div className={Style.btnBox}>
                 <RiDeviceRecoverLine onClick={handleRecover} />
-                <FaTrash />
+                <FaTrash onClick={handleDeletePermanently} />
             </div>
         </div>
     );
