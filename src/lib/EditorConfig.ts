@@ -18,17 +18,8 @@ class CustomImageTool extends Image {
         const caption = wrapper.querySelector('.cdx-input');
 
         if (caption && !CustomImageTool.firstImageRendered) {
-            const observer = new MutationObserver((mutations) => {
-                mutations.forEach((mutation) => {
-                    if (mutation.addedNodes.length > 0) {
-                        caption.style.display = 'none';
-                        CustomImageTool.firstImageRendered = true;
-                        observer.disconnect();
-                    }
-                });
-            });
-
-            observer.observe(wrapper, { childList: true, subtree: true });
+            CustomImageTool.firstImageRendered = true;
+            caption.style.display = 'none';
         }
 
         return wrapper;
@@ -38,7 +29,6 @@ class CustomImageTool extends Image {
 export const resetFirstImageRendered = () => {
     CustomImageTool.firstImageRendered = false;
 };
-
 const editorConfig: EditorConfig = {
     holder: 'editorjs',
     tools: {
@@ -164,6 +154,11 @@ const editorConfig: EditorConfig = {
                 },
                 checklist: {
                     'To do': 'チェックリスト',
+                },
+                image: {
+                    'With border': '枠線あり',
+                    'With background': '背景あり',
+                    'Stretch image': '画像をストレッチ',
                 },
             },
             blockTunes: {
