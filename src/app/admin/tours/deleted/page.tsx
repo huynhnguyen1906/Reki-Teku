@@ -26,7 +26,7 @@ export default function DeletedTours() {
     return (
         <AdminLayout>
             <div className={styles.TourItemBox}>
-                {tourList.length === 0 ? <h3>削除されたツアーはありません</h3> : <h3>過去に削除されたツアー</h3>}
+                {tourList.length === 0 ? <h1>削除されたツアーはありません</h1> : <h1>過去に削除されたツアー</h1>}
                 {isLoading ? (
                     <Spinner animation="border" role="status"></Spinner>
                 ) : (

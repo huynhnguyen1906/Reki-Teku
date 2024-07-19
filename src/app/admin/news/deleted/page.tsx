@@ -26,7 +26,7 @@ export default function DeletedNews() {
     return (
         <AdminLayout>
             <div className={styles.NewsItemBox}>
-                {newsList.length === 0 ? <h3>削除された記事はありません</h3> : <h3>過去に削除された記事</h3>}
+                {newsList.length === 0 ? <h1>削除された記事はありません</h1> : <h1>過去に削除された記事</h1>}
                 {isLoading ? (
                     <Spinner animation="border" role="status"></Spinner>
                 ) : (
