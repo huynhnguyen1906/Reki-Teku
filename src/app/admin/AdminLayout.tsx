@@ -8,6 +8,7 @@ import Logo from '../../../public/images/logo-white.svg';
 import Style from '@styles/appStyles/Admin/Admin.module.scss';
 import Button from 'react-bootstrap/Button';
 import useAuthRefresh from '@/hooks/useAuthRefresh';
+
 interface AdminLayoutProps {
     children: ReactNode;
 }
@@ -18,7 +19,7 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
     const router = useRouter();
     const pathname = usePathname();
 
-    const isActive = (path: string) => pathname === path;
+    const isActive = (regex: RegExp) => regex.test(pathname);
 
     const handleLogout = () => {
         destroyCookie(null, 'auth_token', { path: '/' });
@@ -36,33 +37,16 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
                 </Button>
             </nav>
             <div className={Style.sideBar}>
-                <Link
-                    href="/admin/news"
-                    className={
-                        isActive('/admin/news') ||
-                        isActive('/admin/news/create') ||
-                        isActive('/admin/news/deleted') ||
-                        isActive('/admin/news/edit/[id]')
-                            ? Style.active
-                            : ''
-                    }
-                >
+                <Link href="/admin/news" className={isActive(/^\/admin\/news(\/.*)?$/) ? Style.active : ''}>
                     記事・ブログ管理
                 </Link>
-                <Link
-                    href="/admin/tours"
-                    className={
-                        isActive('/admin/tours') ||
-                        isActive('/admin/tours/create') ||
-                        isActive('/admin/tours/deleted') ||
-                        isActive('/admin/tours/edit/[id]')
-                            ? Style.active
-                            : ''
-                    }
-                >
+                <Link href="/admin/tours" className={isActive(/^\/admin\/tours(\/.*)?$/) ? Style.active : ''}>
                     ツアー管理
                 </Link>
-                <Link href="/admin/text-content" className={isActive('/admin/text-content') ? Style.active : ''}>
+                <Link
+                    href="/admin/text-content"
+                    className={isActive(/^\/admin\/text-content(\/.*)?$/) ? Style.active : ''}
+                >
                     文章内容管理
                 </Link>
             </div>
