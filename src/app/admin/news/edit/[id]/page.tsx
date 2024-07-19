@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import axios from 'axios';
 import EditorWithData from '@/components/Admin/News/EditorWithData';
-
+import AdminLayout from '../../../AdminLayout';
+import Spinner from 'react-bootstrap/esm/Spinner';
 interface NewsData {
     news_data: any;
 }
@@ -27,8 +28,16 @@ export default function EditNewsPage() {
     }, [id]);
 
     if (!initialData) {
-        return <div>Loading...</div>;
+        return (
+            <AdminLayout>
+                <Spinner animation="border" />
+            </AdminLayout>
+        );
     }
 
-    return <EditorWithData initialData={initialData.news_data} documentId={id as string} />;
+    return (
+        <AdminLayout>
+            <EditorWithData initialData={initialData.news_data} documentId={id as string} />
+        </AdminLayout>
+    );
 }
