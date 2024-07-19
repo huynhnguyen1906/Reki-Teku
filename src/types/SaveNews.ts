@@ -7,6 +7,7 @@ export interface OutputData {
 }
 
 export interface HandleSendParams {
+    documentId: string;
     editor: {
         save: () => Promise<OutputData>;
     };
