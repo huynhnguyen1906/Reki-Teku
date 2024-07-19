@@ -21,22 +21,25 @@ function EditorWithData({ initialData, documentId }: EditorWithDataProps) {
     const [loading, setLoading] = useState(false);
     const router = useRouter();
 
+    const { editor, isEditorReady } = useEditor({ ...Config, data: initialData });
+
     useEffect(() => {
         resetFirstImageRendered();
     }, [router]);
-
-    const { editor, isEditorReady } = useEditor({ ...Config, data: initialData });
 
     const handleButtonClick = (buttonName: string) => {
         setActiveButton(buttonName);
     };
 
     const handleUpdateClick = () => {
-        if (editor) {
+        if (isEditorReady && editor && typeof editor.save === 'function') {
+            const oldImageUrls = initialData.blocks
+                .filter((block: any) => block.type === 'image')
+                .map((block: any) => block.data.file.url);
             const params: HandleSendParams = { editor, activeButton, router };
-            handleUpdate(params, setLoading, documentId);
+            handleUpdate(params, setLoading, documentId, oldImageUrls);
         } else {
-            console.error('Editor instance is not initialized');
+            console.error('Editor instance is not initialized or save method is not available');
         }
     };
 
