@@ -18,8 +18,17 @@ class CustomImageTool extends Image {
         const caption = wrapper.querySelector('.cdx-input');
 
         if (caption && !CustomImageTool.firstImageRendered) {
-            caption.style.display = 'none';
-            CustomImageTool.firstImageRendered = true;
+            const observer = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                    if (mutation.addedNodes.length > 0) {
+                        caption.style.display = 'none';
+                        CustomImageTool.firstImageRendered = true;
+                        observer.disconnect();
+                    }
+                });
+            });
+
+            observer.observe(wrapper, { childList: true, subtree: true });
         }
 
         return wrapper;
