@@ -18,6 +18,7 @@ export interface TourInfo {
     description: string;
     meetingPoint: string;
     applyPoint: string;
+    mapIframe: string;
 }
 
 export interface Schedule {

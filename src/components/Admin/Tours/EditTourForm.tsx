@@ -30,6 +30,7 @@ export default function EditTourForm({ initialData, documentId }: EditTourFormPr
         description: initialData.tour_info.description || '',
         meetingPoint: initialData.tour_info.meetingPoint || '',
         applyPoint: initialData.tour_info.applyPoint || '',
+        mapIframe: initialData.tour_info.mapIframe || '',
     });
 
     const [oldImageUrls, setOldImageUrls] = useState<string[]>([]);
@@ -138,6 +139,15 @@ export default function EditTourForm({ initialData, documentId }: EditTourFormPr
                         name="applyPoint"
                         placeholder="ツアーのおすすめポイントを入力..."
                         value={tourInfo.applyPoint}
+                        onChange={handleTourInfoChange}
+                    />
+                </div>
+                <div className={Style.inputItem}>
+                    <label>地図の埋め込み：</label>
+                    <textarea
+                        name="mapIframe"
+                        placeholder="地図の埋め込みを入力..."
+                        value={tourInfo.mapIframe}
                         onChange={handleTourInfoChange}
                     />
                 </div>

@@ -23,6 +23,7 @@ export default function CreateTourForm() {
         description: '',
         meetingPoint: '',
         applyPoint: '',
+        mapIframe: '',
     });
 
     const handleTourInfoChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -124,6 +125,15 @@ export default function CreateTourForm() {
                         name="applyPoint"
                         placeholder="ツアーのおすすめポイントを入力..."
                         value={tourInfo.applyPoint}
+                        onChange={handleTourInfoChange}
+                    />
+                </div>
+                <div className={Style.inputItem}>
+                    <label>地図の埋め込み：</label>
+                    <textarea
+                        name="mapIframe"
+                        placeholder="地図の埋め込みを入力..."
+                        value={tourInfo.mapIframe}
                         onChange={handleTourInfoChange}
                     />
                 </div>
