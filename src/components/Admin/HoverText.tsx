@@ -1,19 +1,24 @@
-import { useState } from 'react';
-import Style from '@styles/componentsStyles/Admin/HoverText.module.scss'
+import { useState, ReactNode } from 'react';
+import styles from '../styles/HoverText.module.css';
 
-const HoverText = ({ icon, text }) => {
-  const [isHovered, setIsHovered] = useState(false);
+interface HoverTextProps {
+    icon: ReactNode;
+    text: string;
+}
 
-  return (
-    <div
-      className={Style.container}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <div className={Style.icon}>{icon}</div>
-      {isHovered && <div className={Style.text}>{text}</div>}
-    </div>
-  );
+const HoverText = ({ icon, text }: HoverTextProps) => {
+    const [isHovered, setIsHovered] = useState(false);
+
+    return (
+        <div
+            className={styles.container}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
+            <div className={styles.icon}>{icon}</div>
+            {isHovered && <div className={styles.text}>{text}</div>}
+        </div>
+    );
 };
 
 export default HoverText;
