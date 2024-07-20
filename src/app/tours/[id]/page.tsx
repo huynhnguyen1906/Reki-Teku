@@ -8,6 +8,7 @@ import { IoMdPin } from 'react-icons/io';
 import Link from 'next/link';
 import MainLayout from '@/components/MainLayout';
 import Schedule from '@/components/Tours/Schedule';
+import ThumbnailSlider from '@/components/Tours/ThumbnailSlider';
 
 export default function Tours() {
     return (
@@ -32,6 +33,7 @@ export default function Tours() {
                             <p>(詳細はLINEでお知らせします)</p>
                         </div>
                     </div>
+                    <ThumbnailSlider />
                 </div>
 
                 <div className={Style.pointWrap}>
