@@ -16,7 +16,7 @@ interface EditorWithDataProps {
     documentId: string;
 }
 
-function EditorWithData({ initialData, documentId }: EditorWithDataProps) {
+export default function EditorWithData({ initialData, documentId }: EditorWithDataProps) {
     const [activeButton, setActiveButton] = useState(initialData.news_type || 'ツアー追加');
     const [loading, setLoading] = useState(false);
     const router = useRouter();
@@ -72,5 +72,3 @@ function EditorWithData({ initialData, documentId }: EditorWithDataProps) {
         </>
     );
 }
-
-export default EditorWithData;
