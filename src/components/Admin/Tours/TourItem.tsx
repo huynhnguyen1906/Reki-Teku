@@ -2,6 +2,7 @@ import Style from '@styles/componentsStyles/Admin/ToursItem.module.scss';
 import { FaTrash } from 'react-icons/fa6';
 import { FaEdit } from 'react-icons/fa';
 import { AdminTourView } from '@/types/AdminTourView';
+import HoverText from '../HoverText';
 
 interface TourItemProps {
     TourItem: AdminTourView;
@@ -27,8 +28,8 @@ export default function TourItem({ TourItem }: TourItemProps) {
                 <p>{formattedApplyPoint}</p>
             </div>
             <div className={Style.btnBox}>
-                <FaEdit />
-                <FaTrash />
+                <HoverText icon={<FaEdit />} text="編集" /> 
+                <HoverText icon={<FaTrash />} text="削除" /> 
             </div>
         </div>
     );

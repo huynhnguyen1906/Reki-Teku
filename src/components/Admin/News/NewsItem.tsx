@@ -3,6 +3,7 @@ import { FaTrash } from 'react-icons/fa6';
 import { FaEdit } from 'react-icons/fa';
 import { AdminNewsView } from '@/types/AdminNewsView';
 import { formatDate } from '@/utils/formatDate';
+import HoverText from '../HoverText';
 
 interface NewsItemProps {
     newsItem: AdminNewsView;
@@ -38,8 +39,8 @@ export default function NewsItem({ newsItem }: NewsItemProps) {
                 <p>{formattedTimestamp}</p>
             </div>
             <div className={Style.btnBox}>
-                <FaEdit />
-                <FaTrash />
+                <HoverText icon={<FaEdit />} text="編集" /> 
+                <HoverText icon={<FaTrash />} text="削除" /> 
             </div>
         </div>
     );
