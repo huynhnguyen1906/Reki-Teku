@@ -75,7 +75,12 @@ export default function CreateToursDesForm({
                         {dest.image && (
                             <div className={Style.imageBox}>
                                 <div className={Style.imgItem}>
-                                    <Image src={dest.image} alt="Uploaded" fill />
+                                    <Image
+                                        src={dest.image}
+                                        alt="Uploaded"
+                                        fill
+                                        sizes="(max-width: 600px) 100vw, 600px"
+                                    />
                                 </div>
                             </div>
                         )}
