@@ -8,16 +8,17 @@
     justify-content: space-between;
     align-items: center;
     .tourName {
-        width: 23rem;
+        width: 25rem;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         p {
+            font-weight: 700;
             font-size: 16px;
         }
     }
     .TourDes {
-        width: 24rem;
+        width: 26rem;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -29,7 +30,7 @@
     .TourApplyPoint {
         width: 25rem;
         p {
-            font-size: 16px;
+            font-size: 12px;
             text-align: left;
         }
     }
@@ -39,5 +40,8 @@
         justify-content: center;
         align-items: center;
         gap: 32px;
+        svg {
+            cursor: pointer;
+        }
     }
 }

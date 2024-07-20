@@ -2,18 +2,29 @@
 import { ReactNode } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
+import { destroyCookie } from 'nookies';
 import Logo from '../../../public/images/logo-white.svg';
 import Style from '@styles/appStyles/Admin/Admin.module.scss';
+import Button from 'react-bootstrap/Button';
+import useAuthRefresh from '@/hooks/useAuthRefresh';
 
 interface AdminLayoutProps {
     children: ReactNode;
 }
 
 const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
+    useAuthRefresh();
+
+    const router = useRouter();
     const pathname = usePathname();
 
-    const isActive = (path: string) => pathname === path;
+    const isActive = (regex: RegExp) => regex.test(pathname);
+
+    const handleLogout = () => {
+        destroyCookie(null, 'auth_token', { path: '/' });
+        router.push('/admin');
+    };
 
     return (
         <div className={Style.container}>
@@ -21,25 +32,21 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
                 <Link href="/admin/news">
                     <Image src={Logo} alt="logo" width={45} height={45} />
                 </Link>
-                <div className={Style.userIcon}>
-                    <Image src={Logo} alt="logo" width={45} height={45} />
-                    <span>Admin</span>
-                </div>
+                <Button variant="secondary" onClick={handleLogout}>
+                    ログアウト
+                </Button>
             </nav>
             <div className={Style.sideBar}>
-                <Link
-                    href="/admin/news"
-                    className={isActive('/admin/news') || isActive('/admin/news/create') ? Style.active : ''}
-                >
+                <Link href="/admin/news" className={isActive(/^\/admin\/news(\/.*)?$/) ? Style.active : ''}>
                     記事・ブログ管理
                 </Link>
-                <Link
-                    href="/admin/tours"
-                    className={isActive('/admin/tours') || isActive('/admin/tours/create') ? Style.active : ''}
-                >
+                <Link href="/admin/tours" className={isActive(/^\/admin\/tours(\/.*)?$/) ? Style.active : ''}>
                     ツアー管理
                 </Link>
-                <Link href="/admin/text-content" className={isActive('/admin/text-content') ? Style.active : ''}>
+                <Link
+                    href="/admin/text-content"
+                    className={isActive(/^\/admin\/text-content(\/.*)?$/) ? Style.active : ''}
+                >
                     文章内容管理
                 </Link>
             </div>

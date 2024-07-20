@@ -5,7 +5,7 @@ export const convertToWebP = async (dataUrl: string): Promise<string> => {
     const blob = await response.blob();
 
     const fileType = blob.type.split('/')[1];
-    if (!['jpeg', 'jpg', 'png'].includes(fileType.toLowerCase())) {
+    if (!['jpeg', 'jpg', 'png', 'HEIC'].includes(fileType.toLowerCase())) {
         return dataUrl;
     }
 

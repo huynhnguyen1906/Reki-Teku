@@ -4,8 +4,10 @@
     margin: 0 auto;
     max-width: 1000px;
     margin-bottom: 50px;
+    overflow: auto;
 }
 .blogHeader {
+    margin-top: 50px;
     img {
         border-radius: 20px;
         height: 100%;
@@ -60,7 +62,7 @@
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 820px) {
     .item,
     .ttl,
     .picWrap,
@@ -68,6 +70,7 @@
         padding: 0 14px;
     }
     .blogHeader {
+        margin-top: 0;
         img {
             border-radius: 0;
         }

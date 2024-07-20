@@ -11,6 +11,7 @@ export const useAdminNews = () => {
         revalidateIfStale: false,
         revalidateOnFocus: false,
         revalidateOnReconnect: false,
+        revalidateOnMount: true,
     });
 
     return {

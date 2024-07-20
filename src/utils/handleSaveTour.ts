@@ -4,7 +4,6 @@ import { ref, uploadString, getDownloadURL } from 'firebase/storage';
 import { storage } from '@/lib/firebase';
 import { convertToWebP } from '@/utils/changeTypeImg';
 import { TourInfo, Schedule } from '@/types/AdminCreateTour';
-import { mutate } from 'swr';
 
 export const handleSaveTour = async (
     tourInfo: TourInfo,
@@ -60,7 +59,6 @@ export const handleSaveTour = async (
 
         if (response.status === 200) {
             toast.success('ツアーが正常に作成されました');
-            await mutate('/api/tours-admin-view', undefined, true);
             router.push('/admin/tours');
         } else {
             toast.error('ツアーの作成に失敗しました');

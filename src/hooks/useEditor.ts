@@ -1,34 +1,35 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import EditorJS, { EditorConfig } from '@editorjs/editorjs';
 
 const useEditor = (config: EditorConfig) => {
     const [isEditorReady, setIsEditorReady] = useState(false);
-    const editorInstance = useRef<EditorJS | null>(null);
+    const [editorInstance, setEditorInstance] = useState<EditorJS | null>(null);
 
     useEffect(() => {
-        if (!editorInstance.current) {
-            editorInstance.current = new EditorJS({
+        if (!editorInstance) {
+            const editor = new EditorJS({
                 ...config,
                 onReady: () => {
                     setIsEditorReady(true);
+                    setEditorInstance(editor);
                     config.onReady?.();
                 },
             });
         }
 
         return () => {
-            if (editorInstance.current && editorInstance.current.destroy) {
-                editorInstance.current.destroy();
-                editorInstance.current = null;
+            if (editorInstance && editorInstance.destroy) {
+                editorInstance.destroy();
+                setEditorInstance(null);
             }
         };
-    }, [config]);
+    }, [config, editorInstance]);
 
     return {
         isEditorReady,
-        editor: editorInstance.current,
+        editor: editorInstance,
     };
 };
 

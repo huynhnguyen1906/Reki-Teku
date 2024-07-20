@@ -18,8 +18,8 @@ class CustomImageTool extends Image {
         const caption = wrapper.querySelector('.cdx-input');
 
         if (caption && !CustomImageTool.firstImageRendered) {
-            caption.style.display = 'none';
             CustomImageTool.firstImageRendered = true;
+            caption.style.display = 'none';
         }
 
         return wrapper;
@@ -29,7 +29,6 @@ class CustomImageTool extends Image {
 export const resetFirstImageRendered = () => {
     CustomImageTool.firstImageRendered = false;
 };
-
 const editorConfig: EditorConfig = {
     holder: 'editorjs',
     tools: {
@@ -155,6 +154,11 @@ const editorConfig: EditorConfig = {
                 },
                 checklist: {
                     'To do': 'チェックリスト',
+                },
+                image: {
+                    'With border': '枠線あり',
+                    'With background': '背景あり',
+                    'Stretch image': '画像をストレッチ',
                 },
             },
             blockTunes: {

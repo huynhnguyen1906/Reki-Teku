@@ -6,6 +6,7 @@ import { MdArrowRightAlt } from 'react-icons/md';
 import Link from 'next/link';
 import ToursSlider from '@/components/Index/ToursSlider';
 import NewsContainer from '@/components/News/NewsContainer';
+
 export default function Home() {
     return (
         <MainLayout>

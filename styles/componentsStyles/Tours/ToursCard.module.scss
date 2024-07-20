@@ -1,7 +1,7 @@
 @import '/styles/variables';
 
 .toursWrap {
-    margin: 100px 50px 0 50px;
+    margin: 30px 50px 0 50px;
     display: flex;
     justify-content: baseline;
     gap: 2rem;
@@ -30,7 +30,7 @@
     .toursWrap {
         max-width: 333px;
         margin: auto;
-        padding: 50px 6px 10px 6px;
+        padding: 25px 6px 10px 6px;
         flex-direction: column;
         .toursContent {
             .toursTtl {
