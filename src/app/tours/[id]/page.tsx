@@ -7,7 +7,7 @@ import { FaExternalLinkAlt } from 'react-icons/fa';
 import { IoMdPin } from 'react-icons/io';
 import Link from 'next/link';
 import MainLayout from '@/components/MainLayout';
-import Schedule from '@/components/Schedule/Schedule';
+import Schedule from '@/components/Tours/Schedule';
 
 export default function Tours() {
     return (
@@ -32,12 +32,11 @@ export default function Tours() {
                             <p>(詳細はLINEでお知らせします)</p>
                         </div>
                     </div>
-                    <div className={Style.toursImg}></div>
                 </div>
 
                 <div className={Style.pointWrap}>
                     <div className={Style.contentTtl}>
-                        <Image src="images/logo-black.svg" alt="" width={40} height={40} />
+                        <Image src="/images/logo-black.svg" alt="" width={40} height={40} />
                         <h2>おすすめポイント</h2>
                     </div>
                     <div className={Style.pointContent}>
@@ -116,7 +115,7 @@ export default function Tours() {
 
                 <div className={Style.tourList}>
                     <div className={Style.contentTtl}>
-                        <Image src="images/logo-black.svg" alt="" width={40} height={40} />
+                        <Image src="/images/logo-black.svg" alt="" width={40} height={40} />
                         <h2>他のツアー</h2>
                     </div>
                     <ToursCard />
