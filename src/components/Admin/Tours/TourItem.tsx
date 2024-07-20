@@ -4,13 +4,10 @@ import Style from '@styles/componentsStyles/Admin/ToursItem.module.scss';
 import { FaTrash } from 'react-icons/fa6';
 import { FaEdit } from 'react-icons/fa';
 import { AdminTourView } from '@/types/AdminTourView';
-<<<<<<< HEAD
-import HoverText from '../HoverText';
-=======
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/navigation';
->>>>>>> e2e5b5ab331650e0156089c5469d58b6e3219b6b
+import HoverText from "@/components/Admin/HoverText";
 
 interface TourItemProps {
     TourItem: AdminTourView;
@@ -59,13 +56,8 @@ export default function TourItem({ TourItem, onDelete }: TourItemProps) {
                 <p>{formattedApplyPoint}</p>
             </div>
             <div className={Style.btnBox}>
-<<<<<<< HEAD
-                <HoverText icon={<FaEdit />} text="編集" /> 
-                <HoverText icon={<FaTrash />} text="削除" /> 
-=======
-                <FaEdit onClick={handleEdit} />
-                <FaTrash onClick={handleDelete} />
->>>>>>> e2e5b5ab331650e0156089c5469d58b6e3219b6b
+                <HoverText icon={<FaEdit onClick={handleEdit} />} text="編集" />
+                <HoverText icon={<FaTrash onClick={handleDelete} />} text="削除" />
             </div>
         </div>
     );
