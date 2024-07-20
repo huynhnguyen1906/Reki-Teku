@@ -1,5 +1,5 @@
 import { useState, ReactNode } from 'react';
-import styles from '../styles/HoverText.module.css';
+import Style from '@styles/componentsStyles/Admin/HoverText.module.scss';
 
 interface HoverTextProps {
     icon: ReactNode;
@@ -11,12 +11,12 @@ const HoverText = ({ icon, text }: HoverTextProps) => {
 
     return (
         <div
-            className={styles.container}
+            className={Style.container}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            <div className={styles.icon}>{icon}</div>
-            {isHovered && <div className={styles.text}>{text}</div>}
+            <div className={Style.icon}>{icon}</div>
+            {isHovered && <div className={Style.text}>{text}</div>}
         </div>
     );
 };
