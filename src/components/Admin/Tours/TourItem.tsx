@@ -7,6 +7,7 @@ import { AdminTourView } from '@/types/AdminTourView';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/navigation';
+import HoverText from "@/components/Admin/HoverText";
 
 interface TourItemProps {
     TourItem: AdminTourView;
@@ -55,8 +56,8 @@ export default function TourItem({ TourItem, onDelete }: TourItemProps) {
                 <p>{formattedApplyPoint}</p>
             </div>
             <div className={Style.btnBox}>
-                <FaEdit onClick={handleEdit} />
-                <FaTrash onClick={handleDelete} />
+                <HoverText icon={<FaEdit onClick={handleEdit} />} text="編集" />
+                <HoverText icon={<FaTrash onClick={handleDelete} />} text="削除" />
             </div>
         </div>
     );

@@ -7,6 +7,7 @@ import { AdminNewsView } from '@/types/AdminNewsView';
 import { formatDate } from '@/utils/formatDate';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import HoverText from "@/components/Admin/HoverText";
 
 interface NewsItemProps {
     newsItem: AdminNewsView;
@@ -64,8 +65,8 @@ export default function NewsItem({ newsItem, onDelete }: NewsItemProps) {
                 <p>{formattedTimestamp}</p>
             </div>
             <div className={Style.btnBox}>
-                <FaEdit onClick={handleEdit} />
-                <FaTrash onClick={handleDelete} />
+                <HoverText icon={<FaEdit onClick={handleEdit} />} text="編集" />
+                <HoverText icon={<FaTrash onClick={handleDelete} />} text="削除" />
             </div>
         </div>
     );

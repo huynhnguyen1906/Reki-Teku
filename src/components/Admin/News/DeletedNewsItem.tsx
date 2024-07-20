@@ -7,6 +7,7 @@ import { AdminNewsView } from '@/types/AdminNewsView';
 import { formatDate } from '@/utils/formatDate';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import HoverText from '@/components/Admin/HoverText';
 
 interface NewsItemProps {
     newsItem: AdminNewsView;
@@ -76,8 +77,8 @@ export default function DeletedNewsItem({ newsItem, onDelete }: NewsItemProps) {
                 <p>{formattedTimestamp}</p>
             </div>
             <div className={Style.btnBox}>
-                <RiDeviceRecoverLine onClick={handleRecover} />
-                <FaTrash onClick={handleDeletePermanently} />
+                <HoverText icon={<RiDeviceRecoverLine onClick={handleRecover} />} text="復元" />
+                <HoverText icon={<FaTrash onClick={handleDeletePermanently} />} text="完全に削除" />
             </div>
         </div>
     );
