@@ -32,7 +32,12 @@ export default function EditTourForm({ initialData, documentId }: EditTourFormPr
         applyPoint: initialData.tour_info.applyPoint || '',
     });
 
-    const oldImageUrls = initialData.schedule.flatMap((day: any) => day.destinations.map((dest: any) => dest.image));
+    const [oldImageUrls, setOldImageUrls] = useState<string[]>([]);
+
+    useEffect(() => {
+        const urls = initialData.schedule.flatMap((day: any) => day.destinations.map((dest: any) => dest.image));
+        setOldImageUrls(urls);
+    }, [initialData]);
 
     const handleTourInfoChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
