@@ -6,6 +6,7 @@ import { FaEdit } from 'react-icons/fa';
 import { AdminTourView } from '@/types/AdminTourView';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { useRouter } from 'next/navigation';
 
 interface TourItemProps {
     TourItem: AdminTourView;
@@ -17,6 +18,8 @@ const truncateString = (str: string, num: number) => {
 };
 
 export default function TourItem({ TourItem, onDelete }: TourItemProps) {
+    const router = useRouter();
+
     const formattedName = TourItem.name ? truncateString(TourItem.name, 13) : '';
     const formattedDes = TourItem.description ? truncateString(TourItem.description, 20) : '';
     const formattedApplyPoint = TourItem.applyPoint ? truncateString(TourItem.applyPoint, 13) : '';
@@ -36,6 +39,10 @@ export default function TourItem({ TourItem, onDelete }: TourItemProps) {
         }
     };
 
+    const handleEdit = () => {
+        router.push(`/admin/tours/edit/${TourItem.id}`);
+    };
+
     return (
         <div className={Style.TourItem}>
             <div className={Style.tourName}>
@@ -48,7 +55,7 @@ export default function TourItem({ TourItem, onDelete }: TourItemProps) {
                 <p>{formattedApplyPoint}</p>
             </div>
             <div className={Style.btnBox}>
-                <FaEdit />
+                <FaEdit onClick={handleEdit} />
                 <FaTrash onClick={handleDelete} />
             </div>
         </div>
