@@ -1,33 +1,17 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
-import axios from 'axios';
 import EditorWithData from '@/components/Admin/News/EditorWithData';
 import AdminLayout from '../../../AdminLayout';
 import Spinner from 'react-bootstrap/esm/Spinner';
-interface NewsData {
-    news_data: any;
-}
+import { useNews } from '@/hooks/useNews';
 
 export default function EditNewsPage() {
-    const [initialData, setInitialData] = useState<NewsData | null>(null);
     const { id } = useParams();
+    const documentId = Array.isArray(id) ? id[0] : id;
+    const { news, isLoading, isError } = useNews(documentId);
 
-    useEffect(() => {
-        const fetchNewsData = async () => {
-            try {
-                const response = await axios.get<NewsData>(`/api/get-news/${id as string}`);
-                setInitialData(response.data);
-            } catch (error) {
-                console.error('Error fetching news data:', error);
-            }
-        };
-
-        fetchNewsData();
-    }, [id]);
-
-    if (!initialData) {
+    if (isLoading) {
         return (
             <AdminLayout>
                 <Spinner animation="border" />
@@ -35,9 +19,17 @@ export default function EditNewsPage() {
         );
     }
 
+    if (isError) {
+        return (
+            <AdminLayout>
+                <div>Error loading news data.</div>
+            </AdminLayout>
+        );
+    }
+
     return (
         <AdminLayout>
-            <EditorWithData initialData={initialData.news_data} documentId={id as string} />
+            <EditorWithData initialData={news.news_data} documentId={documentId} />
         </AdminLayout>
     );
 }
