@@ -55,7 +55,7 @@ export default function NewsContainer() {
                     }}
                     className={Style.Swiper}
                 >
-                    {news.map((newsItem: any) => (
+                    {news?.map((newsItem: any) => (
                         <SwiperSlide key={newsItem.id} className={Style.SwiperSlide}>
                             <NewsCard news={newsItem} />
                         </SwiperSlide>

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { IoMdTime } from 'react-icons/io';
 import { splitText } from '@/utils/splitText';
-
+import { formatDate } from '@/utils/formatDate';
 interface NewsCardProps {
     news: {
         id: string;
@@ -16,7 +16,7 @@ interface NewsCardProps {
 }
 
 export default function NewsCard({ news }: NewsCardProps) {
-    const date = new Date(news.news_timestamp.seconds * 1000).toISOString().split('T')[0];
+    const date = formatDate(news.news_timestamp);
     const tagClass = news.news_type === 'ブログ更新' ? Style.blogTag : Style.tourTag;
 
     return (

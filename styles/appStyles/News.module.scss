@@ -4,7 +4,6 @@
     margin: 0 auto;
     max-width: 1000px;
     margin-bottom: 50px;
-    overflow: auto;
 }
 .blogHeader {
     margin-top: 50px;
@@ -25,11 +24,15 @@
             gap: 3px;
             color: $text-color-gray;
         }
-        .kinds {
+        .blogTag {
             padding: 2px 40px;
             border-radius: 40px;
             color: $accent-color-white;
             text-align: center;
+            background-color: $add-news-tag-bg;
+        }
+        .tourTag {
+            @extend .blogTag;
             background-color: $add-tour-tag-bg;
         }
     }
@@ -61,6 +64,24 @@
         font-size: 16px;
     }
 }
+.swapContent {
+    width: 100%;
+    max-width: 1200px;
+    margin: 100px auto 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    gap: 50px;
+    .contentTtl {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        h2 {
+            font-size: 30px;
+            font-weight: 500;
+        }
+    }
+}
 
 @media screen and (max-width: 820px) {
     .item,
@@ -76,7 +97,7 @@
         }
         .item {
             font-size: 14px;
-            .kinds {
+            .blogTag {
                 padding: 2px 30px;
             }
         }
@@ -94,6 +115,19 @@
         }
         .sup {
             font-size: 14px;
+        }
+    }
+    .swapContent {
+        margin: 50px auto 0;
+        gap: 20px;
+        .contentTtl {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            h2 {
+                font-size: 30px;
+                font-weight: 500;
+            }
         }
     }
 }
