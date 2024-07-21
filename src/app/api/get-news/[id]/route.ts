@@ -24,3 +24,4 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
         return NextResponse.json({ error: 'Error fetching document: ' + (e as Error).message }, { status: 500 });
     }
 }
+export const revalidate = 0;
