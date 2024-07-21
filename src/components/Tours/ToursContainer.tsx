@@ -8,8 +8,9 @@ import { EffectCoverflow } from 'swiper/modules';
 
 import Style from '@styles/componentsStyles/News/NewsContainer.module.scss';
 import ToursCard from '@/components/Tours/ToursCard';
-import Pagination from '../News/Pagination';
+import Pagination from '../News/NewsPagination';
 import { useIndexTour } from '@/hooks/useIndexTour';
+import ToursPagination from './ToursPagination';
 
 export default function ToursContainer() {
     const { tour } = useIndexTour();
@@ -68,7 +69,11 @@ export default function ToursContainer() {
                             <ToursCard key={tour.id} tour={tour} />
                         ))}
                     </div>
-                    <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
+                    <ToursPagination
+                        currentPage={currentPage}
+                        totalPages={totalPages}
+                        onPageChange={handlePageChange}
+                    />
                 </>
             )}
         </div>

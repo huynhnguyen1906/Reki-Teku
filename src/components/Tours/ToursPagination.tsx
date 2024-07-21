@@ -9,7 +9,7 @@ interface PaginationProps {
     onPageChange: (page: number) => void;
 }
 
-export default function Pagination({ currentPage, totalPages, onPageChange }: PaginationProps) {
+export default function ToursPagination({ currentPage, totalPages, onPageChange }: PaginationProps) {
     const handleClick = (page: number) => {
         if (page >= 1 && page <= totalPages) {
             onPageChange(page);

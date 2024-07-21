@@ -8,7 +8,7 @@ import { EffectCoverflow } from 'swiper/modules';
 
 import Style from '@styles/componentsStyles/News/NewsContainer.module.scss';
 import NewsCard from './NewsCard';
-import NewsPagination from './Pagination';
+import NewsPagination from './NewsPagination';
 
 export default function NewsContainer() {
     const [isMobile, setIsMobile] = useState(false);
