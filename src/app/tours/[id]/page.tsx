@@ -17,15 +17,15 @@ import Notes from '@/components/Tours/Notes';
 import { formatTextWithLineBreaks } from '@/utils/formatTextWithLineBreaks ';
 
 export default function Tours() {
+    const [activeTab, setActiveTab] = useState('schedule');
     const { id } = useParams();
     const documentId = Array.isArray(id) ? id[0] : id;
     const { tour } = useTour(documentId);
-
+    if (!tour) return null;
     const tourInfo = tour?.tour_info || {};
     const tourSchedule = tour?.schedule;
     const tourMap = tour?.tour_info.mapIframe;
     const tourApplyPoint = tourInfo.applyPoint ? formatTextWithLineBreaks(tourInfo.applyPoint) : '';
-    const [activeTab, setActiveTab] = useState('schedule');
 
     const renderContent = () => {
         if (activeTab === 'schedule') {

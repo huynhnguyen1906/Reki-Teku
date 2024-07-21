@@ -2,8 +2,6 @@ import Style from '@styles/componentsStyles/Tours/Schedule.module.scss';
 import ScheduleItem from '@/components/Tours/ScheduleItem';
 
 export default function Schedule({ schedule, tourMap }: { schedule: any; tourMap: any }) {
-    console.log(schedule);
-
     return schedule ? (
         <div className={Style.borderline}>
             <div className={Style.circle}>
