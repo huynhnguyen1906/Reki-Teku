@@ -1,12 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { db } from '@/lib/firebase';
 import { doc, getDoc } from 'firebase/firestore';
-import { authenticateRequest } from '@/utils/auth';
 
 export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
     try {
-        await authenticateRequest(req);
-
         const { id } = params;
         const docRef = doc(db, 'News', id);
         const docSnap = await getDoc(docRef);
