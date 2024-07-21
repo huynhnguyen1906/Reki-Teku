@@ -1,11 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { db } from '@/lib/firebase';
-import { collection, query, where, getDocs } from 'firebase/firestore';
+import { collection, query, where, orderBy, getDocs } from 'firebase/firestore';
 
 export async function GET(req: NextRequest) {
     try {
-        const toursQuery = query(collection(db, 'Tours'), where('deleted', '==', false));
-
+        const toursQuery = query(collection(db, 'Tours'), where('deleted', '==', false), orderBy('created_at', 'desc'));
         const querySnapshot = await getDocs(toursQuery);
 
         const toursData = querySnapshot.docs.map((doc) => {
