@@ -34,6 +34,7 @@ export default function ToursSlider() {
                                     alt={tourItem.tour_info.name}
                                     width={480}
                                     height={320}
+                                    priority
                                 />
                             </div>
                             <div className="tourInfo">

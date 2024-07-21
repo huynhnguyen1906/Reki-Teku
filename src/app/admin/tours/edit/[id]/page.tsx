@@ -1,4 +1,3 @@
-// pages/admin/tours/edit/[id]/page.tsx
 'use client';
 import { useParams } from 'next/navigation';
 import EditTourForm from '@/components/Admin/Tours/EditTourForm';
