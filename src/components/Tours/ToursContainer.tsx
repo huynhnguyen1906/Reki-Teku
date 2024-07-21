@@ -56,7 +56,7 @@ export default function ToursContainer() {
                     }}
                     className={Style.Swiper}
                 >
-                    {tour.map((tour: any, index: number) => (
+                    {tour?.map((tour: any, index: number) => (
                         <SwiperSlide key={tour.id} className={Style.SwiperSlide}>
                             <ToursCard tour={tour} />
                         </SwiperSlide>
@@ -65,7 +65,7 @@ export default function ToursContainer() {
             ) : (
                 <>
                     <div className={Style.ItemBox}>
-                        {getCurrentPageTours().map((tour: any) => (
+                        {getCurrentPageTours()?.map((tour: any) => (
                             <ToursCard key={tour.id} tour={tour} />
                         ))}
                     </div>

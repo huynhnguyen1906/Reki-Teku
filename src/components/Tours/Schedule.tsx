@@ -9,8 +9,8 @@ export default function Schedule({ schedule, tourMap }: { schedule: any; tourMap
                     <div></div>
                 </div>
                 <div className={Style.schedWrap}>
-                    {schedule.map((day: any) =>
-                        day.destinations.map((destination: any, index: number) => (
+                    {schedule?.map((day: any) =>
+                        day.destinations?.map((destination: any, index: number) => (
                             <ScheduleItem
                                 key={index}
                                 day={day.day}

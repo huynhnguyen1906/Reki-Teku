@@ -22,7 +22,7 @@ export default function ToursPagination({ currentPage, totalPages, onPageChange 
                 <li onClick={() => handleClick(currentPage - 1)} className={currentPage === 1 ? Style.disabled : ''}>
                     <CgChevronLeft />
                 </li>
-                {[...Array(totalPages)].map((_, i) => (
+                {[...Array(totalPages)]?.map((_, i) => (
                     <li
                         key={i}
                         onClick={() => handleClick(i + 1)}

@@ -46,7 +46,7 @@ export default function ThumbnailSlider({ schedule }: { schedule: any }) {
                 <div className="splide__track">
                     <ul className="splide__list mainSlider">
                         {schedule?.map((day: any, dayIndex: number) =>
-                            day.destinations.map((destination: any, destIndex: number) => (
+                            day.destinations?.map((destination: any, destIndex: number) => (
                                 <li key={`main-${dayIndex}-${destIndex}`} className="splide__slide">
                                     <Image src={destination.image} alt="alt" width={1000} height={1000} priority />
                                 </li>
@@ -60,7 +60,7 @@ export default function ThumbnailSlider({ schedule }: { schedule: any }) {
                 <div className="splide__track">
                     <ul className="splide__list thumbnail">
                         {schedule?.map((day: any, dayIndex: number) =>
-                            day.destinations.map((destination: any, destIndex: number) => (
+                            day.destinations?.map((destination: any, destIndex: number) => (
                                 <li key={`thumb-${dayIndex}-${destIndex}`} className="splide__slide">
                                     <Image
                                         src={destination.image}
