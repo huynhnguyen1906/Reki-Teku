@@ -43,7 +43,7 @@ export default function News() {
                     <h2 className={Style.ttl}>{headerText}</h2>
                 </div>
 
-                {blocks.slice(2).map((block: any, index: any) => {
+                {blocks.slice(2)?.map((block: any, index: any) => {
                     if (block.type === 'paragraph') {
                         return (
                             <p key={index} className={Style.text}>

@@ -30,7 +30,7 @@ export default function DeletedNews() {
                 {isLoading ? (
                     <Spinner animation="border" role="status"></Spinner>
                 ) : (
-                    newsList.map((newsItem) => (
+                    newsList?.map((newsItem) => (
                         <DeletedNewsItem key={newsItem.id} newsItem={newsItem} onDelete={handleDelete} />
                     ))
                 )}

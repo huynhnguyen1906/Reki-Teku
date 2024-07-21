@@ -45,7 +45,7 @@ export async function POST(req: NextRequest) {
         const imageUrls = findImageUrls(docData);
 
         await Promise.all(
-            imageUrls.map(async (url) => {
+            imageUrls?.map(async (url) => {
                 const storageRef = ref(storage, url);
                 await deleteObject(storageRef).catch((error) => {
                     console.error('Error deleting image from storage:', error);
@@ -53,7 +53,6 @@ export async function POST(req: NextRequest) {
             }),
         );
 
-        // Xóa doc từ Firestore
         await deleteDoc(docRef);
 
         return NextResponse.json({ message: 'Document and associated images successfully deleted!' });

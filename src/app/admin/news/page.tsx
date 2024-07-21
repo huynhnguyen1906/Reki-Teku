@@ -40,7 +40,7 @@ export default function News() {
                 {isLoading ? (
                     <Spinner animation="border" role="status"></Spinner>
                 ) : (
-                    newsList.map((newsItem) => (
+                    newsList?.map((newsItem) => (
                         <NewsItem key={newsItem.id} newsItem={newsItem} onDelete={handleDelete} />
                     ))
                 )}

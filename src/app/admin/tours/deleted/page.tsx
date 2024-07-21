@@ -30,7 +30,7 @@ export default function DeletedTours() {
                 {isLoading ? (
                     <Spinner animation="border" role="status"></Spinner>
                 ) : (
-                    tourList.map((tourItem) => (
+                    tourList?.map((tourItem) => (
                         <DeletedTourItem key={tourItem.id} TourItem={tourItem} onDelete={handleDelete} />
                     ))
                 )}
