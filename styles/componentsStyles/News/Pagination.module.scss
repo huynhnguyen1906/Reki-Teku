@@ -1,6 +1,7 @@
 @import '/styles/variables';
 
 .pageNavi {
+    align-self: center;
     ul {
         display: flex;
         justify-content: center;
@@ -12,12 +13,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            cursor: pointer;
+            padding: 8px 12px;
+            background: $accent-color-white;
+            border-radius: 5px;
             p {
-                padding: 8px 12px;
                 color: $text-color;
                 font-size: 16px;
-                border-radius: 5px;
-                background: $accent-color-white;
                 &:hover {
                     color: $accent-color-white;
                     background: $accent-color-brown;

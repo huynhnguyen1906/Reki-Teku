@@ -8,9 +8,25 @@ import { EffectCoverflow } from 'swiper/modules';
 
 import Style from '@styles/componentsStyles/News/NewsContainer.module.scss';
 import ToursCard from '@/components/Tours/ToursCard';
+import Pagination from '../News/Pagination';
+import { useIndexTour } from '@/hooks/useIndexTour';
 
 export default function ToursContainer() {
+    const { tour } = useIndexTour();
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 3;
+    const totalPages = Math.ceil((tour?.length || 0) / itemsPerPage);
     const [isMobile, setIsMobile] = useState(false);
+
+    const handlePageChange = (page: number) => {
+        setCurrentPage(page);
+    };
+
+    const getCurrentPageTours = () => {
+        if (!tour) return [];
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        return tour.slice(startIndex, startIndex + itemsPerPage);
+    };
 
     useEffect(() => {
         const handleResize = () => {
@@ -39,26 +55,20 @@ export default function ToursContainer() {
                     }}
                     className={Style.Swiper}
                 >
-                    <SwiperSlide className={Style.SwiperSlide}>
-                        <ToursCard />
-                    </SwiperSlide>
-                    <SwiperSlide className={Style.SwiperSlide}>
-                        <ToursCard />
-                    </SwiperSlide>
-                    <SwiperSlide className={Style.SwiperSlide}>
-                        <ToursCard />
-                    </SwiperSlide>
-                    <SwiperSlide className={Style.SwiperSlide}>
-                        <ToursCard />
-                    </SwiperSlide>
+                    {tour.map((tour: any, index: number) => (
+                        <SwiperSlide key={tour.id} className={Style.SwiperSlide}>
+                            <ToursCard tour={tour} />
+                        </SwiperSlide>
+                    ))}
                 </Swiper>
             ) : (
                 <>
                     <div className={Style.ItemBox}>
-                        <ToursCard />
-                        <ToursCard />
-                        <ToursCard />
+                        {getCurrentPageTours().map((tour: any) => (
+                            <ToursCard key={tour.id} tour={tour} />
+                        ))}
                     </div>
+                    <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
                 </>
             )}
         </div>
