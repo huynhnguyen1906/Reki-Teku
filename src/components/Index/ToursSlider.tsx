@@ -5,13 +5,18 @@ import { Navigation } from 'swiper/modules';
 import Image from 'next/image';
 import { MdArrowRightAlt } from 'react-icons/md';
 import Link from 'next/link';
-
+import { useIndexTour } from '@/hooks/useIndexTour';
+import { splitText } from '@/utils/splitText';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import '@styles/componentsStyles/Index/Slider.scss';
 import TextStyle from '@styles/appStyles/Tours.module.scss';
 
 export default function ToursSlider() {
+    const { tour } = useIndexTour();
+
+    const tourDescriptionLimit = 100;
+
     return (
         <>
             <svg width="0" height="0" style={{ position: 'absolute', zIndex: -1 }}>
@@ -22,75 +27,41 @@ export default function ToursSlider() {
                 </defs>
             </svg>
             <Swiper rewind={true} navigation={true} modules={[Navigation]} className="mySwiper">
-                <SwiperSlide>
-                    <div className="tourImg">
-                        <Image src="/images/mainVisual.webp" alt="aaaa" width={480} height={320} />
-                    </div>
-                    <div className="tourInfo">
-                        <p className={TextStyle.toursPrice}>¥~1,5000 1泊2日</p>
-                        <h2 className={TextStyle.toursTtl}>古代~室町 博多の歴史</h2>
-                        <p className="toursText">
-                            福岡は、古来より海外との接点を持ち続けてきた日本で唯一の地です。このツアーでは、福岡に点在する各時代を代表する史跡を巡りながら、その歴史的背景と意義を探ります。時系列に沿って訪れることで、福岡の歴史の流れをより深く理解していただけます。
-                        </p>
-                        <p className="toursNote">※ツアー内容は変更が可能ですので、お気軽にお問い合わせください。</p>
-                        <button className="tourButton">
-                            <Link href={'/tours'}>
-                                詳しく見る
-                                <MdArrowRightAlt />
-                            </Link>
-                        </button>
-                    </div>
-                    <div className="tourSpot">
-                        <div className="mapPin"></div>
-                        <p>福岡県</p>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="tourImg">
-                        <Image src="/images/mainVisual.webp" alt="aaaa" width={480} height={320} />
-                    </div>
-                    <div className="tourInfo">
-                        <p className={TextStyle.toursPrice}>¥~1,5000 1泊2日</p>
-                        <h2 className={TextStyle.toursTtl}>古代~室町 博多の歴史</h2>
-                        <p className="toursText">
-                            福岡は、古来より海外との接点を持ち続けてきた日本で唯一の地です。このツアーでは、福岡に点在する各時代を代表する史跡を巡りながら、その歴史的背景と意義を探ります。時系列に沿って訪れることで、福岡の歴史の流れをより深く理解していただけます。
-                        </p>
-                        <p className="toursNote">※ツアー内容は変更が可能ですので、お気軽にお問い合わせください。</p>
-                        <button className="tourButton">
-                            <Link href={'/tours'}>
-                                詳しく見る
-                                <MdArrowRightAlt />
-                            </Link>
-                        </button>
-                    </div>
-                    <div className="tourSpot">
-                        <div className="mapPin"></div>
-                        <p>福岡県</p>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="tourImg">
-                        <Image src="/images/mainVisual.webp" alt="aaaa" width={480} height={320} />
-                    </div>
-                    <div className="tourInfo">
-                        <p className={TextStyle.toursPrice}>¥~1,5000 1泊2日</p>
-                        <h2 className={TextStyle.toursTtl}>古代~室町 博多の歴史</h2>
-                        <p className="toursText">
-                            福岡は、古来より海外との接点を持ち続けてきた日本で唯一の地です。このツアーでは、福岡に点在する各時代を代表する史跡を巡りながら、その歴史的背景と意義を探ります。時系列に沿って訪れることで、福岡の歴史の流れをより深く理解していただけます。
-                        </p>
-                        <p className="toursNote">※ツアー内容は変更が可能ですので、お気軽にお問い合わせください。</p>
-                        <button className="tourButton">
-                            <Link href={'/tours'}>
-                                詳しく見る
-                                <MdArrowRightAlt />
-                            </Link>
-                        </button>
-                    </div>
-                    <div className="tourSpot">
-                        <div className="mapPin"></div>
-                        <p>福岡県</p>
-                    </div>
-                </SwiperSlide>
+                {tour &&
+                    tour.map((tourItem: any) => (
+                        <SwiperSlide key={tourItem.id}>
+                            <div className="tourImg">
+                                <Image
+                                    src={tourItem.first_destination_image}
+                                    alt={tourItem.tour_info.name}
+                                    width={480}
+                                    height={320}
+                                />
+                            </div>
+                            <div className="tourInfo">
+                                <p className={TextStyle.toursPrice}>
+                                    ¥{tourItem.tour_info.price} {tourItem.tour_info.days}
+                                </p>
+                                <h2 className={TextStyle.toursTtl}>{tourItem.tour_info.name}</h2>
+                                <p className="toursText">
+                                    {splitText(tourItem.tour_info.description, tourDescriptionLimit)}
+                                </p>
+                                <p className="toursNote">
+                                    ※ツアー内容は変更が可能ですので、お気軽にお問い合わせください。
+                                </p>
+                                <button className="tourButton">
+                                    <Link href={`/tours/${tourItem.id}`}>
+                                        詳しく見る
+                                        <MdArrowRightAlt />
+                                    </Link>
+                                </button>
+                            </div>
+                            <div className="tourSpot">
+                                <div className="mapPin"></div>
+                                <p>{tourItem.tour_info.location}</p>
+                            </div>
+                        </SwiperSlide>
+                    ))}
             </Swiper>
         </>
     );
