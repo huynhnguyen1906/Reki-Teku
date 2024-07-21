@@ -3,6 +3,8 @@ import React from 'react';
 import Style from '@styles/appStyles/Tours.module.scss';
 
 import { useState } from 'react';
+import { useParams } from 'next/navigation';
+import { useTour } from '@/hooks/useTour';
 import ToursContainer from '@/components/Tours/ToursContainer';
 import Image from 'next/image';
 import { FaExternalLinkAlt } from 'react-icons/fa';
@@ -12,17 +14,27 @@ import MainLayout from '@/components/MainLayout';
 import ThumbnailSlider from '@/components/Tours/ThumbnailSlider';
 import Schedule from '@/components/Tours/Schedule';
 import Notes from '@/components/Tours/Notes';
+import { formatTextWithLineBreaks } from '@/utils/formatTextWithLineBreaks ';
 
 export default function Tours() {
+    const { id } = useParams();
+    const documentId = Array.isArray(id) ? id[0] : id;
+    const { tour } = useTour(documentId);
+
+    const tourInfo = tour?.tour_info || {};
+    const tourSchedule = tour?.schedule;
+    const tourMap = tour?.tour_info.mapIframe;
+    const tourApplyPoint = tourInfo.applyPoint ? formatTextWithLineBreaks(tourInfo.applyPoint) : '';
     const [activeTab, setActiveTab] = useState('schedule');
 
     const renderContent = () => {
         if (activeTab === 'schedule') {
-            return <Schedule />;
+            return <Schedule schedule={tourSchedule} tourMap={tourMap} />;
         } else {
             return <Notes />;
         }
     };
+
     return (
         <MainLayout>
             <div className={Style.container}>
@@ -30,22 +42,21 @@ export default function Tours() {
                     <div className={Style.toursContent}>
                         <div className={Style.pref}>
                             <IoMdPin color="#D04848" />
-                            <p className={Style.place}>福岡県</p>
+                            <p className={Style.place}>{tourInfo.location}</p>
                         </div>
-                        <h1 className={Style.toursTtl}>古代~室町 博多の歴史</h1>
-                        <p className={Style.toursPrice}>¥~1,5000 1泊2日</p>
-                        <p className={Style.text}>
-                            福岡は、古来より海外との接点を持ち続けてきた日本で唯一の地です。このツアーでは、福岡に点在する各時代を代表する史跡を巡りながら、
-                            その歴史的背景と意義を探ります。時系列に沿って訪れることで、福岡の歴史の流れをより深く理解していただけます。
+                        <h1 className={Style.toursTtl}>{tourInfo.name}</h1>
+                        <p className={Style.toursPrice}>
+                            {tourInfo.price}￥ 　{tourInfo.days}
                         </p>
+                        <p className={Style.text}>{tourInfo.description}</p>
                         <p className={Style.attn}>※ツアー内容の変更可能ですので、お問い合わせください</p>
                         <div className={Style.appt}>
                             <p>集合・解散場所</p>
-                            <p>博多駅or福岡</p>
+                            <p>{tourInfo.meetingPoint}</p>
                             <p>(詳細はLINEでお知らせします)</p>
                         </div>
                     </div>
-                    <ThumbnailSlider />
+                    <ThumbnailSlider schedule={tourSchedule} />
                 </div>
 
                 <div className={Style.pointWrap}>
@@ -54,16 +65,7 @@ export default function Tours() {
                         <h2>おすすめポイント</h2>
                     </div>
                     <div className={Style.pointContent}>
-                        <p className={Style.text}>
-                            可能な限り歴史的な順番に各地を訪問するため、歴史の流れを理解しやすくしています。
-                            また、福岡古は来から重要な防衛拠点であり、各地に直接足を運ぶため海外との結びつきが強かったことを肌で感じることができます。
-                            <br />
-                            1日目は大宰府と水城。菅原道真ゆかりの地であり、古代日本の防衛拠点だったことを実感でき、「古代、日本の侵略危機」といったツアー内容です。
-                            2日目は今津元寇防塁と志賀島・蒙古塚。元寇の代表的遺跡であり、博多が中世の防衛拠点だったことを実感でき、「中世、日本の侵略危機」といったツアー内容になります。
-                            このツアーは、福岡の歴史と防衛拠点としての重要性を深く理解するための貴重な機会です。
-                            <br />
-                            時代を超えた旅を通じて、福岡の歴史の奥深さを体験してみませんか？
-                        </p>
+                        <p className={Style.text} dangerouslySetInnerHTML={{ __html: tourApplyPoint }}></p>
 
                         <div className={Style.sinWrap}>
                             <div className={Style.border}>
@@ -97,7 +99,7 @@ export default function Tours() {
                                 <p>¥33960</p>
                             </div>
                             <div className={Style.lineBtn}>
-                                <Link href="#">LINEで確認する</Link>
+                                <Link href="https://lin.ee/6Ak2Mo3">LINEで確認する</Link>
                                 <FaExternalLinkAlt color="#fffdf7" />
                             </div>
                         </div>

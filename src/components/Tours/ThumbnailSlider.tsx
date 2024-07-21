@@ -5,7 +5,8 @@ import '@splidejs/splide/dist/css/splide.min.css';
 import Image from 'next/image';
 import '@styles/componentsStyles/Tours/ThumbnailSlider.scss';
 
-export default function ThumbnailSlider() {
+export default function ThumbnailSlider({ schedule }: { schedule: any }) {
+    console.log(schedule);
     useEffect(() => {
         const mainSlider = new Splide('#main-slider', {
             type: 'fade',
@@ -40,24 +41,18 @@ export default function ThumbnailSlider() {
             <div id="main-slider" className="splide mainSliderContainer">
                 <div className="splide__track">
                     <ul className="splide__list mainSlider">
-                        <li className="splide__slide">
-                            <Image src="/images/blog_osaka/picture_01.webp" alt="Image 1" width={1000} height={1000} />
-                        </li>
-                        <li className="splide__slide">
-                            <Image src="/images/blog_osaka/picture_02.webp" alt="Image 2" width={1000} height={1000} />
-                        </li>
-                        <li className="splide__slide">
-                            <Image src="/images/blog_osaka/picture_03.webp" alt="Image 3" width={1000} height={1000} />
-                        </li>
-                        <li className="splide__slide">
-                            <Image src="/images/blog_osaka/picture_04.webp" alt="Image 4" width={1000} height={1000} />
-                        </li>
-                        <li className="splide__slide">
-                            <Image src="/images/blog_osaka/picture_05.webp" alt="Image 5" width={1000} height={1000} />
-                        </li>
-                        <li className="splide__slide">
-                            <Image src="/images/blog_osaka/picture_06.webp" alt="Image 5" width={1000} height={1000} />
-                        </li>
+                        {schedule?.map((day: any, dayIndex: number) =>
+                            day.destinations.map((destination: any, destIndex: number) => (
+                                <li key={`main-${dayIndex}-${destIndex}`} className="splide__slide">
+                                    <Image
+                                        src={destination.image}
+                                        alt={destination.description}
+                                        width={1000}
+                                        height={1000}
+                                    />
+                                </li>
+                            )),
+                        )}
                     </ul>
                 </div>
             </div>
@@ -65,54 +60,18 @@ export default function ThumbnailSlider() {
             <div id="thumbnail-slider" className="splide thumbnail-slider">
                 <div className="splide__track">
                     <ul className="splide__list thumbnail">
-                        <li className="splide__slide">
-                            <Image
-                                src="/images/blog_osaka/picture_01.webp"
-                                alt="Thumbnail 1"
-                                width={1000}
-                                height={1000}
-                            />
-                        </li>
-                        <li className="splide__slide">
-                            <Image
-                                src="/images/blog_osaka/picture_02.webp"
-                                alt="Thumbnail 2"
-                                width={1000}
-                                height={1000}
-                            />
-                        </li>
-                        <li className="splide__slide">
-                            <Image
-                                src="/images/blog_osaka/picture_03.webp"
-                                alt="Thumbnail 3"
-                                width={1000}
-                                height={1000}
-                            />
-                        </li>
-                        <li className="splide__slide">
-                            <Image
-                                src="/images/blog_osaka/picture_04.webp"
-                                alt="Thumbnail 4"
-                                width={1000}
-                                height={1000}
-                            />
-                        </li>
-                        <li className="splide__slide">
-                            <Image
-                                src="/images/blog_osaka/picture_05.webp"
-                                alt="Thumbnail 5"
-                                width={1000}
-                                height={1000}
-                            />
-                        </li>
-                        <li className="splide__slide">
-                            <Image
-                                src="/images/blog_osaka/picture_06.webp"
-                                alt="Thumbnail 5"
-                                width={1000}
-                                height={1000}
-                            />
-                        </li>
+                        {schedule?.map((day: any, dayIndex: number) =>
+                            day.destinations.map((destination: any, destIndex: number) => (
+                                <li key={`main-${dayIndex}-${destIndex}`} className="splide__slide">
+                                    <Image
+                                        src={destination.image}
+                                        alt={destination.description}
+                                        width={1000}
+                                        height={1000}
+                                    />
+                                </li>
+                            )),
+                        )}
                     </ul>
                 </div>
             </div>
