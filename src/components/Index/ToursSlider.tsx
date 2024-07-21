@@ -15,8 +15,6 @@ import TextStyle from '@styles/appStyles/Tours.module.scss';
 export default function ToursSlider() {
     const { tour } = useIndexTour();
 
-    const tourDescriptionLimit = 100;
-
     return (
         <>
             <svg width="0" height="0" style={{ position: 'absolute', zIndex: -1 }}>
@@ -43,9 +41,7 @@ export default function ToursSlider() {
                                     ¥{tourItem.tour_info.price} {tourItem.tour_info.days}
                                 </p>
                                 <h2 className={TextStyle.toursTtl}>{tourItem.tour_info.name}</h2>
-                                <p className="toursText">
-                                    {splitText(tourItem.tour_info.description, tourDescriptionLimit)}
-                                </p>
+                                <p className="toursText">{splitText(tourItem.tour_info.description, 100)}</p>
                                 <p className="toursNote">
                                     ※ツアー内容は変更が可能ですので、お気軽にお問い合わせください。
                                 </p>
