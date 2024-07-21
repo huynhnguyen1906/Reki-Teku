@@ -6,7 +6,7 @@ const fetcher = (url: string) => {
     return fetch(urlWithTimestamp).then((res) => res.json());
 };
 
-export const useIndexTour = () => {
+export const useIndexNews = () => {
     const { data, error } = useSWR('/api/get-news-index', fetcher, {
         revalidateIfStale: false,
         revalidateOnFocus: false,
@@ -15,7 +15,7 @@ export const useIndexTour = () => {
     });
 
     return {
-        tour: data,
+        news: data,
         isLoading: !error && !data,
         isError: error,
     };

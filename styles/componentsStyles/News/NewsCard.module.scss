@@ -9,7 +9,7 @@
     }
     .newsContent {
         padding: 6px;
-        max-width: 360px;
+        max-width: 330px;
         height: 450px;
         border-radius: 10px;
         background: $accent-color-white;
@@ -70,9 +70,9 @@
         max-width: 315px;
         flex-direction: column;
         .newsContent {
-            height: 340px;
+            height: 360px;
             .item {
-                margin: 6px 0 11px;
+                margin: 5px 0 5px;
                 .blogTag,
                 .tourTag {
                     padding: 0 8px;
@@ -81,6 +81,7 @@
             }
             .newsTtl {
                 font-size: 16px;
+                margin: 5px 0 5px;
             }
             .newsText {
                 font-size: 12px;

@@ -9,9 +9,24 @@ import { EffectCoverflow } from 'swiper/modules';
 import Style from '@styles/componentsStyles/News/NewsContainer.module.scss';
 import NewsCard from './NewsCard';
 import NewsPagination from './NewsPagination';
+import { useIndexNews } from '@/hooks/useIndexNews';
 
 export default function NewsContainer() {
+    const { news } = useIndexNews();
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 3;
+    const totalPages = Math.ceil((news?.length || 0) / itemsPerPage);
     const [isMobile, setIsMobile] = useState(false);
+
+    const handlePageChange = (page: number) => {
+        setCurrentPage(page);
+    };
+
+    const getCurrentPageNews = () => {
+        if (!news) return [];
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        return news.slice(startIndex, startIndex + itemsPerPage);
+    };
 
     useEffect(() => {
         const handleResize = () => {
@@ -40,27 +55,20 @@ export default function NewsContainer() {
                     }}
                     className={Style.Swiper}
                 >
-                    <SwiperSlide className={Style.SwiperSlide}>
-                        <NewsCard />
-                    </SwiperSlide>
-                    <SwiperSlide className={Style.SwiperSlide}>
-                        <NewsCard />
-                    </SwiperSlide>
-                    <SwiperSlide className={Style.SwiperSlide}>
-                        <NewsCard />
-                    </SwiperSlide>
-                    <SwiperSlide className={Style.SwiperSlide}>
-                        <NewsCard />
-                    </SwiperSlide>
+                    {news.map((newsItem: any) => (
+                        <SwiperSlide key={newsItem.id} className={Style.SwiperSlide}>
+                            <NewsCard news={newsItem} />
+                        </SwiperSlide>
+                    ))}
                 </Swiper>
             ) : (
                 <>
                     <div className={Style.ItemBox}>
-                        <NewsCard />
-                        <NewsCard />
-                        <NewsCard />
+                        {getCurrentPageNews().map((newsItem: any) => (
+                            <NewsCard key={newsItem.id} news={newsItem} />
+                        ))}
                     </div>
-                    <NewsPagination />
+                    <NewsPagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
                 </>
             )}
         </div>
