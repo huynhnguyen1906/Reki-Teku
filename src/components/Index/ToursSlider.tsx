@@ -45,6 +45,52 @@ export default function ToursSlider() {
                         <p>福岡県</p>
                     </div>
                 </SwiperSlide>
+                <SwiperSlide>
+                    <div className="tourImg">
+                        <Image src="/images/mainVisual.webp" alt="aaaa" width={480} height={320} />
+                    </div>
+                    <div className="tourInfo">
+                        <p className={TextStyle.toursPrice}>¥~1,5000 1泊2日</p>
+                        <h2 className={TextStyle.toursTtl}>古代~室町 博多の歴史</h2>
+                        <p className="toursText">
+                            福岡は、古来より海外との接点を持ち続けてきた日本で唯一の地です。このツアーでは、福岡に点在する各時代を代表する史跡を巡りながら、その歴史的背景と意義を探ります。時系列に沿って訪れることで、福岡の歴史の流れをより深く理解していただけます。
+                        </p>
+                        <p className="toursNote">※ツアー内容は変更が可能ですので、お気軽にお問い合わせください。</p>
+                        <button className="tourButton">
+                            <Link href={'/tours'}>
+                                詳しく見る
+                                <MdArrowRightAlt />
+                            </Link>
+                        </button>
+                    </div>
+                    <div className="tourSpot">
+                        <div className="mapPin"></div>
+                        <p>福岡県</p>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className="tourImg">
+                        <Image src="/images/mainVisual.webp" alt="aaaa" width={480} height={320} />
+                    </div>
+                    <div className="tourInfo">
+                        <p className={TextStyle.toursPrice}>¥~1,5000 1泊2日</p>
+                        <h2 className={TextStyle.toursTtl}>古代~室町 博多の歴史</h2>
+                        <p className="toursText">
+                            福岡は、古来より海外との接点を持ち続けてきた日本で唯一の地です。このツアーでは、福岡に点在する各時代を代表する史跡を巡りながら、その歴史的背景と意義を探ります。時系列に沿って訪れることで、福岡の歴史の流れをより深く理解していただけます。
+                        </p>
+                        <p className="toursNote">※ツアー内容は変更が可能ですので、お気軽にお問い合わせください。</p>
+                        <button className="tourButton">
+                            <Link href={'/tours'}>
+                                詳しく見る
+                                <MdArrowRightAlt />
+                            </Link>
+                        </button>
+                    </div>
+                    <div className="tourSpot">
+                        <div className="mapPin"></div>
+                        <p>福岡県</p>
+                    </div>
+                </SwiperSlide>
             </Swiper>
         </>
     );

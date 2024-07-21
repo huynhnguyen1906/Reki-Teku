@@ -3,7 +3,7 @@
 .swiper {
     width: 100%;
     height: 100%;
-    overflow: unset;
+    overflow: hidden;
 }
 
 .swiper-slide {
@@ -126,7 +126,7 @@
         .tourSpot {
             width: 7rem;
             height: 7rem;
-            top: 6%;
+            top: 6.5%;
             z-index: 1;
             .mapPin {
                 width: 4rem;
