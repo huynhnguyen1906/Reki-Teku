@@ -1,16 +1,28 @@
+'use client';
 import React from 'react';
 import Style from '@styles/appStyles/Tours.module.scss';
 
-import ToursCard from '@/components/Tours/ToursCard';
+import { useState } from 'react';
+import ToursContainer from '@/components/Tours/ToursContainer';
 import Image from 'next/image';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 import { IoMdPin } from 'react-icons/io';
 import Link from 'next/link';
 import MainLayout from '@/components/MainLayout';
-import Schedule from '@/components/Tours/Schedule';
 import ThumbnailSlider from '@/components/Tours/ThumbnailSlider';
+import Schedule from '@/components/Tours/Schedule';
+import Notes from '@/components/Tours/Notes';
 
 export default function Tours() {
+    const [activeTab, setActiveTab] = useState('schedule');
+
+    const renderContent = () => {
+        if (activeTab === 'schedule') {
+            return <Schedule />;
+        } else {
+            return <Notes />;
+        }
+    };
     return (
         <MainLayout>
             <div className={Style.container}>
@@ -92,35 +104,27 @@ export default function Tours() {
                     </div>
 
                     <div className={Style.item}>
-                        <p>スケジュール</p>
-                        <p>ご確認・注意事項</p>
+                        <button
+                            className={activeTab === 'schedule' ? Style.active : ''}
+                            onClick={() => setActiveTab('schedule')}
+                        >
+                            スケジュール
+                        </button>
+                        <button
+                            className={activeTab === 'notes' ? Style.active : ''}
+                            onClick={() => setActiveTab('notes')}
+                        >
+                            ご確認・注意事項
+                        </button>
                     </div>
-                    <div className={Style.borderline}>
-                        <div className={Style.circle}>
-                            <div className={Style.borderBox}>
-                                <div></div>
-                            </div>
-                            <div className={Style.schedWrap}>
-                                <Schedule />
-                                <Schedule />
-                                <Schedule />
-                                <Schedule />
-                                <Schedule />
-                                <Schedule />
-                                <Schedule />
-                                <Schedule />
-                            </div>
-                        </div>
-                    </div>
-                    <div className={Style.map}></div>
+                    {renderContent()}
                 </div>
-
                 <div className={Style.tourList}>
                     <div className={Style.contentTtl}>
                         <Image src="/images/logo-black.svg" alt="" width={40} height={40} />
                         <h2>他のツアー</h2>
                     </div>
-                    <ToursCard />
+                    <ToursContainer />
                 </div>
             </div>
         </MainLayout>
