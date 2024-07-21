@@ -8,7 +8,7 @@ import '@styles/componentsStyles/CustomNavBar.scss';
 import ModalNavBar from './ModalNavBar';
 import { useState } from 'react';
 
-export default function Header() {
+export default function Header({ newsId, tourId }: { newsId: string; tourId: string }) {
     const [show, setShow] = useState(false);
     const handleShow = () => setShow(true);
 
@@ -23,12 +23,12 @@ export default function Header() {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="d-flex justify-content-end">
                         <Nav.Link href="/about/">歴てくについて</Nav.Link>
-                        <Nav.Link href="/tours/a">ツアー紹介</Nav.Link>
-                        <Nav.Link href="/news/a">お知らせ</Nav.Link>
+                        <Nav.Link href={`/tours/${tourId}`}>ツアー紹介</Nav.Link>
+                        <Nav.Link href={`/news/${newsId}`}>お知らせ</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
-            {show && <ModalNavBar handleClose={handleClose} />}
+            {show && <ModalNavBar handleClose={handleClose} newsId={newsId} tourId={tourId} />}
         </header>
     );
 }

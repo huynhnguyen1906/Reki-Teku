@@ -4,7 +4,7 @@ import { FaInstagram } from 'react-icons/fa';
 import { FaArrowUpRightFromSquare } from 'react-icons/fa6';
 import Link from 'next/link';
 
-export default function Footer() {
+export default function Footer({ newsId, tourId }: { newsId: string; tourId: string }) {
     return (
         <footer className={Style.footerBg}>
             <div className={Style.Wrap}>
@@ -18,10 +18,10 @@ export default function Footer() {
                                 <Link href="/about">歴てくについて</Link>
                             </li>
                             <li>
-                                <Link href="/tours">ツアー紹介</Link>
+                                <Link href={`/tours/${tourId}`}>ツアー紹介</Link>
                             </li>
                             <li>
-                                <Link href="/news">お知らせ</Link>
+                                <Link href={`/news/${newsId}`}>お知らせ</Link>
                             </li>
                         </ul>
                     </div>

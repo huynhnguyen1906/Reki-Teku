@@ -6,9 +6,11 @@ import { IoCloseOutline } from 'react-icons/io5';
 
 interface ModalNavBarProps {
     handleClose: () => void;
+    newsId?: string;
+    tourId?: string;
 }
 
-export default function ModalNavBar({ handleClose: handleClose }: ModalNavBarProps) {
+export default function ModalNavBar({ handleClose: handleClose, newsId, tourId }: ModalNavBarProps) {
     return (
         <div
             className={Style.NavDisplay}
@@ -25,10 +27,10 @@ export default function ModalNavBar({ handleClose: handleClose }: ModalNavBarPro
                         <Link href={'/about'}>歴てくについて</Link>
                     </li>
                     <li className={Style.NavItem}>
-                        <Link href={'/tours/a'}>ツアー紹介</Link>
+                        <Link href={`/tours/${tourId}`}>ツアー紹介</Link>
                     </li>
                     <li className={Style.NavItem}>
-                        <Link href={'/news/a'}>お知らせ</Link>
+                        <Link href={`/news/${newsId}`}>お知らせ</Link>
                     </li>
                     <li className={Style.NavItem}>
                         <Link href={'/question'}>よくある質問</Link>
