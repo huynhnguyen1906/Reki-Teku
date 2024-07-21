@@ -10,16 +10,16 @@ export default function Pagination() {
                     <CgChevronLeft />
                 </li>
                 <li>
-                    <a href="#">1</a>
+                    <p>1</p>
                 </li>
                 <li>
-                    <a href="#">2</a>
+                    <p>2</p>
                 </li>
                 <li>
-                    <a href="#">3</a>
+                    <p>3</p>
                 </li>
                 <li>
-                    <a href="#">4</a>
+                    <p>4</p>
                 </li>
                 <li>
                     <CgChevronRight />

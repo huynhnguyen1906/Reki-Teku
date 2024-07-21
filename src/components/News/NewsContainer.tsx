@@ -60,6 +60,7 @@ export default function NewsContainer() {
                         <NewsCard />
                         <NewsCard />
                     </div>
+                    <NewsPagination />
                 </>
             )}
         </div>

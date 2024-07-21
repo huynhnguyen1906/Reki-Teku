@@ -6,14 +6,17 @@
         justify-content: center;
         align-items: center;
         gap: 1rem;
+        height: 40px;
         li {
             list-style: none;
-            a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            p {
                 padding: 8px 12px;
                 color: $text-color;
                 font-size: 16px;
                 border-radius: 5px;
-                text-decoration: none;
                 background: $accent-color-white;
                 &:hover {
                     color: $accent-color-white;
