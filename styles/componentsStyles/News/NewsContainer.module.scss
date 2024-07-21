@@ -27,7 +27,7 @@
     }
     .Swiper {
         width: 100%;
-        overflow: unset;
+        overflow: unset !important;
         .SwiperSlide {
             display: flex;
             justify-content: center;
