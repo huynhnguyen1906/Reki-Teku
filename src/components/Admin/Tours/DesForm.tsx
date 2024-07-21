@@ -80,6 +80,7 @@ export default function CreateToursDesForm({
                                         alt="Uploaded"
                                         fill
                                         sizes="(max-width: 600px) 100vw, 600px"
+                                        priority
                                     />
                                 </div>
                             </div>

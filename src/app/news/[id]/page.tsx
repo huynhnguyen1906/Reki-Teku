@@ -30,7 +30,7 @@ export default function News() {
                 <div className={Style.blogHeader}>
                     {firstImage && (
                         <div>
-                            <Image src={firstImage} alt="" width={1000} height={490} />
+                            <Image src={firstImage} alt="" width={1000} height={490} priority />
                         </div>
                     )}
                     <div className={Style.item}>
@@ -54,7 +54,7 @@ export default function News() {
                         return (
                             <div key={index} className={Style.picWrap}>
                                 <p className={Style.pic}>
-                                    <Image src={block.data.file.url} alt="" width={800} height={610} />
+                                    <Image src={block.data.file.url} alt="" width={800} height={610} priority />
                                 </p>
                                 <p className={Style.sup}>{block.data.caption}</p>
                             </div>

@@ -15,7 +15,7 @@ export default function ScheduleItem({ day, destination, description, image }: S
     return (
         <div className={Style.schedContent}>
             <div className={Style.pic}>
-                <Image src={image} alt={destination} width={650} height={366} />
+                <Image src={image} alt={destination} width={650} height={366} priority />
                 <p className={Style.place}>
                     DAY{day}
                     <span>{destination}</span>

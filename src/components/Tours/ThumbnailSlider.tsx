@@ -48,7 +48,7 @@ export default function ThumbnailSlider({ schedule }: { schedule: any }) {
                         {schedule?.map((day: any, dayIndex: number) =>
                             day.destinations.map((destination: any, destIndex: number) => (
                                 <li key={`main-${dayIndex}-${destIndex}`} className="splide__slide">
-                                    <Image src={destination.image} alt="alt" width={1000} height={1000} />
+                                    <Image src={destination.image} alt="alt" width={1000} height={1000} priority />
                                 </li>
                             )),
                         )}
@@ -67,6 +67,7 @@ export default function ThumbnailSlider({ schedule }: { schedule: any }) {
                                         alt={destination.description}
                                         width={1000}
                                         height={1000}
+                                        priority
                                     />
                                 </li>
                             )),

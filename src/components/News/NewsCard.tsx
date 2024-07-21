@@ -24,7 +24,7 @@ export default function NewsCard({ news }: NewsCardProps) {
             <Link href={`/news/${news.id}`}>
                 <div className={Style.newsContent}>
                     <p className={Style.thumb}>
-                        <Image src={news.image.file.url} alt="news image" width={367} height={204} />
+                        <Image src={news.image.file.url} alt="news image" width={367} height={204} priority />
                     </p>
                     <div className={Style.item}>
                         <div className={Style.data}>
