@@ -22,8 +22,8 @@ export default function Header() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleShow} />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="d-flex justify-content-end">
-                        <Nav.Link href="/about">歴てくについて</Nav.Link>
-                        <Nav.Link href="/tours">ツアー紹介</Nav.Link>
+                        <Nav.Link href="/about/a">歴てくについて</Nav.Link>
+                        <Nav.Link href="/tours/a">ツアー紹介</Nav.Link>
                         <Nav.Link href="/news">お知らせ</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
