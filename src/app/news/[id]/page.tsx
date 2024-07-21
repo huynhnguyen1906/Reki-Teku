@@ -24,7 +24,7 @@ export default function News() {
     const firstImage = blocks[0]?.data?.file?.url;
     const headerText = blocks[1]?.data?.text;
 
-    return news ? (
+    return (
         <MainLayout>
             <div className={Style.blogWrap}>
                 <div className={Style.blogHeader}>
@@ -71,7 +71,5 @@ export default function News() {
                 <NewsContainer />
             </div>
         </MainLayout>
-    ) : (
-        ''
     );
 }
