@@ -6,10 +6,12 @@ import { MdArrowRightAlt } from 'react-icons/md';
 import Link from 'next/link';
 import ToursSlider from '@/components/Index/ToursSlider';
 import NewsContainer from '@/components/News/NewsContainer';
+import IndexDot from '@/components/Index/IndexDot';
 
 export default function Home() {
     return (
         <MainLayout>
+            <IndexDot />
             <div className={Style.MainVisual}>
                 <VisualContent />
             </div>
