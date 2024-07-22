@@ -46,7 +46,7 @@ export default function Tours() {
                         </div>
                         <h1 className={Style.toursTtl}>{tourInfo.name}</h1>
                         <p className={Style.toursPrice}>
-                            {tourInfo.price}￥ 　{tourInfo.days}
+                            ￥{tourInfo.price}　{tourInfo.days}
                         </p>
                         <p className={Style.text}>{tourInfo.description}</p>
                         <p className={Style.attn}>※ツアー内容の変更可能ですので、お問い合わせください</p>
