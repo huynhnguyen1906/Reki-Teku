@@ -17,13 +17,23 @@
             padding: 8px 12px;
             background: $accent-color-white;
             border-radius: 5px;
+            &:hover {
+                color: $accent-color-white;
+                background: $accent-color-brown;
+                p {
+                    color: $accent-color-white;
+                }
+            }
+            &.active {
+                color: $accent-color-white;
+                background: $accent-color-brown;
+                p {
+                    color: $accent-color-white;
+                }
+            }
             p {
                 color: $text-color;
                 font-size: 16px;
-                &:hover {
-                    color: $accent-color-white;
-                    background: $accent-color-brown;
-                }
             }
         }
     }
