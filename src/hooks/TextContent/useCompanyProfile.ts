@@ -1,9 +1,9 @@
-import useSWR, { mutate } from 'swr';
+import useSWR from 'swr';
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-export const useIndexText = () => {
-    const { data, error } = useSWR('/api/text-content/save-index-text', fetcher, {
+export const useCompanyProfile = () => {
+    const { data, error } = useSWR('/api/text-content/save-company-profile', fetcher, {
         revalidateIfStale: false,
         revalidateOnFocus: false,
         revalidateOnReconnect: false,
@@ -11,7 +11,7 @@ export const useIndexText = () => {
     });
 
     return {
-        text: data,
+        profile: data,
         isLoading: !error && !data,
         isError: error,
     };
