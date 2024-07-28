@@ -86,7 +86,8 @@ export default function Footer({ newsId, tourId }: { newsId: string; tourId: str
                     <div className={Style.footerWrap}>
                         <ul>
                             <li>
-                                <Link href="#">プライバシーポリシー</Link>　<Link href="#">ご利用にあたって</Link>　
+                                <Link href="/privacy-policy">プライバシーポリシー</Link>　
+                                <Link href="/terms-and-conditions">旅行業約款</Link>　
                                 <Link href="/question">よくある質問</Link>
                             </li>
                             <li>

@@ -74,6 +74,9 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
                 >
                     旅行業約款
                 </Link>
+                <Link href="/admin/questions" className={isActive(/^\/admin\/questions(\/.*)?$/) ? Style.active : ''}>
+                    よくある質問
+                </Link>
             </div>
             <div className={Style.mainContent}>{children}</div>
         </div>
