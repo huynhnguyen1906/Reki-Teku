@@ -27,7 +27,7 @@
 .sideBar {
     background-color: $main-color;
     height: 100vh;
-    width: 20rem;
+    width: 22rem;
     position: fixed;
     top: 0px;
     left: 0;
@@ -58,10 +58,10 @@
 }
 
 .mainContent {
-    width: calc(100% - 20rem);
+    width: calc(100% - 22rem);
     background-color: #ffffff;
     margin-top: 7rem;
-    margin-left: 20rem;
+    margin-left: 22rem;
     padding: 20px;
     min-height: calc(100vh - 70px);
     height: auto;

@@ -1,10 +1,21 @@
 import AdminLayout from '../AdminLayout';
-export default function TextContent() {
+import Style from '@styles/appStyles/Admin/TextContent.module.scss';
+import Button from 'react-bootstrap/esm/Button';
+import dynamic from 'next/dynamic';
+
+const EditorComponent = dynamic(() => import('@/components/Admin/TextContent/TextEditor'), { ssr: false });
+
+export default function PrivacyPolicy() {
     return (
         <>
             <AdminLayout>
-                <h1>TextContent</h1>
-                <p>TextContent page content</p>
+                <div className={Style.TextForm}>
+                    <h1 className={Style.title}>プライバシーポリシー</h1>
+                </div>
+                <EditorComponent />
+                <Button variant="success" className={Style.submitBtn}>
+                    送信
+                </Button>
             </AdminLayout>
         </>
     );

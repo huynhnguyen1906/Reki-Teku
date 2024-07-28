@@ -5,12 +5,12 @@ import dynamic from 'next/dynamic';
 
 const EditorComponent = dynamic(() => import('@/components/Admin/TextContent/TextEditor'), { ssr: false });
 
-export default function TermsAndConditions() {
+export default function ToursNotes() {
     return (
         <>
             <AdminLayout>
                 <div className={Style.TextForm}>
-                    <h1 className={Style.title}>旅行業約款</h1>
+                    <h1 className={Style.title}>ツアーの確認、注意事項</h1>
                 </div>
                 <EditorComponent />
                 <Button variant="success" className={Style.submitBtn}>

@@ -1,0 +1,69 @@
+.title {
+    font-size: 3rem;
+}
+
+.TextForm {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 20px 20px 40px;
+    gap: 20px;
+    .inputItem {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 100%;
+        gap: 10px;
+        padding: 12px 0;
+        label {
+            font-size: 18px;
+            font-weight: 500;
+        }
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+        }
+        textarea {
+            height: auto;
+            min-height: 150px;
+            resize: none;
+        }
+        .imageBox {
+            width: 100%;
+            height: 400px;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .imgItem {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                max-width: 300px;
+                max-height: 400px;
+                img {
+                    position: relative !important;
+                    max-width: 100%;
+                    max-height: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+    button {
+        font-size: 16px;
+        padding: 5px;
+    }
+}
+.submitBtn {
+    width: 180px;
+    height: 50px;
+    font-size: 18px;
+}

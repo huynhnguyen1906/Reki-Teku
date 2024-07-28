@@ -43,11 +43,36 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
                 <Link href="/admin/tours" className={isActive(/^\/admin\/tours(\/.*)?$/) ? Style.active : ''}>
                     ツアー管理
                 </Link>
+                <hr className="w-100" />
+                <Link href="/admin/index-text" className={isActive(/^\/admin\/index-text(\/.*)?$/) ? Style.active : ''}>
+                    トップページ文章管理
+                </Link>
+                <Link href="/admin/about-text" className={isActive(/^\/admin\/about-text(\/.*)?$/) ? Style.active : ''}>
+                    歴てくについて文章管理
+                </Link>
                 <Link
-                    href="/admin/text-content"
-                    className={isActive(/^\/admin\/text-content(\/.*)?$/) ? Style.active : ''}
+                    href="/admin/company-profile"
+                    className={isActive(/^\/admin\/company-profile(\/.*)?$/) ? Style.active : ''}
                 >
-                    文章内容管理
+                    会社概要
+                </Link>
+                <Link
+                    href="/admin/tours-notes"
+                    className={isActive(/^\/admin\/tours-notes(\/.*)?$/) ? Style.active : ''}
+                >
+                    ツアーの確認、注意事項
+                </Link>
+                <Link
+                    href="/admin/privacy-policy"
+                    className={isActive(/^\/admin\/privacy-policy(\/.*)?$/) ? Style.active : ''}
+                >
+                    プライバシーポリシー
+                </Link>
+                <Link
+                    href="/admin/terms-and-conditions"
+                    className={isActive(/^\/admin\/terms-and-conditions(\/.*)?$/) ? Style.active : ''}
+                >
+                    旅行業約款
                 </Link>
             </div>
             <div className={Style.mainContent}>{children}</div>
