@@ -22,8 +22,12 @@ export default function NewsPagination({ currentPage, totalPages, onPageChange }
                     <CgChevronLeft />
                 </li>
                 {Array.from({ length: totalPages }, (_, index) => (
-                    <li key={index} onClick={() => handlePageChange(index + 1)}>
-                        <p className={currentPage === index + 1 ? Style.active : ''}>{index + 1}</p>
+                    <li
+                        key={index}
+                        onClick={() => handlePageChange(index + 1)}
+                        className={currentPage === index + 1 ? Style.active : ''}
+                    >
+                        <p>{index + 1}</p>
                     </li>
                 ))}
                 <li onClick={() => handlePageChange(currentPage + 1)}>
