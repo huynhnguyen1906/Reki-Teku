@@ -23,8 +23,6 @@ export async function POST(req: NextRequest) {
 
 export async function GET(req: NextRequest) {
     try {
-        await authenticateRequest(req);
-
         const docRef = doc(db, 'TextContent', 'Questions');
         const docSnap = await getDoc(docRef);
 
