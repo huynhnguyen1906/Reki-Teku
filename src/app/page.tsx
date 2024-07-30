@@ -7,6 +7,7 @@ import Link from 'next/link';
 import ToursSlider from '@/components/Index/ToursSlider';
 import NewsContainer from '@/components/News/NewsContainer';
 import IndexDot from '@/components/Index/IndexDot';
+import IndexText from '@/components/Index/indexText';
 
 export default function Home() {
     return (
@@ -20,18 +21,7 @@ export default function Home() {
                     <div className={Style.TextContainer}>
                         <div className={Style.CloudLeft}></div>
                         <div className={Style.CloudRight}></div>
-                        <h2>歴てくについて</h2>
-                        <p>
-                            <span>有名ではない地域の</span>
-                            <br />
-                            <span>隠れた歴史や人物の足跡を</span>
-                            <br />
-                            <span>たどり、新たな発見に満ちた</span>
-                            <br />
-                            <span>ツアーを楽しめます</span>
-                            <br />
-                            <span>歴史を知る旅を始めましょう。</span>
-                        </p>
+                        <IndexText />
                         <button className={Style.Button}>
                             <Link href={'/about'}>
                                 もっと見る

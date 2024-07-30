@@ -29,24 +29,6 @@
             flex-direction: row-reverse;
             gap: 5rem;
             position: relative;
-            h2 {
-                writing-mode: vertical-rl;
-                text-orientation: upright;
-                font-size: 4rem;
-                font-weight: 500;
-                letter-spacing: 2rem;
-            }
-            p {
-                font-size: 2.6rem;
-                writing-mode: vertical-rl;
-                text-orientation: upright;
-                line-height: 4rem;
-                padding-top: 50px;
-                letter-spacing: 1rem;
-                span {
-                    line-height: 5rem;
-                }
-            }
             .Button {
                 position: absolute;
                 width: 25.5rem;
@@ -126,26 +108,6 @@
                 align-items: center;
                 gap: 3rem;
                 position: relative;
-                h2 {
-                    writing-mode: horizontal-tb;
-                    text-orientation: mixed;
-                    text-align: center;
-                    font-size: 2.4rem;
-                    font-weight: 500;
-                    letter-spacing: 1rem;
-                }
-                p {
-                    font-size: 1.6rem;
-                    writing-mode: horizontal-tb;
-                    text-orientation: mixed;
-                    text-align: center;
-                    line-height: 3rem;
-                    padding-top: 0px;
-                    letter-spacing: 0.5rem;
-                    span {
-                        line-height: 4rem;
-                    }
-                }
                 .Button {
                     position: relative;
                     width: 17rem;
