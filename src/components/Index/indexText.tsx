@@ -5,14 +5,14 @@ import { useIndexText } from '@/hooks/TextContent/useIndexText';
 export default function IndexText() {
     const { text, isLoading } = useIndexText();
 
-    function formatText(text: string) {
+    const formatText = (text: string) => {
         return text.split('\n').map((line, index) => (
             <span key={index}>
                 {line}
                 <br />
             </span>
         ));
-    }
+    };
 
     if (isLoading) return null;
 
