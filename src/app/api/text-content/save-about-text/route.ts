@@ -12,13 +12,13 @@ export async function POST(req: NextRequest) {
         const docRef = doc(db, 'TextContent', 'AboutText');
         const docSnap = await getDoc(docRef);
 
-        if (docSnap.exists() && docSnap.data().image) {
-            const oldImageRef = ref(storage, docSnap.data().image);
-            await deleteObject(oldImageRef);
-        }
+        let imageUrl = docSnap.exists() && docSnap.data().image ? docSnap.data().image : '';
 
-        let imageUrl = '';
-        if (image) {
+        if (image && image !== imageUrl) {
+            if (imageUrl) {
+                const oldImageRef = ref(storage, imageUrl);
+                await deleteObject(oldImageRef);
+            }
             const imageRef = ref(storage, `images/aboutText_${Date.now()}.webp`);
             await uploadString(imageRef, image, 'data_url');
             imageUrl = await getDownloadURL(imageRef);
@@ -36,6 +36,23 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ message: 'Text saved successfully!' });
     } catch (e) {
         return NextResponse.json({ error: 'Error saving text: ' + (e as Error).message }, { status: 500 });
+    }
+}
+
+export async function GET(req: NextRequest) {
+    try {
+        await authenticateRequest(req);
+
+        const docRef = doc(db, 'TextContent', 'AboutText');
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+            return NextResponse.json(docSnap.data());
+        } else {
+            return NextResponse.json({ data: null });
+        }
+    } catch (e) {
+        return NextResponse.json({ error: 'Error fetching text: ' + (e as Error).message }, { status: 500 });
     }
 }
 
