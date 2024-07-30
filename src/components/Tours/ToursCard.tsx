@@ -20,7 +20,7 @@ interface ToursCardProps {
 export default function ToursCard({ tour }: ToursCardProps) {
     return (
         <div className={Style.toursWrap}>
-            <Link href={`/tours/${tour.id}`} scroll={false}>
+            <Link href={`/tours/${tour.id}`} scroll={true}>
                 <div className={Style.toursContent}>
                     <p className={Style.thumb}>
                         <Image
