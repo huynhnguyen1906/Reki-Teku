@@ -3,6 +3,8 @@
 .container {
     margin: 50px auto 0;
     max-width: 1000px;
+    height: auto;
+    min-height: 50vh;
     .contentTtl {
         margin-bottom: 50px;
         text-align: center;
