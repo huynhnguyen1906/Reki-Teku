@@ -1,9 +1,14 @@
 'use client';
-import { useLayoutEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Style from '@styles/componentsStyles/Index/VisualContent.module.scss';
 
+const images = ['/images/mainVisual.webp', '/images/mainVisual2.webp', '/images/mainVisual3.webp'];
+
 export default function VisualContent() {
-    useLayoutEffect(() => {
+    const [currentImage, setCurrentImage] = useState(0);
+    const [opacity, setOpacity] = useState(1);
+
+    useEffect(() => {
         const updateClipPath = () => {
             const VisualContent = document.getElementById('VisualContent');
             if (VisualContent) {
@@ -33,14 +38,34 @@ export default function VisualContent() {
             }
         };
 
+        const interval = setInterval(() => {
+            setOpacity(0.2);
+            setTimeout(() => {
+                setCurrentImage((prevImage) => (prevImage + 1) % images.length);
+                setOpacity(1);
+            }, 500);
+        }, 3000);
+
         updateClipPath();
         window.addEventListener('resize', updateClipPath);
 
-        return () => window.removeEventListener('resize', updateClipPath);
+        return () => {
+            clearInterval(interval);
+            window.removeEventListener('resize', updateClipPath);
+        };
     }, []);
 
     return (
         <div id="VisualContent" className={Style.VisualContent}>
+            <div
+                className={`${Style.background}`}
+                style={{
+                    backgroundImage: `url('/images/03_bg_overlay.png'),
+                        linear-gradient(270deg, rgba(17, 17, 17, 0.3) 0%, rgba(17, 17, 17, 0) 44.5%),
+                        url(${images[currentImage]})`,
+                    opacity: opacity,
+                }}
+            ></div>
             <div className={Style.HeroTextLeft}>
                 <div>
                     <span>川が大きな流れから</span>
