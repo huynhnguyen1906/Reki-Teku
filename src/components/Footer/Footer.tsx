@@ -1,10 +1,16 @@
+'use client';
 import Style from '@styles/componentsStyles/Footer.module.scss';
 import { FaXTwitter } from 'react-icons/fa6';
 import { FaInstagram } from 'react-icons/fa';
 import { FaArrowUpRightFromSquare } from 'react-icons/fa6';
 import Link from 'next/link';
+import { useCompanyProfile } from '@/hooks/TextContent/useCompanyProfile';
+import { formatTextWithLineBreaks } from '@/utils/formatTextWithLineBreaks ';
 
 export default function Footer() {
+    const { profile, isLoading } = useCompanyProfile();
+    const profileAddress = profile?.address ? formatTextWithLineBreaks(profile.address) : '';
+    if (isLoading) return null;
     return (
         <footer className={Style.footerBg}>
             <div className={Style.Wrap}>
@@ -30,12 +36,11 @@ export default function Footer() {
                             <h1>歴てく IN・SIDE</h1>
                             <div className={Style.defaultInfoWrap}>
                                 <div>
-                                    <p>〒819-0336</p>
-                                    <p>福岡市西区横浜3丁目27-15</p>
+                                    <p dangerouslySetInnerHTML={{ __html: profileAddress }}></p>
                                 </div>
                                 <div>
-                                    <p>TEL：090-2359-2427</p>
-                                    <p>Mail：rekitekuinside@gmail.com</p>
+                                    <p>{profile?.contact}</p>
+                                    <p>{profile?.email}</p>
                                 </div>
                             </div>
                         </div>

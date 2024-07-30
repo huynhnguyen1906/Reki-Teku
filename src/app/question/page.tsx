@@ -6,8 +6,12 @@ import Accordion from 'react-bootstrap/Accordion';
 import Style from '@styles/appStyles/Question.module.scss';
 import Link from 'next/link';
 import { FaExternalLinkAlt } from 'react-icons/fa';
+import { useQuestions } from '@/hooks/TextContent/useQuestions';
+import { Question } from '@/types/Question';
 
-export default function Question() {
+export default function QuestionPage() {
+    const { questions, isLoading } = useQuestions();
+
     useEffect(() => {
         const updateBackground = () => {
             if (window.matchMedia('(max-width: 600px)').matches) {
@@ -28,112 +32,30 @@ export default function Question() {
             document.body.style.backgroundImage = 'url(/images/bg.svg)';
         };
     }, []);
+
+    if (isLoading) return null;
+
     return (
         <MainLayout>
             <div className={Style.container}>
                 <h2 className={Style.contentTtl}>よくある質問</h2>
 
                 <Accordion defaultActiveKey={null}>
-                    <div className={Style.body}>
-                        <Accordion.Item eventKey="0">
-                            <Accordion.Header>Q サービスの予約方法を教えてください</Accordion.Header>
-                            <Accordion.Body className={Style.text}>
-                                サービスの予約は公式アカウントから行えます。
-                                <br />
-                                公式LINEアカウントを友達追加していただきメッセージで希望のプランと必要な情報をお送りください。予約完了後、確認メッセージをお送りします
-                            </Accordion.Body>
-                        </Accordion.Item>
-                    </div>
-                    <div className={Style.body}>
-                        <Accordion.Item eventKey="1">
-                            <Accordion.Header>Q 支払い方法はどのようなものがありますか？</Accordion.Header>
-                            <Accordion.Body className={Style.text}>
-                                サービスの予約は公式アカウントから行えます。
-                                <br />
-                                公式LINEアカウントを友達追加していただきメッセージで希望のプランと必要な情報をお送りください。予約完了後、確認メッセージをお送りします
-                            </Accordion.Body>
-                        </Accordion.Item>
-                    </div>
-                    <div className={Style.body}>
-                        <Accordion.Item eventKey="2">
-                            <Accordion.Header>Q キャンセルポリシーを教えてください</Accordion.Header>
-                            <Accordion.Body className={Style.text}>
-                                サービスの予約は公式アカウントから行えます。
-                                <br />
-                                公式LINEアカウントを友達追加していただきメッセージで希望のプランと必要な情報をお送りください。予約完了後、確認メッセージをお送りします
-                            </Accordion.Body>
-                        </Accordion.Item>
-                    </div>
-                    <div className={Style.body}>
-                        <Accordion.Item eventKey="3">
-                            <Accordion.Header>Q 子供や高齢者でも参加できますか？</Accordion.Header>
-                            <Accordion.Body className={Style.text}>
-                                サービスの予約は公式アカウントから行えます。
-                                <br />
-                                公式LINEアカウントを友達追加していただきメッセージで希望のプランと必要な情報をお送りください。予約完了後、確認メッセージをお送りします
-                            </Accordion.Body>
-                        </Accordion.Item>
-                    </div>
-                    <div className={Style.body}>
-                        <Accordion.Item eventKey="4">
-                            <Accordion.Header>Q 旅行保険は含まれていますか</Accordion.Header>
-                            <Accordion.Body className={Style.text}>
-                                サービスの予約は公式アカウントから行えます。
-                                <br />
-                                公式LINEアカウントを友達追加していただきメッセージで希望のプランと必要な情報をお送りください。予約完了後、確認メッセージをお送りします
-                            </Accordion.Body>
-                        </Accordion.Item>
-                    </div>
-                    <div className={Style.body}>
-                        <Accordion.Item eventKey="5">
-                            <Accordion.Header>Q 集合場所までのアクセス方法を教えてください</Accordion.Header>
-                            <Accordion.Body className={Style.text}>
-                                サービスの予約は公式アカウントから行えます。
-                                <br />
-                                公式LINEアカウントを友達追加していただきメッセージで希望のプランと必要な情報をお送りください。予約完了後、確認メッセージをお送りします
-                            </Accordion.Body>
-                        </Accordion.Item>
-                    </div>
-                    <div className={Style.body}>
-                        <Accordion.Item eventKey="6">
-                            <Accordion.Header>Q 予約内容の変更は可能ですか？</Accordion.Header>
-                            <Accordion.Body className={Style.text}>
-                                サービスの予約は公式アカウントから行えます。
-                                <br />
-                                公式LINEアカウントを友達追加していただきメッセージで希望のプランと必要な情報をお送りください。予約完了後、確認メッセージをお送りします
-                            </Accordion.Body>
-                        </Accordion.Item>
-                    </div>
-                    <div className={Style.body}>
-                        <Accordion.Item eventKey="7">
-                            <Accordion.Header>Q グループでの参加は可能ですか？</Accordion.Header>
-                            <Accordion.Body className={Style.text}>
-                                サービスの予約は公式アカウントから行えます。
-                                <br />
-                                公式LINEアカウントを友達追加していただきメッセージで希望のプランと必要な情報をお送りください。予約完了後、確認メッセージをお送りします
-                            </Accordion.Body>
-                        </Accordion.Item>
-                    </div>
-                    <div className={Style.body}>
-                        <Accordion.Item eventKey="8">
-                            <Accordion.Header>Q ツアーに必要な持ち物はなんですか？</Accordion.Header>
-                            <Accordion.Body className={Style.text}>
-                                サービスの予約は公式アカウントから行えます。
-                                <br />
-                                公式LINEアカウントを友達追加していただきメッセージで希望のプランと必要な情報をお送りください。予約完了後、確認メッセージをお送りします
-                            </Accordion.Body>
-                        </Accordion.Item>
-                    </div>
-                    <div className={Style.body}>
-                        <Accordion.Item eventKey="9">
-                            <Accordion.Header>Q ツアー料金に含まれるものは何ですか？</Accordion.Header>
-                            <Accordion.Body className={Style.text}>
-                                サービスの予約は公式アカウントから行えます。
-                                <br />
-                                公式LINEアカウントを友達追加していただきメッセージで希望のプランと必要な情報をお送りください。予約完了後、確認メッセージをお送りします
-                            </Accordion.Body>
-                        </Accordion.Item>
-                    </div>
+                    {questions.map((item: Question, index: number) => (
+                        <div className={Style.body} key={index}>
+                            <Accordion.Item eventKey={index.toString()}>
+                                <Accordion.Header>{item.question}</Accordion.Header>
+                                <Accordion.Body className={Style.text}>
+                                    {item.answer.split('\n').map((line, i) => (
+                                        <React.Fragment key={i}>
+                                            {line}
+                                            <br />
+                                        </React.Fragment>
+                                    ))}
+                                </Accordion.Body>
+                            </Accordion.Item>
+                        </div>
+                    ))}
                 </Accordion>
                 <div className={Style.inquiry}>
                     <p>

@@ -1,9 +1,10 @@
 .NotesContainer {
     width: 100%;
-    max-width: 1000px;
+    max-width: 1180px;
     margin: 0 auto;
-    h2 {
-        text-align: center;
-        font-size: 24px;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
 }

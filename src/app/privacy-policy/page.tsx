@@ -37,7 +37,7 @@ export default function PrivacyPolicy() {
                         width: 'calc(100% - 40px)',
                         maxWidth: '964px',
                         height: 'auto',
-                        minHeight: '100vh',
+                        minHeight: '50vh',
                         marginTop: '70px',
                         borderRadius: '10px',
                     }}
