@@ -1,6 +1,7 @@
 'use client';
 
 import Style from '@styles/appStyles/News.module.scss';
+import { useEffect } from 'react';
 import Image from 'next/image';
 import { IoMdTime } from 'react-icons/io';
 import MainLayout from '@/components/MainLayout';
@@ -13,6 +14,10 @@ export default function News() {
     const { id } = useParams();
     const documentId = Array.isArray(id) ? id[0] : id;
     const { news } = useNews(documentId);
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     if (!news) return;
     const { news_timestamp, news_type, news_data } = news;

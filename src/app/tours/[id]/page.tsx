@@ -1,8 +1,7 @@
 'use client';
 import React from 'react';
 import Style from '@styles/appStyles/Tours.module.scss';
-
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import { useTour } from '@/hooks/useTour';
 import ToursContainer from '@/components/Tours/ToursContainer';
@@ -21,6 +20,12 @@ export default function Tours() {
     const { id } = useParams();
     const documentId = Array.isArray(id) ? id[0] : id;
     const { tour } = useTour(documentId);
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        console.log('a');
+    }, []);
+
     if (!tour) return null;
     const tourInfo = tour?.tour_info || {};
     const tourSchedule = tour?.schedule;
