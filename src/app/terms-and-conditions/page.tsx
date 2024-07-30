@@ -4,9 +4,7 @@ import { useTermsAndConditions } from '@/hooks/TextContent/useTermsAndConditions
 import parse from 'html-react-parser';
 
 export default function TermsAndConditions() {
-    const { content, isLoading } = useTermsAndConditions();
-
-    if (isLoading) return null;
+    const { content } = useTermsAndConditions();
 
     const renderContent = (content: any) => {
         if (!content) return null;
@@ -30,22 +28,24 @@ export default function TermsAndConditions() {
 
     return (
         <MainLayout>
-            <div className="w-100 h-auto overflow-auto">
-                <div
-                    className="textBlock d-flex flex-column justify-content-start align-item-start mx-auto gap-4"
-                    style={{
-                        width: 'calc(100% - 40px)',
-                        maxWidth: '964px',
-                        height: 'auto',
-                        minHeight: '50vh',
-                        marginTop: '70px',
-                        borderRadius: '10px',
-                    }}
-                >
-                    <h2 className="fs-1">旅行業約款</h2>
-                    {renderContent(content.data)}
+            {content && (
+                <div className="w-100 h-auto overflow-auto">
+                    <div
+                        className="textBlock d-flex flex-column justify-content-start align-item-start mx-auto gap-4"
+                        style={{
+                            width: 'calc(100% - 40px)',
+                            maxWidth: '964px',
+                            height: 'auto',
+                            minHeight: '50vh',
+                            marginTop: '70px',
+                            borderRadius: '10px',
+                        }}
+                    >
+                        <h2 className="fs-1">旅行業約款</h2>
+                        {renderContent(content.data)}
+                    </div>
                 </div>
-            </div>
+            )}
         </MainLayout>
     );
 }

@@ -23,13 +23,10 @@ export default function News() {
             }
         };
 
-        // Initial check
         handleResize();
 
-        // Add event listener
         window.addEventListener('resize', handleResize);
 
-        // Clean up event listener on unmount
         return () => {
             window.removeEventListener('resize', handleResize);
         };

@@ -8,9 +8,8 @@ import { useCompanyProfile } from '@/hooks/TextContent/useCompanyProfile';
 import { formatTextWithLineBreaks } from '@/utils/formatTextWithLineBreaks ';
 
 export default function Footer() {
-    const { profile, isLoading } = useCompanyProfile();
+    const { profile } = useCompanyProfile();
     const profileAddress = profile?.address ? formatTextWithLineBreaks(profile.address) : '';
-    if (isLoading) return null;
     return (
         <footer className={Style.footerBg}>
             <div className={Style.Wrap}>
@@ -35,13 +34,17 @@ export default function Footer() {
                         <div className={Style.contactWrap}>
                             <h1>歴てく IN・SIDE</h1>
                             <div className={Style.defaultInfoWrap}>
-                                <div>
-                                    <p dangerouslySetInnerHTML={{ __html: profileAddress }}></p>
-                                </div>
-                                <div>
-                                    <p>{profile?.contact}</p>
-                                    <p>{profile?.email}</p>
-                                </div>
+                                {profile && (
+                                    <>
+                                        <div>
+                                            <p dangerouslySetInnerHTML={{ __html: profileAddress }}></p>
+                                        </div>
+                                        <div>
+                                            <p>{profile?.contact}</p>
+                                            <p>{profile?.email}</p>
+                                        </div>
+                                    </>
+                                )}
                             </div>
                         </div>
                         <div className={Style.messageWrap}>

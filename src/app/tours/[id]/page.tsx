@@ -37,98 +37,102 @@ export default function Tours() {
 
     return (
         <MainLayout>
-            <div className={Style.container}>
-                <div className={Style.toursWrap}>
-                    <div className={Style.toursContent}>
-                        <div className={Style.pref}>
-                            <IoMdPin color="#D04848" />
-                            <p className={Style.place}>{tourInfo.location}</p>
-                        </div>
-                        <h1 className={Style.toursTtl}>{tourInfo.name}</h1>
-                        <p className={Style.toursPrice}>
-                            ￥{tourInfo.price}　{tourInfo.days}
-                        </p>
-                        <p className={Style.text}>{tourInfo.description}</p>
-                        <p className={Style.attn}>※ツアー内容の変更可能ですので、お問い合わせください</p>
-                        <div className={Style.appt}>
-                            <p>集合・解散場所</p>
-                            <p>{tourInfo.meetingPoint}</p>
-                            <p>(詳細はLINEでお知らせします)</p>
-                        </div>
-                    </div>
-                    <ThumbnailSlider schedule={tourSchedule} />
-                </div>
-
-                <div className={Style.pointWrap}>
-                    <div className={Style.contentTtl}>
-                        <Image src="/images/logo-black.svg" alt="" width={40} height={40} />
-                        <h2>おすすめポイント</h2>
-                    </div>
-                    <div className={Style.pointContent}>
-                        <p className={Style.text} dangerouslySetInnerHTML={{ __html: tourApplyPoint }}></p>
-
-                        <div className={Style.sinWrap}>
-                            <div className={Style.border}>
-                                <div className={Style.date}>
-                                    <p>開始日</p>
-                                    <input type="date" name="date" id="date" />
+            {tour && (
+                <>
+                    <div className={Style.container}>
+                        <div className={Style.toursWrap}>
+                            <div className={Style.toursContent}>
+                                <div className={Style.pref}>
+                                    <IoMdPin color="#D04848" />
+                                    <p className={Style.place}>{tourInfo.location}</p>
                                 </div>
-                                <p className={Style.line}></p>
-                                <div className={Style.num}>
-                                    <p>人数</p>
-                                    <select id="num" defaultValue="2">
-                                        <option value="1">1名様</option>
-                                        <option value="2">2名様</option>
-                                        <option value="3">3名様</option>
-                                        <option value="4">4名様</option>
-                                    </select>
+                                <h1 className={Style.toursTtl}>{tourInfo.name}</h1>
+                                <p className={Style.toursPrice}>
+                                    ￥{tourInfo.price}　{tourInfo.days}
+                                </p>
+                                <p className={Style.text}>{tourInfo.description}</p>
+                                <p className={Style.attn}>※ツアー内容の変更可能ですので、お問い合わせください</p>
+                                <div className={Style.appt}>
+                                    <p>集合・解散場所</p>
+                                    <p>{tourInfo.meetingPoint}</p>
+                                    <p>(詳細はLINEでお知らせします)</p>
                                 </div>
                             </div>
+                            <ThumbnailSlider schedule={tourSchedule} />
+                        </div>
 
-                            <div className={Style.detail}>
-                                <p>大人×2</p>
-                                <p>¥21980</p>
+                        <div className={Style.pointWrap}>
+                            <div className={Style.contentTtl}>
+                                <Image src="/images/logo-black.svg" alt="" width={40} height={40} />
+                                <h2>おすすめポイント</h2>
                             </div>
-                            <div className={Style.detail}>
-                                <p>子供×1</p>
-                                <p>¥11980</p>
+                            <div className={Style.pointContent}>
+                                <p className={Style.text} dangerouslySetInnerHTML={{ __html: tourApplyPoint }}></p>
+
+                                <div className={Style.sinWrap}>
+                                    <div className={Style.border}>
+                                        <div className={Style.date}>
+                                            <p>開始日</p>
+                                            <input type="date" name="date" id="date" />
+                                        </div>
+                                        <p className={Style.line}></p>
+                                        <div className={Style.num}>
+                                            <p>人数</p>
+                                            <select id="num" defaultValue="2">
+                                                <option value="1">1名様</option>
+                                                <option value="2">2名様</option>
+                                                <option value="3">3名様</option>
+                                                <option value="4">4名様</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div className={Style.detail}>
+                                        <p>大人×2</p>
+                                        <p>¥21980</p>
+                                    </div>
+                                    <div className={Style.detail}>
+                                        <p>子供×1</p>
+                                        <p>¥11980</p>
+                                    </div>
+                                    <p className={Style.line}></p>
+                                    <div className={Style.total}>
+                                        <p>合計</p>
+                                        <p>¥33960</p>
+                                    </div>
+                                    <div className={Style.lineBtn}>
+                                        <Link href="https://lin.ee/6Ak2Mo3">LINEで確認する</Link>
+                                        <FaExternalLinkAlt color="#fffdf7" />
+                                    </div>
+                                </div>
                             </div>
-                            <p className={Style.line}></p>
-                            <div className={Style.total}>
-                                <p>合計</p>
-                                <p>¥33960</p>
+
+                            <div className={Style.item}>
+                                <button
+                                    className={activeTab === 'schedule' ? Style.active : ''}
+                                    onClick={() => setActiveTab('schedule')}
+                                >
+                                    スケジュール
+                                </button>
+                                <button
+                                    className={activeTab === 'notes' ? Style.active : ''}
+                                    onClick={() => setActiveTab('notes')}
+                                >
+                                    ご確認・注意事項
+                                </button>
                             </div>
-                            <div className={Style.lineBtn}>
-                                <Link href="https://lin.ee/6Ak2Mo3">LINEで確認する</Link>
-                                <FaExternalLinkAlt color="#fffdf7" />
+                            {renderContent()}
+                        </div>
+                        <div className={Style.tourList}>
+                            <div className={Style.contentTtl}>
+                                <Image src="/images/logo-black.svg" alt="" width={40} height={40} />
+                                <h2>他のツアー</h2>
                             </div>
+                            <ToursContainer />
                         </div>
                     </div>
-
-                    <div className={Style.item}>
-                        <button
-                            className={activeTab === 'schedule' ? Style.active : ''}
-                            onClick={() => setActiveTab('schedule')}
-                        >
-                            スケジュール
-                        </button>
-                        <button
-                            className={activeTab === 'notes' ? Style.active : ''}
-                            onClick={() => setActiveTab('notes')}
-                        >
-                            ご確認・注意事項
-                        </button>
-                    </div>
-                    {renderContent()}
-                </div>
-                <div className={Style.tourList}>
-                    <div className={Style.contentTtl}>
-                        <Image src="/images/logo-black.svg" alt="" width={40} height={40} />
-                        <h2>他のツアー</h2>
-                    </div>
-                    <ToursContainer />
-                </div>
-            </div>
+                </>
+            )}
         </MainLayout>
     );
 }

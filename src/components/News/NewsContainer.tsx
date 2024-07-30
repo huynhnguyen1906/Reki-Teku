@@ -41,34 +41,42 @@ export default function NewsContainer() {
 
     return (
         <div className={Style.NewsContainer}>
-            {isMobile ? (
-                <Swiper
-                    effect={'coverflow'}
-                    grabCursor={true}
-                    centeredSlides={true}
-                    slidesPerView={'auto'}
-                    coverflowEffect={{
-                        rotate: 0,
-                        stretch: 0,
-                        depth: 100,
-                        modifier: 1,
-                    }}
-                    className={Style.Swiper}
-                >
-                    {news?.map((newsItem: any) => (
-                        <SwiperSlide key={newsItem.id} className={Style.SwiperSlide}>
-                            <NewsCard news={newsItem} />
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-            ) : (
+            {news && (
                 <>
-                    <div className={Style.ItemBox}>
-                        {getCurrentPageNews().map((newsItem: any) => (
-                            <NewsCard key={newsItem.id} news={newsItem} />
-                        ))}
-                    </div>
-                    <NewsPagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
+                    {isMobile ? (
+                        <Swiper
+                            effect={'coverflow'}
+                            grabCursor={true}
+                            centeredSlides={true}
+                            slidesPerView={'auto'}
+                            coverflowEffect={{
+                                rotate: 0,
+                                stretch: 0,
+                                depth: 100,
+                                modifier: 1,
+                            }}
+                            className={Style.Swiper}
+                        >
+                            {news?.map((newsItem: any) => (
+                                <SwiperSlide key={newsItem.id} className={Style.SwiperSlide}>
+                                    <NewsCard news={newsItem} />
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    ) : (
+                        <>
+                            <div className={Style.ItemBox}>
+                                {getCurrentPageNews().map((newsItem: any) => (
+                                    <NewsCard key={newsItem.id} news={newsItem} />
+                                ))}
+                            </div>
+                            <NewsPagination
+                                currentPage={currentPage}
+                                totalPages={totalPages}
+                                onPageChange={handlePageChange}
+                            />
+                        </>
+                    )}
                 </>
             )}
         </div>

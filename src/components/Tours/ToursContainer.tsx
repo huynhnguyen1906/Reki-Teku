@@ -42,38 +42,42 @@ export default function ToursContainer() {
 
     return (
         <div className={Style.NewsContainer}>
-            {isMobile ? (
-                <Swiper
-                    effect={'coverflow'}
-                    grabCursor={true}
-                    centeredSlides={true}
-                    slidesPerView={'auto'}
-                    coverflowEffect={{
-                        rotate: 0,
-                        stretch: 0,
-                        depth: 100,
-                        modifier: 1,
-                    }}
-                    className={Style.Swiper}
-                >
-                    {tour?.map((tour: any, index: number) => (
-                        <SwiperSlide key={tour.id} className={Style.SwiperSlide}>
-                            <ToursCard tour={tour} />
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-            ) : (
+            {tour && (
                 <>
-                    <div className={Style.ItemBox}>
-                        {getCurrentPageTours()?.map((tour: any) => (
-                            <ToursCard key={tour.id} tour={tour} />
-                        ))}
-                    </div>
-                    <ToursPagination
-                        currentPage={currentPage}
-                        totalPages={totalPages}
-                        onPageChange={handlePageChange}
-                    />
+                    {isMobile ? (
+                        <Swiper
+                            effect={'coverflow'}
+                            grabCursor={true}
+                            centeredSlides={true}
+                            slidesPerView={'auto'}
+                            coverflowEffect={{
+                                rotate: 0,
+                                stretch: 0,
+                                depth: 100,
+                                modifier: 1,
+                            }}
+                            className={Style.Swiper}
+                        >
+                            {tour?.map((tour: any, index: number) => (
+                                <SwiperSlide key={tour.id} className={Style.SwiperSlide}>
+                                    <ToursCard tour={tour} />
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    ) : (
+                        <>
+                            <div className={Style.ItemBox}>
+                                {getCurrentPageTours()?.map((tour: any) => (
+                                    <ToursCard key={tour.id} tour={tour} />
+                                ))}
+                            </div>
+                            <ToursPagination
+                                currentPage={currentPage}
+                                totalPages={totalPages}
+                                onPageChange={handlePageChange}
+                            />
+                        </>
+                    )}
                 </>
             )}
         </div>
