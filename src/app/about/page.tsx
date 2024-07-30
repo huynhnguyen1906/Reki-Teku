@@ -11,6 +11,7 @@ import { formatTextWithLineBreaks } from '@/utils/formatTextWithLineBreaks ';
 export default function About() {
     const { text, isLoading } = useAboutText();
     const { profile } = useCompanyProfile();
+    const profileAddress = profile?.address ? formatTextWithLineBreaks(profile.address) : '';
     useEffect(() => {
         const updateBackground = () => {
             if (window.matchMedia('(max-width: 600px)').matches) {
@@ -75,7 +76,7 @@ export default function About() {
                     <dl>
                         <div className={Style.about}>
                             <dt>所在地</dt>
-                            <dd dangerouslySetInnerHTML={{ __html: formatTextWithLineBreaks(profile?.address) }}></dd>
+                            <dd dangerouslySetInnerHTML={{ __html: profileAddress }}></dd>
                         </div>
                     </dl>
                     <dl>
