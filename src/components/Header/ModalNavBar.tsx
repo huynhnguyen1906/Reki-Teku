@@ -22,38 +22,38 @@ export default function ModalNavBar({ handleClose: handleClose }: ModalNavBarPro
                 <IoCloseOutline color="#4B3333" className={Style.CloseIcon} size={40} onClick={handleClose} />
                 <ul className={Style.NavItemBox}>
                     <li className={Style.NavItem}>
-                        <Link href={'/about'} scroll={false}>
+                        <Link href={'/about'} scroll={true}>
                             歴てくについて
                         </Link>
                     </li>
                     <li className={Style.NavItem}>
-                        <Link href={`/tours/`} scroll={false}>
+                        <Link href={`/tours/`} scroll={true}>
                             ツアー紹介
                         </Link>
                     </li>
                     <li className={Style.NavItem}>
-                        <Link href={`/news/`} scroll={false}>
+                        <Link href={`/news/`} scroll={true}>
                             お知らせ
                         </Link>
                     </li>
                     <li className={Style.NavItem}>
-                        <Link href={'/question'} scroll={false}>
+                        <Link href={'/question'} scroll={true}>
                             よくある質問
                         </Link>
                     </li>
                     <li className={Style.NavItem}>
-                        <Link href={'https://lin.ee/6Ak2Mo3'} scroll={false}>
+                        <Link href={'https://lin.ee/6Ak2Mo3'} scroll={true}>
                             お問い合わせ
                         </Link>
                     </li>
                     <li className={Style.NavItem}>
-                        <Link href="https://x.com/rekiteku" scroll={false}>
+                        <Link href="https://x.com/rekiteku" scroll={true}>
                             <FaXTwitter color="#4B3333" />
                         </Link>
-                        <Link href="https://instagram.com/rekiteku" scroll={false}>
+                        <Link href="https://instagram.com/rekiteku" scroll={true}>
                             <FaInstagram color="#4B3333" />
                         </Link>
-                        <Link href="#" scroll={false}>
+                        <Link href="#" scroll={true}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="16"

@@ -17,22 +17,22 @@ export default function Footer() {
                     <div className={Style.nav}>
                         <ul>
                             <li>
-                                <Link href="/" scroll={false}>
+                                <Link href="/" scroll={true}>
                                     トップページ
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/about" scroll={false}>
+                                <Link href="/about" scroll={true}>
                                     歴てくについて
                                 </Link>
                             </li>
                             <li>
-                                <Link href={`/tours/`} scroll={false}>
+                                <Link href={`/tours/`} scroll={true}>
                                     ツアー紹介
                                 </Link>
                             </li>
                             <li>
-                                <Link href={`/news/`} scroll={false}>
+                                <Link href={`/news/`} scroll={true}>
                                     お知らせ
                                 </Link>
                             </li>
@@ -57,13 +57,13 @@ export default function Footer() {
                         </div>
                         <div className={Style.messageWrap}>
                             <div className={Style.sns}>
-                                <Link href="https://x.com/rekiteku" scroll={false}>
+                                <Link href="https://x.com/rekiteku" scroll={true}>
                                     <FaXTwitter color="#fff" />
                                 </Link>
-                                <Link href="https://instagram.com/rekiteku" scroll={false}>
+                                <Link href="https://instagram.com/rekiteku" scroll={true}>
                                     <FaInstagram color="#fff" />
                                 </Link>
-                                <Link href="https://lin.ee/6Ak2Mo3" scroll={false}>
+                                <Link href="https://lin.ee/6Ak2Mo3" scroll={true}>
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="16"
@@ -81,7 +81,7 @@ export default function Footer() {
                                 </Link>
                             </div>
                             <div className={Style.mail}>
-                                <Link href="https://lin.ee/6Ak2Mo3" scroll={false}>
+                                <Link href="https://lin.ee/6Ak2Mo3" scroll={true}>
                                     LINEで予約・お問い合わせ
                                     <span>
                                         <FaArrowUpRightFromSquare />
@@ -89,7 +89,7 @@ export default function Footer() {
                                 </Link>
                                 <Link
                                     href="mailto:rekitekuinside@gmail.com?subject=Subject&body=Body%20Text"
-                                    scroll={false}
+                                    scroll={true}
                                 >
                                     メールで予約・お問い合わせ
                                     <span>
@@ -102,25 +102,25 @@ export default function Footer() {
                     <div className={Style.footerWrap}>
                         <ul>
                             <li>
-                                <Link href="/privacy-policy" scroll={false}>
+                                <Link href="/privacy-policy" scroll={true}>
                                     プライバシーポリシー
                                 </Link>
                                 　
-                                <Link href="/terms-and-conditions" scroll={false}>
+                                <Link href="/terms-and-conditions" scroll={true}>
                                     旅行業約款
                                 </Link>
                                 　
-                                <Link href="/question" scroll={false}>
+                                <Link href="/question" scroll={true}>
                                     よくある質問
                                 </Link>
                             </li>
                             <li>
-                                <Link href="#" scroll={false}>
+                                <Link href="#" scroll={true}>
                                     国内旅行業務取扱管理者番号　1234-56789
                                 </Link>
                             </li>
                             <li>
-                                <Link href="#" scroll={false}>
+                                <Link href="#" scroll={true}>
                                     &copy;歴てく2024
                                 </Link>
                             </li>

@@ -29,7 +29,7 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
     return (
         <div className={Style.container}>
             <nav className={Style.nav}>
-                <Link href="/admin/news" scroll={false}>
+                <Link href="/admin/news" scroll={true}>
                     <Image src={Logo} alt="logo" width={45} height={45} />
                 </Link>
                 <Button variant="secondary" onClick={handleLogout}>
@@ -40,14 +40,14 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
                 <Link
                     href="/admin/news"
                     className={isActive(/^\/admin\/news(\/.*)?$/) ? Style.active : ''}
-                    scroll={false}
+                    scroll={true}
                 >
                     記事・ブログ管理
                 </Link>
                 <Link
                     href="/admin/tours"
                     className={isActive(/^\/admin\/tours(\/.*)?$/) ? Style.active : ''}
-                    scroll={false}
+                    scroll={true}
                 >
                     ツアー管理
                 </Link>
@@ -55,49 +55,49 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
                 <Link
                     href="/admin/index-text"
                     className={isActive(/^\/admin\/index-text(\/.*)?$/) ? Style.active : ''}
-                    scroll={false}
+                    scroll={true}
                 >
                     トップページ文章管理
                 </Link>
                 <Link
                     href="/admin/about-text"
                     className={isActive(/^\/admin\/about-text(\/.*)?$/) ? Style.active : ''}
-                    scroll={false}
+                    scroll={true}
                 >
                     歴てくについて文章管理
                 </Link>
                 <Link
                     href="/admin/company-profile"
                     className={isActive(/^\/admin\/company-profile(\/.*)?$/) ? Style.active : ''}
-                    scroll={false}
+                    scroll={true}
                 >
                     会社概要
                 </Link>
                 <Link
                     href="/admin/tours-notes"
                     className={isActive(/^\/admin\/tours-notes(\/.*)?$/) ? Style.active : ''}
-                    scroll={false}
+                    scroll={true}
                 >
                     ツアーの確認、注意事項
                 </Link>
                 <Link
                     href="/admin/privacy-policy"
                     className={isActive(/^\/admin\/privacy-policy(\/.*)?$/) ? Style.active : ''}
-                    scroll={false}
+                    scroll={true}
                 >
                     プライバシーポリシー
                 </Link>
                 <Link
                     href="/admin/terms-and-conditions"
                     className={isActive(/^\/admin\/terms-and-conditions(\/.*)?$/) ? Style.active : ''}
-                    scroll={false}
+                    scroll={true}
                 >
                     旅行業約款
                 </Link>
                 <Link
                     href="/admin/questions"
                     className={isActive(/^\/admin\/questions(\/.*)?$/) ? Style.active : ''}
-                    scroll={false}
+                    scroll={true}
                 >
                     よくある質問
                 </Link>

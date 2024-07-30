@@ -17,7 +17,7 @@ export default function Tours() {
                     {tour &&
                         tour.map((item: any) => (
                             <div key={item.id} className={Style.tourItem}>
-                                <Link href={`/tours/${item.id}`} scroll={false}>
+                                <Link href={`/tours/${item.id}`} scroll={true}>
                                     <div className={Style.toursContent}>
                                         <p className={Style.thumb}>
                                             <Image

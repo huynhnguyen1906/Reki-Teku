@@ -44,7 +44,7 @@ export default function News() {
 
                             return (
                                 <div key={item.id} className={Style.newsItem}>
-                                    <Link href={`/news/${item.id}`} scroll={false}>
+                                    <Link href={`/news/${item.id}`} scroll={true}>
                                         <div className={Style.newsContent}>
                                             <p className={Style.thumb}>
                                                 <Image

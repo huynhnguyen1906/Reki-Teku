@@ -101,7 +101,7 @@ export default function Tours() {
                                         <p>¥33960</p>
                                     </div>
                                     <div className={Style.lineBtn}>
-                                        <Link href="https://lin.ee/6Ak2Mo3" scroll={false}>
+                                        <Link href="https://lin.ee/6Ak2Mo3" scroll={true}>
                                             LINEで確認する
                                         </Link>
                                         <FaExternalLinkAlt color="#fffdf7" />
