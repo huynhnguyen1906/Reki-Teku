@@ -63,55 +63,55 @@ export default function About() {
                     <dl>
                         <div className={Style.about}>
                             <dt>名称</dt>
-                            <dd>{profile.name}</dd>
+                            <dd>{profile?.name}</dd>
                         </div>
                     </dl>
                     <dl>
                         <div className={Style.about}>
                             <dt>設立</dt>
-                            <dd>{profile.establishment}</dd>
+                            <dd>{profile?.establishment}</dd>
                         </div>
                     </dl>
                     <dl>
                         <div className={Style.about}>
                             <dt>所在地</dt>
-                            <dd dangerouslySetInnerHTML={{ __html: formatTextWithLineBreaks(profile.address) }}></dd>
+                            <dd dangerouslySetInnerHTML={{ __html: formatTextWithLineBreaks(profile?.address) }}></dd>
                         </div>
                     </dl>
                     <dl>
                         <div className={Style.about}>
                             <dt>取締役</dt>
-                            <dd>{profile.director}</dd>
+                            <dd>{profile?.director}</dd>
                         </div>
                     </dl>
                     <dl>
                         <div className={Style.about}>
                             <dt>連絡先</dt>
-                            <dd>{profile.contact}</dd>
+                            <dd>{profile?.contact}</dd>
                         </div>
                     </dl>
                     <dl>
                         <div className={Style.about}>
                             <dt>営業日</dt>
-                            <dd>{profile.businessDays}</dd>
+                            <dd>{profile?.businessDays}</dd>
                         </div>
                     </dl>
                     <dl>
                         <div className={Style.about}>
                             <dt>資本金</dt>
-                            <dd>{profile.capital}</dd>
+                            <dd>{profile?.capital}</dd>
                         </div>
                     </dl>
                     <dl>
                         <div className={Style.about}>
                             <dt>資格</dt>
-                            <dd>{profile.qualifications}</dd>
+                            <dd>{profile?.qualifications}</dd>
                         </div>
                     </dl>
                     <dl>
                         <div className={Style.about}>
                             <dt>加盟団体</dt>
-                            <dd>{profile.memberships}</dd>
+                            <dd>{profile?.memberships}</dd>
                         </div>
                     </dl>
                 </div>
