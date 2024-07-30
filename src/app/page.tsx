@@ -7,7 +7,7 @@ import Link from 'next/link';
 import ToursSlider from '@/components/Index/ToursSlider';
 import NewsContainer from '@/components/News/NewsContainer';
 import IndexDot from '@/components/Index/IndexDot';
-import IndexText from '@/components/Index/indexText';
+import IndexText from '@/components/Index/IndexText';
 
 export default function Home() {
     return (

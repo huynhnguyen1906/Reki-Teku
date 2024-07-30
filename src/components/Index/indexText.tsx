@@ -1,5 +1,5 @@
 'use client';
-import Style from '@styles/componentsStyles/Index/indexText.module.scss';
+import Style from '@styles/componentsStyles/Index/IndexText.module.scss';
 import { useIndexText } from '@/hooks/TextContent/useIndexText';
 
 export default function IndexText() {
