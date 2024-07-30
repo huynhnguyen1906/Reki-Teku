@@ -32,9 +32,21 @@
                 text-align: left;
                 font-size: 22px;
             }
+            .profile {
+                width: 250px;
+                height: 330px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
             p {
-                &:last-child {
-                    margin-top: 30px;
+                br {
+                    &:last-child {
+                        display: block;
+                        margin-bottom: 30px;
+                    }
                 }
             }
         }
