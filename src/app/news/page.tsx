@@ -1,4 +1,5 @@
 'use client';
+import { useState, useEffect } from 'react';
 import MainLayout from '@/components/MainLayout';
 import Style from '@styles/appStyles/NewsView.module.scss';
 import Link from 'next/link';
@@ -9,6 +10,30 @@ import { splitText } from '@/utils/splitText';
 
 export default function News() {
     const { news } = useIndexNews();
+    const [charLimit, setCharLimit] = useState(80);
+    const [headerCharLimit, setHeaderCharLimit] = useState(55);
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth <= 1000) {
+                setCharLimit(55);
+                setHeaderCharLimit(10);
+            } else {
+                setCharLimit(80);
+                setHeaderCharLimit(15);
+            }
+        };
+
+        // Initial check
+        handleResize();
+
+        // Add event listener
+        window.addEventListener('resize', handleResize);
+
+        // Clean up event listener on unmount
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     return (
         <MainLayout>
@@ -39,8 +64,12 @@ export default function News() {
                                                 </div>
                                                 <p className={tagClass}>{item.news_type}</p>
                                             </div>
-                                            <h3 className={Style.newsTtl}>{item.header.text}</h3>
-                                            <p className={Style.newsText}>{splitText(item.paragraph.text, 80)}</p>
+                                            <h3 className={Style.newsTtl}>
+                                                {splitText(item.header.text, headerCharLimit)}
+                                            </h3>
+                                            <p className={Style.newsText}>
+                                                {splitText(item.paragraph.text, charLimit)}
+                                            </p>
                                         </div>
                                     </Link>
                                 </div>
