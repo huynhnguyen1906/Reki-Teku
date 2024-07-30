@@ -17,16 +17,24 @@ export default function Footer() {
                     <div className={Style.nav}>
                         <ul>
                             <li>
-                                <Link href="/">トップページ</Link>
+                                <Link href="/" scroll={false}>
+                                    トップページ
+                                </Link>
                             </li>
                             <li>
-                                <Link href="/about">歴てくについて</Link>
+                                <Link href="/about" scroll={false}>
+                                    歴てくについて
+                                </Link>
                             </li>
                             <li>
-                                <Link href={`/tours/`}>ツアー紹介</Link>
+                                <Link href={`/tours/`} scroll={false}>
+                                    ツアー紹介
+                                </Link>
                             </li>
                             <li>
-                                <Link href={`/news/`}>お知らせ</Link>
+                                <Link href={`/news/`} scroll={false}>
+                                    お知らせ
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -49,16 +57,13 @@ export default function Footer() {
                         </div>
                         <div className={Style.messageWrap}>
                             <div className={Style.sns}>
-                                <Link href="https://x.com/rekiteku">
+                                <Link href="https://x.com/rekiteku" scroll={false}>
                                     <FaXTwitter color="#fff" />
                                 </Link>
-                                <Link
-                                    href="https://instagram.com/rekiteku 
-"
-                                >
+                                <Link href="https://instagram.com/rekiteku" scroll={false}>
                                     <FaInstagram color="#fff" />
                                 </Link>
-                                <Link href="https://lin.ee/6Ak2Mo3">
+                                <Link href="https://lin.ee/6Ak2Mo3" scroll={false}>
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="16"
@@ -76,13 +81,16 @@ export default function Footer() {
                                 </Link>
                             </div>
                             <div className={Style.mail}>
-                                <Link href="https://lin.ee/6Ak2Mo3">
+                                <Link href="https://lin.ee/6Ak2Mo3" scroll={false}>
                                     LINEで予約・お問い合わせ
                                     <span>
                                         <FaArrowUpRightFromSquare />
                                     </span>
                                 </Link>
-                                <Link href="mailto:rekitekuinside@gmail.com?subject=Subject&body=Body%20Text">
+                                <Link
+                                    href="mailto:rekitekuinside@gmail.com?subject=Subject&body=Body%20Text"
+                                    scroll={false}
+                                >
                                     メールで予約・お問い合わせ
                                     <span>
                                         <FaArrowUpRightFromSquare />
@@ -94,15 +102,27 @@ export default function Footer() {
                     <div className={Style.footerWrap}>
                         <ul>
                             <li>
-                                <Link href="/privacy-policy">プライバシーポリシー</Link>　
-                                <Link href="/terms-and-conditions">旅行業約款</Link>　
-                                <Link href="/question">よくある質問</Link>
+                                <Link href="/privacy-policy" scroll={false}>
+                                    プライバシーポリシー
+                                </Link>
+                                　
+                                <Link href="/terms-and-conditions" scroll={false}>
+                                    旅行業約款
+                                </Link>
+                                　
+                                <Link href="/question" scroll={false}>
+                                    よくある質問
+                                </Link>
                             </li>
                             <li>
-                                <Link href="#">国内旅行業務取扱管理者番号　1234-56789</Link>
+                                <Link href="#" scroll={false}>
+                                    国内旅行業務取扱管理者番号　1234-56789
+                                </Link>
                             </li>
                             <li>
-                                <Link href="#">&copy;歴てく2024</Link>
+                                <Link href="#" scroll={false}>
+                                    &copy;歴てく2024
+                                </Link>
                             </li>
                         </ul>
                     </div>

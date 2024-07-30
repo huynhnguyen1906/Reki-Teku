@@ -29,7 +29,7 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
     return (
         <div className={Style.container}>
             <nav className={Style.nav}>
-                <Link href="/admin/news">
+                <Link href="/admin/news" scroll={false}>
                     <Image src={Logo} alt="logo" width={45} height={45} />
                 </Link>
                 <Button variant="secondary" onClick={handleLogout}>
@@ -37,44 +37,68 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
                 </Button>
             </nav>
             <div className={Style.sideBar}>
-                <Link href="/admin/news" className={isActive(/^\/admin\/news(\/.*)?$/) ? Style.active : ''}>
+                <Link
+                    href="/admin/news"
+                    className={isActive(/^\/admin\/news(\/.*)?$/) ? Style.active : ''}
+                    scroll={false}
+                >
                     記事・ブログ管理
                 </Link>
-                <Link href="/admin/tours" className={isActive(/^\/admin\/tours(\/.*)?$/) ? Style.active : ''}>
+                <Link
+                    href="/admin/tours"
+                    className={isActive(/^\/admin\/tours(\/.*)?$/) ? Style.active : ''}
+                    scroll={false}
+                >
                     ツアー管理
                 </Link>
                 <hr className="w-100" />
-                <Link href="/admin/index-text" className={isActive(/^\/admin\/index-text(\/.*)?$/) ? Style.active : ''}>
+                <Link
+                    href="/admin/index-text"
+                    className={isActive(/^\/admin\/index-text(\/.*)?$/) ? Style.active : ''}
+                    scroll={false}
+                >
                     トップページ文章管理
                 </Link>
-                <Link href="/admin/about-text" className={isActive(/^\/admin\/about-text(\/.*)?$/) ? Style.active : ''}>
+                <Link
+                    href="/admin/about-text"
+                    className={isActive(/^\/admin\/about-text(\/.*)?$/) ? Style.active : ''}
+                    scroll={false}
+                >
                     歴てくについて文章管理
                 </Link>
                 <Link
                     href="/admin/company-profile"
                     className={isActive(/^\/admin\/company-profile(\/.*)?$/) ? Style.active : ''}
+                    scroll={false}
                 >
                     会社概要
                 </Link>
                 <Link
                     href="/admin/tours-notes"
                     className={isActive(/^\/admin\/tours-notes(\/.*)?$/) ? Style.active : ''}
+                    scroll={false}
                 >
                     ツアーの確認、注意事項
                 </Link>
                 <Link
                     href="/admin/privacy-policy"
                     className={isActive(/^\/admin\/privacy-policy(\/.*)?$/) ? Style.active : ''}
+                    scroll={false}
                 >
                     プライバシーポリシー
                 </Link>
                 <Link
                     href="/admin/terms-and-conditions"
                     className={isActive(/^\/admin\/terms-and-conditions(\/.*)?$/) ? Style.active : ''}
+                    scroll={false}
                 >
                     旅行業約款
                 </Link>
-                <Link href="/admin/questions" className={isActive(/^\/admin\/questions(\/.*)?$/) ? Style.active : ''}>
+                <Link
+                    href="/admin/questions"
+                    className={isActive(/^\/admin\/questions(\/.*)?$/) ? Style.active : ''}
+                    scroll={false}
+                >
                     よくある質問
                 </Link>
             </div>

@@ -23,7 +23,7 @@ export default function Home() {
                         <div className={Style.CloudRight}></div>
                         <IndexText />
                         <button className={Style.Button}>
-                            <Link href={'/about'}>
+                            <Link href={'/about'} scroll={false}>
                                 もっと見る
                                 <MdArrowRightAlt />
                             </Link>

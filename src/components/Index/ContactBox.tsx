@@ -18,7 +18,7 @@ export default function ContactBox() {
                 </div>
                 <div className={Style.LineQr}></div>
             </div>
-            <Link href={'https://lin.ee/6Ak2Mo3'} className={Style.LineIcon}></Link>
+            <Link href={'https://lin.ee/6Ak2Mo3'} className={Style.LineIcon} scroll={false}></Link>
         </div>
     );
 }

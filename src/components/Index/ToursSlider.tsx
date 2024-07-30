@@ -47,7 +47,7 @@ export default function ToursSlider() {
                                     ※ツアー内容は変更が可能ですので、お気軽にお問い合わせください。
                                 </p>
                                 <button className="tourButton">
-                                    <Link href={`/tours/${tourItem.id}`}>
+                                    <Link href={`/tours/${tourItem.id}`} scroll={false}>
                                         詳しく見る
                                         <MdArrowRightAlt />
                                     </Link>

@@ -21,7 +21,7 @@ export default function NewsCard({ news }: NewsCardProps) {
 
     return (
         <div className={Style.newsWrap}>
-            <Link href={`/news/${news.id}`}>
+            <Link href={`/news/${news.id}`} scroll={false}>
                 <div className={Style.newsContent}>
                     <p className={Style.thumb}>
                         <Image src={news.image.file.url} alt="news image" width={367} height={204} priority />

@@ -63,7 +63,9 @@ export default function QuestionPage() {
                             お客様のご質問に迅速に対応いたします
                         </p>
                         <div className={Style.lineBtn}>
-                            <Link href="#">お問い合わせはこちら</Link>
+                            <Link href="#" scroll={false}>
+                                お問い合わせはこちら
+                            </Link>
                             <FaExternalLinkAlt color="#fffdf7" />
                         </div>
                     </div>

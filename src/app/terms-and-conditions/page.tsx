@@ -28,24 +28,27 @@ export default function TermsAndConditions() {
 
     return (
         <MainLayout>
-            {content && (
-                <div className="w-100 h-auto overflow-auto">
-                    <div
-                        className="textBlock d-flex flex-column justify-content-start align-item-start mx-auto gap-4"
-                        style={{
-                            width: 'calc(100% - 40px)',
-                            maxWidth: '964px',
-                            height: 'auto',
-                            minHeight: '50vh',
-                            marginTop: '70px',
-                            borderRadius: '10px',
-                        }}
-                    >
-                        <h2 className="fs-1">旅行業約款</h2>
-                        {renderContent(content.data)}
-                    </div>
+            <div className="w-100 h-auto overflow-auto">
+                <div
+                    className="textBlock d-flex flex-column justify-content-start align-item-start mx-auto gap-4"
+                    style={{
+                        width: 'calc(100% - 40px)',
+                        maxWidth: '964px',
+                        height: 'auto',
+                        minHeight: '50vh',
+                        marginTop: '70px',
+                        borderRadius: '10px',
+                    }}
+                >
+                    {content && (
+                        <>
+                            {' '}
+                            <h2 className="fs-1">旅行業約款</h2>
+                            {renderContent(content.data)}
+                        </>
+                    )}
                 </div>
-            )}
+            </div>
         </MainLayout>
     );
 }
