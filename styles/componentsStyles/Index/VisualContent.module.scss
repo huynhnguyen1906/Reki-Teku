@@ -1,15 +1,93 @@
 @import '/styles/variables.scss';
-
+@keyframes fade1 {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    35% {
+        opacity: 1;
+    }
+    45% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes fade2 {
+    0% {
+        opacity: 0;
+    }
+    35% {
+        opacity: 0;
+    }
+    45% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes fade3 {
+    0% {
+        opacity: 1;
+    }
+    10% {
+        opacity: 0;
+    }
+    70% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 .VisualContent {
     width: 100%;
     height: 100%;
-    background: url('../../../public/images/03_bg_overlay.png'),
-        linear-gradient(270deg, rgba(17, 17, 17, 0.3) 0%, rgba(17, 17, 17, 0) 44.5%),
-        url('../../../public/images/mainVisual.webp');
-    background-repeat: repeat, repeat, no-repeat;
-    background-position: left top, left top, center center;
-    background-size: 4px 4px, 100% 100%, cover;
     position: relative;
+    overflow: hidden;
+    .visual {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: repeat, repeat, no-repeat;
+        background-position: left top, left top, center center;
+        background-size: 4px 4px, 100% 100%, cover;
+        opacity: 0;
+        animation-timing-function: ease-in-out;
+    }
+    .visual1 {
+        background-image: url('../../../public/images/03_bg_overlay.png'),
+            linear-gradient(270deg, rgba(17, 17, 17, 0.3) 0%, rgba(17, 17, 17, 0) 44.5%),
+            url('../../../public/images/mainVisual.webp');
+        animation: fade1 13s infinite;
+    }
+    .visual2 {
+        background-image: url('../../../public/images/03_bg_overlay.png'),
+            linear-gradient(270deg, rgba(17, 17, 17, 0.3) 0%, rgba(17, 17, 17, 0) 44.5%),
+            url('../../../public/images/mainVisual2.webp');
+        animation: fade2 13s infinite;
+    }
+    .visual3 {
+        background-image: url('../../../public/images/03_bg_overlay.png'),
+            linear-gradient(270deg, rgba(17, 17, 17, 0.3) 0%, rgba(17, 17, 17, 0) 44.5%),
+            url('../../../public/images/mainVisual3.webp');
+        animation: fade3 13s infinite;
+    }
     .HeroTextRight {
         position: absolute;
         top: calc(50% - 20px);

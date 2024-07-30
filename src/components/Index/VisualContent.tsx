@@ -41,6 +41,9 @@ export default function VisualContent() {
 
     return (
         <div id="VisualContent" className={Style.VisualContent}>
+            <div className={`${Style.visual} ${Style.visual1}`}></div>
+            <div className={`${Style.visual} ${Style.visual2}`}></div>
+            <div className={`${Style.visual} ${Style.visual3}`}></div>
             <div className={Style.HeroTextLeft}>
                 <div>
                     <span>川が大きな流れから</span>
