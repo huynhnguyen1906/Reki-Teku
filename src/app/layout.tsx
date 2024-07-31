@@ -9,7 +9,8 @@ export const generateMetadata = async (): Promise<Metadata> => {
             default: '歴てく｜自分の目と足で歴史の『サイドストーリー』を探求し人生を深める',
             template: '%s | 歴てく',
         },
-        description: '',
+        description:
+            '川が大きな流れから小さく枝分かれしていくように、歴史も枝分かれしていきます。「歴てく」は、枝分かれした歴史のサイドストーリーを知る旅をあなたにご提供します。',
         keywords: '歴てく, reki-teku, 歴史, サイドストーリー, 人生, 深める, fukuoka, 福岡',
         openGraph: {
             type: 'website',
