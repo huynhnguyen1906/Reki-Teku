@@ -18,10 +18,10 @@ export const generateMetadata = async (): Promise<Metadata> => {
             description: '自分の目と足で歴史の『サイドストーリー』を探求し人生を深める',
             images: [
                 {
-                    url: '/og-image.png',
+                    url: 'https://github.com/huynhnguyen1906/Reki-Teku/blob/main/src/app/og-image.png?raw=true',
                     width: 1200,
                     height: 630,
-                    alt: 'Og Image Alt',
+                    alt: '自分の目と足で歴史の『サイドストーリー』を探求し人生を深める',
                 },
             ],
             siteName: '歴てく',
@@ -29,33 +29,49 @@ export const generateMetadata = async (): Promise<Metadata> => {
         },
         twitter: {
             card: 'summary_large_image',
-            site: '@site_account',
-            creator: '@creator_account',
-            title: 'Your Site Title',
-            description: 'Your site description',
-            images: 'https://www.yourwebsite.com/twitter-image.jpg',
+            site: '@rekiteku',
+            creator: '@rekiteku',
+            title: '歴てく',
+            description: '自分の目と足で歴史の『サイドストーリー』を探求し人生を深める',
+            images: 'https://github.com/huynhnguyen1906/Reki-Teku/blob/main/src/app/og-image.png?raw=true',
         },
-        applicationName: 'Your Application Name',
+        applicationName: '歴てく',
         appleWebApp: {
             capable: true,
-            title: 'Your App Title',
+            title: '歴てく',
             statusBarStyle: 'default',
         },
-        themeColor: '#ffffff',
         icons: {
             icon: [
                 {
-                    url: 'https://www.yourwebsite.com/icon-192.png',
+                    rel: 'icon',
+                    type: 'image/x-icon',
+                    sizes: '48x48',
+                    url: '/favicon.ico',
+                },
+                {
+                    rel: 'icon',
+                    type: 'image/png',
+                    sizes: '16x16',
+                    url: '/favicon-16x16.png',
+                },
+                {
+                    rel: 'icon',
+                    type: 'image/png',
+                    sizes: '32x32',
+                    url: '/favicon-32x32.png',
+                },
+                {
+                    url: '/android-chrome-192x192.png',
                     sizes: '192x192',
                 },
                 {
-                    url: 'https://www.yourwebsite.com/icon-512.png',
+                    url: '/android-chrome-512x512.png',
                     sizes: '512x512',
                 },
             ],
-            apple: 'https://www.yourwebsite.com/apple-icon.png',
+            apple: '/apple-touch-icon.png',
         },
-        manifest: 'https://www.yourwebsite.com/manifest.json',
     };
 };
 
