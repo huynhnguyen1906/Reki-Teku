@@ -6,22 +6,23 @@ import { Metadata } from 'next';
 export const generateMetadata = async (): Promise<Metadata> => {
     return {
         title: {
-            default: '歴てく',
+            default: '歴てく｜自分の目と足で歴史の『サイドストーリー』を探求し人生を深める',
             template: '%s | 歴てく',
         },
-        description: '自分の目と足で歴史の『サイドストーリー』を探求し人生を深める',
+        description: '',
         keywords: '歴てく, 歴史, サイドストーリー, 人生, 深める, fukuoka, 福岡',
         openGraph: {
             type: 'website',
             url: `${process.env.NEXT_PUBLIC_BASE_URL}`,
             title: '歴てく',
-            description: '自分の目と足で歴史の『サイドストーリー』を探求し人生を深める',
+            description:
+                '川が大きな流れから小さく枝分かれしていくように、歴史も枝分かれしていきます。「歴てく」は、枝分かれした歴史のサイドストーリーを知る旅をあなたにご提供します。',
             images: [
                 {
                     url: 'https://github.com/huynhnguyen1906/Reki-Teku/blob/main/src/app/og-image.png?raw=true',
                     width: 1200,
                     height: 630,
-                    alt: '自分の目と足で歴史の『サイドストーリー』を探求し人生を深める',
+                    alt: '川が大きな流れから小さく枝分かれしていくように、歴史も枝分かれしていきます。「歴てく」は、枝分かれした歴史のサイドストーリーを知る旅をあなたにご提供します。',
                 },
             ],
             siteName: '歴てく',
@@ -32,7 +33,8 @@ export const generateMetadata = async (): Promise<Metadata> => {
             site: '@rekiteku',
             creator: '@rekiteku',
             title: '歴てく',
-            description: '自分の目と足で歴史の『サイドストーリー』を探求し人生を深める',
+            description:
+                '川が大きな流れから小さく枝分かれしていくように、歴史も枝分かれしていきます。「歴てく」は、枝分かれした歴史のサイドストーリーを知る旅をあなたにご提供します。',
             images: 'https://github.com/huynhnguyen1906/Reki-Teku/blob/main/src/app/og-image.png?raw=true',
         },
         applicationName: '歴てく',
