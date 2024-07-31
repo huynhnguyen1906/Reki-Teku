@@ -1,5 +1,4 @@
 import Style from '@styles/componentsStyles/News/NewsCard.module.scss';
-import Link from 'next/link';
 import Image from 'next/image';
 import { IoMdTime } from 'react-icons/io';
 import { splitText } from '@/utils/splitText';
