@@ -21,8 +21,6 @@ export const generateMetadata = async (): Promise<Metadata> => {
             images: [
                 {
                     url: 'https://github.com/huynhnguyen1906/Reki-Teku/blob/main/src/app/og-image.png?raw=true',
-                    width: 1200,
-                    height: 630,
                     alt: '川が大きな流れから小さく枝分かれしていくように、歴史も枝分かれしていきます。「歴てく」は、枝分かれした歴史のサイドストーリーを知る旅をあなたにご提供します。',
                 },
             ],
