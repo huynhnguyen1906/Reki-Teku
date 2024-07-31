@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { IoMdTime } from 'react-icons/io';
 import { splitText } from '@/utils/splitText';
 import { formatDate } from '@/utils/formatDate';
-import { usePathname } from 'next/navigation';
 
 interface NewsCardProps {
     news: {
@@ -18,14 +17,12 @@ interface NewsCardProps {
 }
 
 export default function NewsCard({ news }: NewsCardProps) {
-    const pathname = usePathname();
     const date = formatDate(news.news_timestamp);
     const tagClass = news.news_type === 'ブログ更新' ? Style.blogTag : Style.tourTag;
-    const href = pathname === `/news/${news.id}` ? '#' : `/news/${news.id}`;
 
     return (
         <div className={Style.newsWrap}>
-            <Link href={href} scroll={false}>
+            <a href={`/news/${news.id}`}>
                 <div className={Style.newsContent}>
                     <p className={Style.thumb}>
                         <Image src={news.image.file.url} alt="news image" width={367} height={204} priority />
@@ -40,7 +37,7 @@ export default function NewsCard({ news }: NewsCardProps) {
                     <h3 className={Style.newsTtl}>{news.header.text}</h3>
                     <p className={Style.newsText}>{splitText(news.paragraph.text, 100)}</p>
                 </div>
-            </Link>
+            </a>
         </div>
     );
 }
