@@ -2,13 +2,10 @@
 import MainLayout from '@/components/MainLayout';
 import { useTermsAndConditions } from '@/hooks/TextContent/useTermsAndConditions';
 import parse from 'html-react-parser';
-import { useEffect } from 'react';
 
 export default function TermsAndConditions() {
     const { content } = useTermsAndConditions();
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
+
     const renderContent = (content: any) => {
         if (!content) return null;
 
