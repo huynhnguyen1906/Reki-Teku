@@ -11,7 +11,9 @@ import { Question } from '@/types/Question';
 
 export default function QuestionPage() {
     const { questions } = useQuestions();
-
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     useEffect(() => {
         const updateBackground = () => {
             if (window.matchMedia('(max-width: 600px)').matches) {

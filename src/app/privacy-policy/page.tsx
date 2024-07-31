@@ -2,9 +2,13 @@
 import MainLayout from '@/components/MainLayout';
 import { usePrivacyPolicy } from '@/hooks/TextContent/usePrivacyPolicy';
 import parse from 'html-react-parser';
-
+import { useEffect } from 'react';
 export default function PrivacyPolicy() {
     const { content } = usePrivacyPolicy();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const renderContent = (content: any) => {
         if (!content) return null;

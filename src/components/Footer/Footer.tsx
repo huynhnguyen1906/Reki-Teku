@@ -102,28 +102,20 @@ export default function Footer() {
                     <div className={Style.footerWrap}>
                         <ul>
                             <li>
-                                <Link href="/privacy-policy" scroll={true}>
+                                <Link href="/privacy-policy" scroll={false}>
                                     プライバシーポリシー
                                 </Link>
                                 　
-                                <Link href="/terms-and-conditions" scroll={true}>
+                                <Link href="/terms-and-conditions" scroll={false}>
                                     旅行業約款
                                 </Link>
                                 　
-                                <Link href="/question" scroll={true}>
+                                <Link href="/question" scroll={false}>
                                     よくある質問
                                 </Link>
                             </li>
-                            <li>
-                                <Link href="#" scroll={true}>
-                                    国内旅行業務取扱管理者番号　1234-56789
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="#" scroll={true}>
-                                    &copy;歴てく2024
-                                </Link>
-                            </li>
+                            {profile && <li>国内旅行業務取扱管理者番号　 {profile.licenseNumber}</li>}
+                            <li>&copy;歴てく2024</li>
                         </ul>
                     </div>
                 </div>
