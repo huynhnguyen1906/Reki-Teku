@@ -22,7 +22,7 @@ export default function NewsCard({ news }: NewsCardProps) {
 
     return (
         <div className={Style.newsWrap}>
-            <a href={`/news/${news.id}`}>
+            <Link href={`/news/${news.id}`} scroll={true}>
                 <div className={Style.newsContent}>
                     <p className={Style.thumb}>
                         <Image src={news.image.file.url} alt="news image" width={367} height={204} priority />
@@ -37,7 +37,7 @@ export default function NewsCard({ news }: NewsCardProps) {
                     <h3 className={Style.newsTtl}>{news.header.text}</h3>
                     <p className={Style.newsText}>{splitText(news.paragraph.text, 100)}</p>
                 </div>
-            </a>
+            </Link>
         </div>
     );
 }

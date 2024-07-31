@@ -20,7 +20,7 @@ interface ToursCardProps {
 export default function ToursCard({ tour }: ToursCardProps) {
     return (
         <div className={Style.toursWrap}>
-            <a href={`/tours/${tour.id}`}>
+            <Link href={`/tours/${tour.id}`} scroll={true}>
                 <div className={Style.toursContent}>
                     <p className={Style.thumb}>
                         <Image
@@ -34,7 +34,7 @@ export default function ToursCard({ tour }: ToursCardProps) {
                     <h3 className={Style.toursTtl}>{tour.tour_info.name}</h3>
                     <p className={Style.toursText}>{splitText(tour.tour_info.description, 100)}</p>
                 </div>
-            </a>
+            </Link>
         </div>
     );
 }
