@@ -102,15 +102,15 @@ export default function Footer() {
                     <div className={Style.footerWrap}>
                         <ul>
                             <li>
-                                <Link href="/privacy-policy" scroll={false}>
+                                <Link href="/privacy-policy" scroll={true}>
                                     プライバシーポリシー
                                 </Link>
                                 　
-                                <Link href="/terms-and-conditions" scroll={false}>
+                                <Link href="/terms-and-conditions" scroll={true}>
                                     旅行業約款
                                 </Link>
                                 　
-                                <Link href="/question" scroll={false}>
+                                <Link href="/question" scroll={true}>
                                     よくある質問
                                 </Link>
                             </li>
