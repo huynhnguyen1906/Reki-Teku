@@ -10,7 +10,7 @@ export const generateMetadata = async (): Promise<Metadata> => {
             template: '%s | 歴てく',
         },
         description: '',
-        keywords: '歴てく, 歴史, サイドストーリー, 人生, 深める, fukuoka, 福岡',
+        keywords: '歴てく, reki-teku, 歴史, サイドストーリー, 人生, 深める, fukuoka, 福岡',
         openGraph: {
             type: 'website',
             url: `${process.env.NEXT_PUBLIC_BASE_URL}`,
