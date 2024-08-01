@@ -7,7 +7,7 @@ export const generateMetadata = async (): Promise<Metadata> => {
     return {
         title: {
             default: '歴てく｜自分の目と足で歴史の『サイドストーリー』を探求し人生を深める',
-            template: '%s | 歴てく',
+            template: '%s｜歴てく',
         },
         description:
             '川が大きな流れから小さく枝分かれしていくように、歴史も枝分かれしていきます。「歴てく」は、枝分かれした歴史のサイドストーリーを知る旅をあなたにご提供します。',
