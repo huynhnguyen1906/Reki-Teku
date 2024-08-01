@@ -2,6 +2,7 @@
 import Style from '@styles/componentsStyles/Tours/ToursCard.module.scss';
 import Image from 'next/image';
 import { splitText } from '@/utils/splitText';
+import { convertSlugText } from '@/utils/convertSlugText';
 interface ToursCardProps {
     tour: {
         id: string;
@@ -19,7 +20,7 @@ interface ToursCardProps {
 export default function ToursCard({ tour }: ToursCardProps) {
     return (
         <div className={Style.toursWrap}>
-            <a href={`/tours/${tour.id}`}>
+            <a href={`/tours/${convertSlugText(tour.tour_info.name)}-${tour.id}.html`}>
                 <div className={Style.toursContent}>
                     <p className={Style.thumb}>
                         <Image

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useIndexTour } from '@/hooks/useIndexTour';
 import { splitText } from '@/utils/splitText';
+import { convertSlugText } from '@/utils/convertSlugText';
 
 export default function TourViewPage() {
     const { tour } = useIndexTour();
@@ -17,7 +18,10 @@ export default function TourViewPage() {
                     {tour &&
                         tour.map((item: any) => (
                             <div key={item.id} className={Style.tourItem}>
-                                <Link href={`/tours/${item.id}`} scroll={true}>
+                                <Link
+                                    href={`/tours/${convertSlugText(item.tour_info.name)}-${item.id}.html`}
+                                    scroll={true}
+                                >
                                     <div className={Style.toursContent}>
                                         <p className={Style.thumb}>
                                             <Image

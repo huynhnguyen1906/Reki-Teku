@@ -11,6 +11,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import '@styles/componentsStyles/Index/Slider.scss';
 import TextStyle from '@styles/appStyles/Tours.module.scss';
+import { convertSlugText } from '@/utils/convertSlugText';
 
 export default function ToursSlider() {
     const { tour } = useIndexTour();
@@ -47,7 +48,10 @@ export default function ToursSlider() {
                                     ※ツアー内容は変更が可能ですので、お気軽にお問い合わせください。
                                 </p>
                                 <button className="tourButton">
-                                    <Link href={`/tours/${tourItem.id}`} scroll={true}>
+                                    <Link
+                                        href={`/tours/${convertSlugText(tour[0].tour_info.name)}-${tourItem.id}.html`}
+                                        scroll={true}
+                                    >
                                         詳しく見る
                                         <MdArrowRightAlt />
                                     </Link>

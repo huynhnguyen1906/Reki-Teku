@@ -2,13 +2,17 @@
 import { Metadata, ResolvingMetadata } from 'next';
 import TourPage from '@/components/Tours/TourPage';
 import axios from 'axios';
+import { extractIdFromSlug } from '@/utils/extractIdFromSlug';
+
 type Props = {
     params: { id: string };
     searchParams: { [key: string]: string | string[] | undefined };
 };
 
-const fetchTourData = async (id: string) => {
-    const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/get-tour/${id}`);
+const fetchTourData = async (slug: string) => {
+    const id = extractIdFromSlug(slug);
+    const url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/get-tour/${id}`;
+    const response = await axios.get(url);
     if (response.status !== 200) {
         throw new Error('Failed to fetch tour data');
     }
@@ -16,8 +20,8 @@ const fetchTourData = async (id: string) => {
 };
 
 export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
-    const id = params.id;
-    const tour = await fetchTourData(id);
+    const slug = params.id;
+    const tour = await fetchTourData(slug);
 
     return {
         title: tour.tour_info.name,
@@ -25,7 +29,7 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
         keywords: `歴てく, reki-teku, 歴史, サイドストーリー, 人生, 深める, ${tour.tour_info.location}`,
         openGraph: {
             type: 'website',
-            url: `${process.env.NEXT_PUBLIC_BASE_URL}/tours/${id}`,
+            url: `${process.env.NEXT_PUBLIC_BASE_URL}/tours/${slug}`,
             title: tour.tour_info.name,
             description: tour.tour_info.description,
             images: [
