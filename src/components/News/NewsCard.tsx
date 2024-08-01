@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { IoMdTime } from 'react-icons/io';
 import { splitText } from '@/utils/splitText';
 import { formatDate } from '@/utils/formatDate';
-
+import { convertSlugText } from '@/utils/convertSlugText';
 interface NewsCardProps {
     news: {
         id: string;
@@ -21,7 +21,7 @@ export default function NewsCard({ news }: NewsCardProps) {
 
     return (
         <div className={Style.newsWrap}>
-            <a href={`/news/${news.id}`}>
+            <a href={`/news/${convertSlugText(news.header.text)}-${news.id}.html`}>
                 <div className={Style.newsContent}>
                     <p className={Style.thumb}>
                         <Image src={news.image.file.url} alt="news image" width={367} height={204} priority />

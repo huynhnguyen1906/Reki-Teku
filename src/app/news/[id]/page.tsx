@@ -1,14 +1,17 @@
 import { Metadata, ResolvingMetadata } from 'next';
 import NewsPage from '@/components/News/NewsPage';
 import axios from 'axios';
+import { extractIdFromSlug } from '@/utils/extractIdFromSlug';
 
 type Props = {
     params: { id: string };
     searchParams: { [key: string]: string | string[] | undefined };
 };
 
-const fetchNewsData = async (id: string) => {
-    const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/get-news/${id}`);
+const fetchNewsData = async (slug: string) => {
+    const id = extractIdFromSlug(slug);
+    const url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/get-news/${id}`;
+    const response = await axios.get(url);
     if (response.status !== 200) {
         throw new Error('Failed to fetch news data');
     }
@@ -16,8 +19,8 @@ const fetchNewsData = async (id: string) => {
 };
 
 export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
-    const id = params.id;
-    const news = await fetchNewsData(id);
+    const slug = params.id;
+    const news = await fetchNewsData(slug);
 
     const firstParagraph = news.news_data.blocks.find((block: any) => block.type === 'paragraph')?.data?.text;
     const firstImage = news.news_data.blocks.find((block: any) => block.type === 'image')?.data?.file?.url;
@@ -29,7 +32,7 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
         keywords: `ニュース, 更新, ブログ, ${news.news_type}`,
         openGraph: {
             type: 'website',
-            url: `${process.env.NEXT_PUBLIC_BASE_URL}/news/${id}`,
+            url: `${process.env.NEXT_PUBLIC_BASE_URL}/news/${slug}`,
             title: headerText || 'ニュース記事',
             description: firstParagraph || 'ニュース記事の詳細',
             images: [

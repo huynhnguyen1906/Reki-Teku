@@ -1,4 +1,3 @@
-// pages/tours/[id].tsx
 import React from 'react';
 import Style from '@styles/appStyles/Tours.module.scss';
 import ToursContainer from '@/components/Tours/ToursContainer';

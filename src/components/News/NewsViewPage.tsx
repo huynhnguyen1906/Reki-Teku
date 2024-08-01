@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { useIndexNews } from '@/hooks/useIndexNews';
 import { formatDate } from '@/utils/formatDate';
 import { splitText } from '@/utils/splitText';
+import { convertSlugText } from '@/utils/convertSlugText';
 
 export default function NewsViewPage() {
     const { news } = useIndexNews();
@@ -44,7 +45,10 @@ export default function NewsViewPage() {
 
                             return (
                                 <div key={item.id} className={Style.newsItem}>
-                                    <Link href={`/news/${item.id}`} scroll={true}>
+                                    <Link
+                                        href={`/news/${convertSlugText(item.header.text)}-${item.id}.html`}
+                                        scroll={true}
+                                    >
                                         <div className={Style.newsContent}>
                                             <p className={Style.thumb}>
                                                 <Image

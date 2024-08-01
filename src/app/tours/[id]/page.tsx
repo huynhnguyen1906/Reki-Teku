@@ -1,4 +1,3 @@
-// pages/tours/[id]/page.tsx
 import { Metadata, ResolvingMetadata } from 'next';
 import TourPage from '@/components/Tours/TourPage';
 import axios from 'axios';
