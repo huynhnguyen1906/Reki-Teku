@@ -39,7 +39,6 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
                     height: 630,
                     alt: tour.tour_info.description,
                 },
-                ...previousImages,
             ],
             siteName: '歴てく',
             locale: 'ja_JP',
