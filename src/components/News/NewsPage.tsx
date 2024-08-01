@@ -1,20 +1,22 @@
-'use client';
-
 import Style from '@styles/appStyles/News.module.scss';
 import Image from 'next/image';
 import { IoMdTime } from 'react-icons/io';
 import MainLayout from '@/components/MainLayout';
 import NewsContainer from '@/components/News/NewsContainer';
-import { useNews } from '@/hooks/useNews';
-import { useParams } from 'next/navigation';
 import { formatDate } from '@/utils/formatDate';
 
-export default function NewsPage() {
-    const { id } = useParams();
-    const documentId = Array.isArray(id) ? id[0] : id;
-    const { news } = useNews(documentId);
+type NewsPageProps = {
+    news: {
+        id: string;
+        news_type: string;
+        news_timestamp: { seconds: number; nanoseconds: number };
+        news_data: {
+            blocks: Array<{ type: string; data: { [key: string]: any } }>;
+        };
+    };
+};
 
-    if (!news) return;
+export default function NewsPage({ news }: NewsPageProps) {
     const { news_timestamp, news_type, news_data } = news;
     const date = formatDate(news_timestamp);
 
