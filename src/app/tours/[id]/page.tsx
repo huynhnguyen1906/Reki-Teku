@@ -19,8 +19,6 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
     const id = params.id;
     const tour = await fetchTourData(id);
 
-    const previousImages = (await parent).openGraph?.images || [];
-
     return {
         title: tour.tour_info.name,
         description: tour.tour_info.description,
@@ -58,37 +56,6 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
             capable: true,
             title: tour.tour_info.name,
             statusBarStyle: 'default',
-        },
-        icons: {
-            icon: [
-                {
-                    rel: 'icon',
-                    type: 'image/x-icon',
-                    sizes: '48x48',
-                    url: '/favicon.ico',
-                },
-                {
-                    rel: 'icon',
-                    type: 'image/png',
-                    sizes: '16x16',
-                    url: '/favicon-16x16.png',
-                },
-                {
-                    rel: 'icon',
-                    type: 'image/png',
-                    sizes: '32x32',
-                    url: '/favicon-32x32.png',
-                },
-                {
-                    url: '/android-chrome-192x192.png',
-                    sizes: '192x192',
-                },
-                {
-                    url: '/android-chrome-512x512.png',
-                    sizes: '512x512',
-                },
-            ],
-            apple: '/apple-touch-icon.png',
         },
     };
 }
