@@ -1,10 +1,12 @@
 @import '/styles/variables';
 
 .companyWrap {
+    width: 100%;
     max-width: 1000px;
-    min-width: 70vh;
+    min-height: 70vh;
     margin: 0 auto;
     .content {
+        width: 100%;
         padding-top: 100px;
         text-align: center;
         h3 {

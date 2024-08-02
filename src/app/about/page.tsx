@@ -34,7 +34,7 @@ export default function About() {
     }, []);
     return (
         <MainLayout>
-            {text && profile && (
+            {text && profile ? (
                 <div className={Style.companyWrap}>
                     <div className={Style.content}>
                         <h2 className={Style.ttl}>「歴てく」について</h2>
@@ -121,6 +121,8 @@ export default function About() {
                         </dl>
                     </div>
                 </div>
+            ) : (
+                <div className={Style.companyWrap}></div>
             )}
         </MainLayout>
     );
