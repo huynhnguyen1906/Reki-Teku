@@ -31,7 +31,14 @@ const AdminPage = () => {
             >
                 Admin ログイン
             </h1>
-            <Button onClick={login} size="lg" className="fs-3">
+            <Button
+                onClick={login}
+                size="lg"
+                className="fs-3"
+                style={{
+                    fontFamily: 'roboto',
+                }}
+            >
                 Googleアカウントでログイン
             </Button>
         </div>
