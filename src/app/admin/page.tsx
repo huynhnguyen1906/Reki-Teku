@@ -32,7 +32,7 @@ const AdminPage = () => {
                 Admin ログイン
             </h1>
             <Button onClick={login} size="lg" className="fs-3">
-                Login with Google
+                Googleアカウントでログイン
             </Button>
         </div>
     );
