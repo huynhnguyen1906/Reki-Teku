@@ -3,7 +3,6 @@ import Style from '@styles/appStyles/Tours.module.scss';
 import ToursContainer from '@/components/Tours/ToursContainer';
 import Image from 'next/image';
 import { IoMdPin } from 'react-icons/io';
-import Link from 'next/link';
 import MainLayout from '@/components/MainLayout';
 import ThumbnailSlider from '@/components/Tours/ThumbnailSlider';
 import PointWrap from '@/components/Tours/PointWrap';
