@@ -31,6 +31,7 @@
         border-radius: 20px;
         div {
             display: flex;
+            justify-content: space-between;
             gap: 1rem;
             padding: 10px 7px;
         }
@@ -40,7 +41,6 @@
         }
         select {
             @extend input;
-            margin-left: 20px;
             border: none;
         }
     }
