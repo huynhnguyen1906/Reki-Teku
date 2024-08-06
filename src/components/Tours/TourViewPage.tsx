@@ -6,16 +6,19 @@ import Link from 'next/link';
 import { useIndexTour } from '@/hooks/useIndexTour';
 import { splitText } from '@/utils/splitText';
 import { convertSlugText } from '@/utils/convertSlugText';
+import LoadingContainer from '../Loading/LoadingContainer';
 
 export default function TourViewPage() {
-    const { tour } = useIndexTour();
+    const { tour, isLoading } = useIndexTour();
 
     return (
         <MainLayout>
             <div className={Style.container}>
                 <h2>ツアー一覧</h2>
                 <div className={Style.itemBox}>
-                    {tour &&
+                    {isLoading ? (
+                        <LoadingContainer />
+                    ) : (
                         tour.map((item: any) => (
                             <div key={item.id} className={Style.tourItem}>
                                 <Link
@@ -37,7 +40,8 @@ export default function TourViewPage() {
                                     </div>
                                 </Link>
                             </div>
-                        ))}
+                        ))
+                    )}
                 </div>
             </div>
         </MainLayout>

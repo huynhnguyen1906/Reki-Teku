@@ -8,9 +8,10 @@ import { useIndexNews } from '@/hooks/useIndexNews';
 import { formatDate } from '@/utils/formatDate';
 import { splitText } from '@/utils/splitText';
 import { convertSlugText } from '@/utils/convertSlugText';
+import LoadingContainer from '../Loading/LoadingContainer';
 
 export default function NewsViewPage() {
-    const { news } = useIndexNews();
+    const { news, isLoading } = useIndexNews();
     const [charLimit, setCharLimit] = useState(80);
     const [headerCharLimit, setHeaderCharLimit] = useState(55);
     useEffect(() => {
@@ -38,7 +39,9 @@ export default function NewsViewPage() {
             <div className={Style.container}>
                 <h2>ニュース・ブログ一覧</h2>
                 <div className={Style.itemBox}>
-                    {news &&
+                    {isLoading ? (
+                        <LoadingContainer />
+                    ) : (
                         news.map((item: any) => {
                             const date = formatDate(item.news_timestamp);
                             const tagClass = item.news_type === 'ブログ更新' ? Style.blogTag : Style.tourTag;
@@ -75,7 +78,8 @@ export default function NewsViewPage() {
                                     </Link>
                                 </div>
                             );
-                        })}
+                        })
+                    )}
                 </div>
             </div>
         </MainLayout>

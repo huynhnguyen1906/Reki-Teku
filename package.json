@@ -33,6 +33,7 @@
         "nookies": "^2.5.2",
         "react": "^18",
         "react-bootstrap": "^2.10.4",
+        "react-content-loader": "^7.0.2",
         "react-dom": "^18",
         "react-icons": "^5.2.1",
         "react-slick": "^0.30.2",
