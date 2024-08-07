@@ -15,15 +15,17 @@ export default function IndexText() {
         ));
     };
 
+    if (isLoading) {
+        return <LoadingContainer />;
+    }
+
     return (
         <>
-            {isLoading ? (
-                <LoadingContainer />
+            <h2 className={Style.leadText}>歴てくについて</h2>
+            {text ? (
+                <p className={Style.text}>{formatText(text.text)}</p>
             ) : (
-                <>
-                    <h2 className={Style.leadText}>歴てくについて</h2>
-                    <p className={Style.text}>{text && formatText(text.text)}</p>
-                </>
+                <p className={Style.text}>No text available</p>
             )}
         </>
     );
