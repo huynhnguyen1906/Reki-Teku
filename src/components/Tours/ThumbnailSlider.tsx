@@ -42,12 +42,12 @@ export default function ThumbnailSlider({ schedule }: { schedule: any }) {
 
     return (
         <div className="splideContainer">
-            {schedule && (
+            {schedule && schedule.length > 0 ? (
                 <>
                     <div id="main-slider" className="splide mainSliderContainer" ref={mainSliderRef}>
                         <div className="splide__track">
                             <ul className="splide__list mainSlider">
-                                {schedule?.map((day: any, dayIndex: number) =>
+                                {schedule.map((day: any, dayIndex: number) =>
                                     day.destinations?.map((destination: any, destIndex: number) => (
                                         <li key={`main-${dayIndex}-${destIndex}`} className="splide__slide">
                                             <Image
@@ -67,7 +67,7 @@ export default function ThumbnailSlider({ schedule }: { schedule: any }) {
                     <div id="thumbnail-slider" className="splide thumbnail-slider" ref={thumbnailSliderRef}>
                         <div className="splide__track">
                             <ul className="splide__list thumbnail">
-                                {schedule?.map((day: any, dayIndex: number) =>
+                                {schedule.map((day: any, dayIndex: number) =>
                                     day.destinations?.map((destination: any, destIndex: number) => (
                                         <li key={`thumb-${dayIndex}-${destIndex}`} className="splide__slide">
                                             <Image
@@ -84,6 +84,8 @@ export default function ThumbnailSlider({ schedule }: { schedule: any }) {
                         </div>
                     </div>
                 </>
+            ) : (
+                <span>画像がございません</span>
             )}
         </div>
     );

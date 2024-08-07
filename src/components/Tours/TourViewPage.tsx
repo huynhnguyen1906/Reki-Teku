@@ -27,13 +27,17 @@ export default function TourViewPage() {
                                 >
                                     <div className={Style.toursContent}>
                                         <p className={Style.thumb}>
-                                            <Image
-                                                src={item.first_destination_image}
-                                                alt={item.tour_info.name}
-                                                width={367}
-                                                height={204}
-                                                priority
-                                            />
+                                            {item.first_destination_image ? (
+                                                <Image
+                                                    src={item.first_destination_image}
+                                                    alt={item.tour_info.name}
+                                                    width={367}
+                                                    height={204}
+                                                    priority
+                                                />
+                                            ) : (
+                                                <span>画像がございません</span>
+                                            )}
                                         </p>
                                         <h3 className={Style.toursTtl}>{item.tour_info.name}</h3>
                                         <p className={Style.toursText}>{splitText(item.tour_info.description, 100)}</p>
