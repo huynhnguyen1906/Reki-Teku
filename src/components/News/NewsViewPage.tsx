@@ -14,6 +14,7 @@ export default function NewsViewPage() {
     const { news, isLoading } = useIndexNews();
     const [charLimit, setCharLimit] = useState(80);
     const [headerCharLimit, setHeaderCharLimit] = useState(55);
+
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth <= 1000) {
@@ -45,7 +46,6 @@ export default function NewsViewPage() {
                         news.map((item: any) => {
                             const date = formatDate(item.news_timestamp);
                             const tagClass = item.news_type === 'ブログ更新' ? Style.blogTag : Style.tourTag;
-
                             return (
                                 <div key={item.id} className={Style.newsItem}>
                                     <Link
@@ -54,13 +54,17 @@ export default function NewsViewPage() {
                                     >
                                         <div className={Style.newsContent}>
                                             <p className={Style.thumb}>
-                                                <Image
-                                                    src={item.image.file.url}
-                                                    alt={item.header.text}
-                                                    width={367}
-                                                    height={204}
-                                                    priority
-                                                />
+                                                {item.image?.file.url ? (
+                                                    <Image
+                                                        src={item.image.file.url}
+                                                        alt={item.header.text}
+                                                        width={367}
+                                                        height={204}
+                                                        priority
+                                                    />
+                                                ) : (
+                                                    <span>画像がございません</span>
+                                                )}
                                             </p>
                                             <div className={Style.item}>
                                                 <div className={Style.data}>

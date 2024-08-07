@@ -4,6 +4,7 @@ import { IoMdTime } from 'react-icons/io';
 import { splitText } from '@/utils/splitText';
 import { formatDate } from '@/utils/formatDate';
 import { convertSlugText } from '@/utils/convertSlugText';
+
 interface NewsCardProps {
     news: {
         id: string;
@@ -11,7 +12,7 @@ interface NewsCardProps {
         news_timestamp: { seconds: number; nanoseconds: number };
         header: { text: string };
         paragraph: { text: string };
-        image: { file: { url: string } };
+        image: { file: { url: string } } | null;
     };
 }
 
@@ -24,7 +25,11 @@ export default function NewsCard({ news }: NewsCardProps) {
             <a href={`/news/${convertSlugText(news.header.text)}-${news.id}.html`}>
                 <div className={Style.newsContent}>
                     <p className={Style.thumb}>
-                        <Image src={news.image?.file.url} alt="news image" width={367} height={204} priority />
+                        {news.image?.file.url ? (
+                            <Image src={news.image.file.url} alt={news.header.text} width={367} height={204} priority />
+                        ) : (
+                            <span>画像がございません</span>
+                        )}
                     </p>
                     <div className={Style.item}>
                         <div className={Style.data}>
