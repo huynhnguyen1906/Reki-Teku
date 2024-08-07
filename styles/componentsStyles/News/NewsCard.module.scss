@@ -4,12 +4,16 @@
     display: flex;
     justify-content: baseline;
     gap: 2rem;
+    width: 100%;
+    max-width: calc(33.333%);
+    flex: 1 1 calc(33.3333%);
     a {
         text-decoration: none;
+        width: 100%;
     }
     .newsContent {
         padding: 6px;
-        max-width: 400px;
+        width: 100%;
         height: 450px;
         border-radius: 10px;
         background: $accent-color-white;
