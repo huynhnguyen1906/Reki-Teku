@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
-import { EffectCoverflow } from 'swiper/modules';
 
 import Style from '@styles/componentsStyles/News/NewsContainer.module.scss';
 import ToursCard from '@/components/Tours/ToursCard';
