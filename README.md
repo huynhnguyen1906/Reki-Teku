@@ -1,13 +1,13 @@
 # 歴てく
 
 <p align="center">
-  <img src="/public/images/readme1.webp" width="100%"/>
+  <img src="public/images/readme1.webp" width="100%"/>
 </p>
 
 ####
 
 <p align="center">
-  <img src="/public/images/readme2.webp" width="100%"/>
+  <img src="public/images/readme2.webp" width="100%"/>
 </p>
 
 ## 紹介
