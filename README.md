@@ -1,5 +1,15 @@
 # 歴てく
 
+<p align="center">
+  <img src="/public/images/readme1.webp" width="100%"/>
+</p>
+
+####
+
+<p align="center">
+  <img src="/public/images/readme2.webp" width="100%"/>
+</p>
+
 ## 紹介
 
 これは、福岡県の歴史観光プロジェクトを準備している顧客と連携したプロジェクトです。
