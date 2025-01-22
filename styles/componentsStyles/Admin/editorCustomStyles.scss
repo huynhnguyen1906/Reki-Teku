@@ -9,6 +9,11 @@
 .codex-editor__redactor {
     padding-bottom: 50px !important;
 }
+.ce-block:first-of-type {
+    .cdx-input {
+        display: none !important;
+    }
+}
 .image-tool__image {
     display: flex;
     justify-content: center;

@@ -1,9 +1,11 @@
+'use client';
 import Style from '@styles/appStyles/News.module.scss';
 import Image from 'next/image';
 import { IoMdTime } from 'react-icons/io';
 import MainLayout from '@/components/MainLayout';
 import NewsContainer from '@/components/News/NewsContainer';
 import { formatDate } from '@/utils/formatDate';
+import React from 'react';
 
 type NewsPageProps = {
     news: {
@@ -25,7 +27,7 @@ export default function NewsPage({ news }: NewsPageProps) {
 
     const firstImage = blocks[0]?.data?.file?.url;
     const headerText = blocks[1]?.data?.text;
-
+    console.log(blocks[7]?.data);
     return (
         <MainLayout>
             {news && (
@@ -48,23 +50,71 @@ export default function NewsPage({ news }: NewsPageProps) {
                         </div>
 
                         {blocks.slice(2)?.map((block: any, index: any) => {
-                            if (block.type === 'paragraph') {
-                                return (
-                                    <p key={index} className={Style.text}>
-                                        {block.data.text}
-                                    </p>
-                                );
-                            } else if (block.type === 'image') {
-                                return (
-                                    <div key={index} className={Style.picWrap}>
-                                        <p className={Style.pic}>
-                                            <Image src={block.data.file.url} alt="" width={800} height={610} priority />
+                            switch (block.type) {
+                                case 'paragraph':
+                                    return (
+                                        <p key={index} className={Style.text}>
+                                            {block.data.text}
                                         </p>
-                                        <p className={Style.sup}>{block.data.caption}</p>
-                                    </div>
-                                );
+                                    );
+                                case 'header':
+                                    return React.createElement(
+                                        `h${block.data.level}`,
+                                        {
+                                            key: index,
+                                            className: `${Style.ttl} ${Style[`h${block.data.level}`]}`,
+                                        },
+                                        block.data.text,
+                                    );
+                                case 'image':
+                                    return (
+                                        <div key={index} className={Style.picWrap}>
+                                            <p className={Style.pic}>
+                                                <Image
+                                                    src={block.data.file.url}
+                                                    alt=""
+                                                    width={800}
+                                                    height={610}
+                                                    priority
+                                                />
+                                            </p>
+                                            <p className={Style.sup}>{block.data.caption}</p>
+                                        </div>
+                                    );
+                                case 'list':
+                                    const ListTag = block.data.style === 'ordered' ? 'ol' : 'ul';
+                                    return (
+                                        <ListTag key={index} className={Style.list}>
+                                            {block.data.items.map((item: string, i: number) => (
+                                                <li key={i}>{item}</li>
+                                            ))}
+                                        </ListTag>
+                                    );
+                                case 'quote':
+                                    return (
+                                        <div key={index} className={Style.quote}>
+                                            <div className={Style.quoteText}>{block.data.text}</div>
+                                            {block.data.caption && (
+                                                <div className={Style.quoteCaption}>{block.data.caption}</div>
+                                            )}
+                                        </div>
+                                    );
+                                case 'delimiter':
+                                    return <div key={index} className={Style.delimiter} />;
+                                case 'checklist':
+                                    return (
+                                        <ul key={index} className={Style.checklist}>
+                                            {block.data.items.map((item: any, i: number) => (
+                                                <li key={i} className={Style.checklistItem}>
+                                                    <input type="checkbox" checked={item.checked} readOnly />
+                                                    <span>{item.text}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    );
+                                default:
+                                    return null;
                             }
-                            return null;
                         })}
                     </div>
                     <div className={Style.swapContent}>

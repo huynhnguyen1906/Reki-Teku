@@ -39,15 +39,93 @@
             background-color: $add-tour-tag-bg;
         }
     }
-    .ttl {
-        margin-top: 10px;
-        font-size: 42px;
+}
+
+.ttl {
+    margin-top: 10px;
+    font-size: 42px;
+    &.h1 {
+        font-size: 32px;
+        font-weight: 700;
+    }
+    &.h2 {
+        font-size: 28px;
+        font-weight: 600;
+    }
+    &.h3 {
+        font-size: 24px;
+        font-weight: 600;
+    }
+    &.h4 {
+        font-size: 20px;
+        font-weight: 500;
+    }
+    &.h5 {
+        font-size: 18px;
+        font-weight: 500;
+    }
+    &.h6 {
+        font-size: 16px;
+        font-weight: 500;
     }
 }
 
 .text {
     margin-top: 60px;
     font-size: 18px;
+}
+
+.list {
+    margin: 20px 0;
+    padding-left: 40px;
+    li {
+        margin: 10px 0;
+        font-size: 16px;
+    }
+}
+
+.quote {
+    margin: 30px 0;
+    padding: 20px;
+    background: #f7f7f7;
+    border-left: 4px solid #333;
+    .quoteText {
+        font-style: italic;
+        margin-bottom: 10px;
+    }
+    .quoteCaption {
+        font-size: 14px;
+        color: #666;
+    }
+}
+
+.delimiter {
+    margin: 30px auto;
+    text-align: center;
+    &::before {
+        content: '***********';
+        display: inline-block;
+        color: #666;
+        letter-spacing: 0.8em;
+    }
+}
+
+.checklist {
+    margin: 20px 0;
+    list-style: none;
+    padding-left: 0;
+
+    .checklistItem {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 10px 0;
+
+        input[type='checkbox'] {
+            width: 16px;
+            height: 16px;
+        }
+    }
 }
 
 .picWrap {
@@ -91,8 +169,13 @@
     .item,
     .ttl,
     .picWrap,
-    .text {
+    .text,
+    .delimiter,
+    .checklist {
         padding: 0 14px;
+    }
+    .quote {
+        margin: 20px 14px;
     }
     .blogHeader {
         margin-top: 0;

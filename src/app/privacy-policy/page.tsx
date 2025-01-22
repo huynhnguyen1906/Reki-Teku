@@ -2,6 +2,7 @@
 import MainLayout from '@/components/MainLayout';
 import { usePrivacyPolicy } from '@/hooks/TextContent/usePrivacyPolicy';
 import parse from 'html-react-parser';
+import React from 'react';
 
 export default function PrivacyPolicy() {
     const { content } = usePrivacyPolicy();
@@ -20,6 +21,33 @@ export default function PrivacyPolicy() {
                     );
                 case 'paragraph':
                     return <p key={block.id}>{parse(block.data.text)}</p>;
+                case 'list':
+                    const listTag = block.data.style === 'ordered' ? 'ol' : 'ul';
+                    return React.createElement(
+                        listTag,
+                        { key: block.id },
+                        block.data.items.map((item: string, index: number) => <li key={index}>{parse(item)}</li>),
+                    );
+                case 'delimiter':
+                    return (
+                        <div
+                            key={block.id}
+                            style={{
+                                width: '100%',
+                                textAlign: 'center',
+                            }}
+                        >
+                            <hr
+                                style={{
+                                    width: '100%',
+                                    maxWidth: '600px',
+                                    margin: '0 auto',
+                                    border: 'none',
+                                    borderTop: '3px solid #E8E8EB',
+                                }}
+                            />
+                        </div>
+                    );
                 default:
                     return null;
             }

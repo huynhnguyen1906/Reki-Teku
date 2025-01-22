@@ -3,10 +3,7 @@ import Paragraph from '@editorjs/paragraph';
 import Header from '@editorjs/header';
 import List from '@editorjs/list';
 import Image from '@editorjs/image';
-import Embed from '@editorjs/embed';
-import Table from '@editorjs/table';
 import Quote from '@editorjs/quote';
-import Code from '@editorjs/code';
 import Delimiter from '@editorjs/delimiter';
 import Checklist from '@editorjs/checklist';
 
@@ -16,12 +13,17 @@ class CustomImageTool extends Image {
     render() {
         const wrapper = super.render();
         const caption = wrapper.querySelector('.cdx-input');
-
         if (caption && !CustomImageTool.firstImageRendered) {
             CustomImageTool.firstImageRendered = true;
-            caption.style.display = 'none';
+            caption.classList.add('first-caption');
+            const style = document.createElement('style');
+            style.innerHTML = `
+                .first-caption {
+                    display: none !important;
+                }
+            `;
+            document.head.appendChild(style);
         }
-
         return wrapper;
     }
 }
@@ -76,20 +78,6 @@ const editorConfig: EditorConfig = {
                 },
             },
         },
-        embed: {
-            class: Embed,
-            inlineToolbar: true,
-            config: {
-                services: {
-                    youtube: true,
-                    coub: true,
-                    twitter: true,
-                    facebook: true,
-                    instagram: true,
-                },
-            },
-        },
-        table: Table,
         quote: {
             class: Quote,
             inlineToolbar: true,
@@ -98,7 +86,6 @@ const editorConfig: EditorConfig = {
                 captionPlaceholder: '引用元を入力...',
             },
         },
-        code: Code,
         checklist: Checklist,
         delimiter: Delimiter,
     },
@@ -128,9 +115,6 @@ const editorConfig: EditorConfig = {
                 Heading: '見出し',
                 List: 'リスト',
                 Image: '画像',
-                Table: 'テーブル',
-                Embed: '埋め込み',
-                Code: 'コード',
                 Quote: '引用',
                 Delimiter: '区切り線',
                 Checklist: 'チェックリスト',

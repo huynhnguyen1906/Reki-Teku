@@ -1,11 +1,11 @@
 'use client';
+import React from 'react';
 import MainLayout from '@/components/MainLayout';
 import { useTermsAndConditions } from '@/hooks/TextContent/useTermsAndConditions';
 import parse from 'html-react-parser';
 
 export default function TermsAndConditions() {
     const { content } = useTermsAndConditions();
-
     const renderContent = (content: any) => {
         if (!content) return null;
 
@@ -20,6 +20,33 @@ export default function TermsAndConditions() {
                     );
                 case 'paragraph':
                     return <p key={block.id}>{parse(block.data.text)}</p>;
+                case 'list':
+                    const listTag = block.data.style === 'ordered' ? 'ol' : 'ul';
+                    return React.createElement(
+                        listTag,
+                        { key: block.id },
+                        block.data.items.map((item: string, index: number) => <li key={index}>{parse(item)}</li>),
+                    );
+                case 'delimiter':
+                    return (
+                        <div
+                            key={block.id}
+                            style={{
+                                width: '100%',
+                                textAlign: 'center',
+                            }}
+                        >
+                            <hr
+                                style={{
+                                    width: '100%',
+                                    maxWidth: '600px',
+                                    margin: '0 auto',
+                                    border: 'none',
+                                    borderTop: '3px solid #E8E8EB',
+                                }}
+                            />
+                        </div>
+                    );
                 default:
                     return null;
             }
