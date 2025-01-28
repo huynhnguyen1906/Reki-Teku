@@ -1,15 +1,41 @@
-'use client';
+// app/components/Footer.jsx
 import Style from '@styles/componentsStyles/Footer.module.scss';
 import { FaXTwitter } from 'react-icons/fa6';
 import { FaInstagram } from 'react-icons/fa';
 import { FaArrowUpRightFromSquare } from 'react-icons/fa6';
 import Link from 'next/link';
-import { useCompanyProfile } from '@/hooks/TextContent/useCompanyProfile';
 import { formatTextWithLineBreaks } from '@/utils/formatTextWithLineBreaks ';
 
-export default function Footer() {
-    const { profile } = useCompanyProfile();
+async function fetchCompanyProfile() {
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+
+    try {
+        const res = await fetch(`${baseUrl}/api/text-content/save-company-profile`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            cache: 'no-store',
+        });
+
+        if (!res.ok) {
+            console.error('Failed to fetch company profile:', res.statusText);
+            return null;
+        }
+
+        const data = await res.json();
+        console.log('Company profile:', data);
+        return data;
+    } catch (error) {
+        console.error('Error fetching company profile:', error);
+        return null;
+    }
+}
+
+export default async function Footer() {
+    const profile = await fetchCompanyProfile();
     const profileAddress = profile?.address ? formatTextWithLineBreaks(profile.address) : '';
+
     return (
         <footer className={Style.footerBg}>
             <div className={Style.Wrap}>
@@ -42,16 +68,20 @@ export default function Footer() {
                         <div className={Style.contactWrap}>
                             <h1>歴てく IN・SIDE</h1>
                             <div className={Style.defaultInfoWrap}>
-                                {profile && (
+                                {profile ? (
                                     <>
                                         <div>
                                             <p dangerouslySetInnerHTML={{ __html: profileAddress }}></p>
                                         </div>
                                         <div>
-                                            <p>{profile?.contact}</p>
-                                            <p>{profile?.email}</p>
+                                            <p>{profile.contact}</p>
+                                            <p>{profile.email}</p>
                                         </div>
                                     </>
+                                ) : (
+                                    <div>
+                                        <p>情報がございません。</p>
+                                    </div>
                                 )}
                             </div>
                         </div>
@@ -105,8 +135,14 @@ export default function Footer() {
                                 <a href="/privacy-policy">プライバシーポリシー</a>　
                                 <a href="/terms-and-conditions">旅行業約款</a>　<a href="/question">よくある質問</a>
                             </li>
-                            {profile && <li>国内旅行業務取扱管理者番号　 {profile.licenseNumber}</li>}
-                            <li>&copy;歴てく2024</li>
+                            {profile ? (
+                                <>
+                                    <li>国内旅行業務取扱管理者番号　 {profile.licenseNumber}</li>
+                                    <li>&copy;歴てく{profile.copyrightYear}</li>
+                                </>
+                            ) : (
+                                <li>情報がございません。</li>
+                            )}
                         </ul>
                     </div>
                 </div>

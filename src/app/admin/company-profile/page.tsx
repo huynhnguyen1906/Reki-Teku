@@ -22,6 +22,7 @@ export default function CompanyProfile() {
         memberships: '',
         email: '',
         licenseNumber: '',
+        copyrightYear: '',
     });
 
     useEffect(() => {
@@ -38,6 +39,7 @@ export default function CompanyProfile() {
                 memberships: profile.memberships || '',
                 email: profile.email || '',
                 licenseNumber: profile.licenseNumber || '',
+                copyrightYear: profile.copyrightYear || '',
             });
         }
     }, [profile, isLoading, isError]);
@@ -115,6 +117,10 @@ export default function CompanyProfile() {
                             <div className={Style.inputItem}>
                                 <label>国内旅行業務取扱管理者番号：</label>
                                 <input name="licenseNumber" value={formData.licenseNumber} onChange={handleChange} />
+                            </div>
+                            <div className={Style.inputItem}>
+                                <label>コピーライト 年号：</label>
+                                <input name="copyrightYear" value={formData.copyrightYear} onChange={handleChange} />
                             </div>
                             <Button variant="success" className={Style.submitBtn} onClick={handleSubmit}>
                                 送信
