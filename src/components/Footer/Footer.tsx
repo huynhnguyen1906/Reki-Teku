@@ -24,7 +24,6 @@ async function fetchCompanyProfile() {
         }
 
         const data = await res.json();
-        console.log('Company profile:', data);
         return data;
     } catch (error) {
         console.error('Error fetching company profile:', error);
