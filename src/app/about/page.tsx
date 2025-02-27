@@ -5,7 +5,6 @@ import Style from '@styles/appStyles/About.module.scss';
 import Image from 'next/image';
 import MainLayout from '@/components/MainLayout';
 import { useAboutText } from '@/hooks/TextContent/useAboutText';
-import { useCompanyProfile } from '@/hooks/TextContent/useCompanyProfile';
 import { useCompanyProfileContext } from '@/context/CompanyProfileContext';
 import { formatTextWithLineBreaks } from '@/utils/formatTextWithLineBreaks ';
 
