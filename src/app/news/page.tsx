@@ -6,7 +6,7 @@ export const generateMetadata = async (): Promise<Metadata> => {
         title: 'ニュース一覧',
         description:
             '川が大きな流れから小さく枝分かれしていくように、歴史も枝分かれしていきます。「歴てく」は、枝分かれした歴史のサイドストーリーを知る旅をあなたにご提供します。',
-        keywords: '歴てく, reki-teku, 歴史, サイドストーリー, 人生, 深める, fukuoka, 福岡',
+        keywords: '歴てく, reki-teku, rekiteku, 歴史, サイドストーリー, 人生, 深める, fukuoka, 福岡',
         openGraph: {
             type: 'website',
             url: `${process.env.NEXT_PUBLIC_BASE_URL}`,

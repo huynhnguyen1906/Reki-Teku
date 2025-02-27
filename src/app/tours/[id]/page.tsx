@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
     return {
         title: tour.tour_info.name,
         description: tour.tour_info.description,
-        keywords: `歴てく, reki-teku, 歴史, サイドストーリー, 人生, 深める, ${tour.tour_info.location}`,
+        keywords: `歴てく, reki-teku, rekiteku, 歴史, サイドストーリー, 人生, 深める, ${tour.tour_info.location}`,
         openGraph: {
             type: 'website',
             url: `${process.env.NEXT_PUBLIC_BASE_URL}/tours/${slug}`,

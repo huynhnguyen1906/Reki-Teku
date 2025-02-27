@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
     return {
         title: headerText || 'ニュース記事',
         description: firstParagraph || 'ニュース記事の詳細',
-        keywords: `ニュース, 更新, ブログ, ${news.news_type}`,
+        keywords: `ニュース, 更新, ブログ, ${news.news_type},歴てく, reki-teku, rekiteku, 歴史, サイドストーリー, 人生, 深める, fukuoka, 福岡`,
         openGraph: {
             type: 'website',
             url: `${process.env.NEXT_PUBLIC_BASE_URL}/news/${slug}`,
