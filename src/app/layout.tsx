@@ -2,6 +2,8 @@ import '@styles/GlobalStyles.scss';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import { Metadata } from 'next';
+import fetchCompanyProfile from '@/utils/fetchCompanyProfile';
+import { CompanyProfileContextProvider } from '@/context/CompanyProfileContext';
 
 export const generateMetadata = async (): Promise<Metadata> => {
     return {
@@ -26,7 +28,7 @@ export const generateMetadata = async (): Promise<Metadata> => {
                     url: 'https://github.com/huynhnguyen1906/Reki-Teku/blob/main/src/app/og-image.png?raw=true',
                     width: 1200,
                     height: 630,
-                    alt: '川が大きな流れから小さく枝分かれしていくように、歴史も枝分かれしていきます。「歴てく」は、枝分かれした歴史のサイドストーリーを知る旅をあなたにご提供します。',
+                    alt: '歴てく｜自分の目と足で歴史の『サイドストーリー』を探求し人生を深める',
                 },
             ],
             siteName: '歴てく',
@@ -84,11 +86,15 @@ export const generateMetadata = async (): Promise<Metadata> => {
     };
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+    const companyProfile = await fetchCompanyProfile();
+
     return (
         <html lang="ja">
             <body>
-                {children}{' '}
+                <CompanyProfileContextProvider companyProfile={companyProfile}>
+                    {children}
+                </CompanyProfileContextProvider>
                 <ToastContainer
                     position="bottom-left"
                     autoClose={2000}

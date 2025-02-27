@@ -6,11 +6,12 @@ import Image from 'next/image';
 import MainLayout from '@/components/MainLayout';
 import { useAboutText } from '@/hooks/TextContent/useAboutText';
 import { useCompanyProfile } from '@/hooks/TextContent/useCompanyProfile';
+import { useCompanyProfileContext } from '@/context/CompanyProfileContext';
 import { formatTextWithLineBreaks } from '@/utils/formatTextWithLineBreaks ';
 
 export default function About() {
     const { text } = useAboutText();
-    const { profile } = useCompanyProfile();
+    const { profile } = useCompanyProfileContext();
     const profileAddress = profile?.address ? formatTextWithLineBreaks(profile.address) : '';
     useEffect(() => {
         const updateBackground = () => {
