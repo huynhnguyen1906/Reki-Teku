@@ -24,6 +24,7 @@
         "axios": "^1.7.2",
         "bootstrap": "^5.3.3",
         "browser-image-compression": "^2.0.2",
+        "caniuse-lite": "^1.0.30001701",
         "clsx": "^2.1.1",
         "cookies-next": "^4.2.1",
         "firebase": "^10.12.3",
